@@ -7,12 +7,15 @@ using UnityEditor.U2D;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
-
+/*
 public class DebugContent : MonoBehaviour
 {
-    [SerializeField] private bool DontLoadImages;
-    [SerializeField] private Suspect suspect;
-    private string prompt = "in caricature exaggerate face comics in stylized realistic digital art, a wowan with a yellow dress, a grey background behind";
+    [SerializeField] 
+    private ScenarioGenerator scenarioGenerator;
+    [SerializeField] 
+    private RawImage suspectImage;
+    [SerializeField] 
+    private bool DontLoadImages;
     [SerializeField]
     private StableDiffusionText2Image background;
     [SerializeField]
@@ -31,6 +34,7 @@ public class DebugContent : MonoBehaviour
     private int currentDialogue = 0;
     private int currentGeneration = 0;
 
+    private Suspect suspect;
     public void DisplaySheet()
     {
         InfoSheet.Instance.DisplaySheet(
@@ -39,17 +43,21 @@ public class DebugContent : MonoBehaviour
             suspect.age,
             suspect.sexe,
             suspect.height,
-            suspect.criminalRecord,
-            suspect.psychologicalReport,
-            suspect.medicalReport);
+            suspect.criminalRecord);
     }
 
-    public void HideSheet()
-    {
-        InfoSheet.Instance.HideSheet();   
-    }
+    
     void Start()
     {
+        /*
+        scenarioGenerator.GenerateScenario((scenario =>
+        {
+            Debug.LogError(scenario.objectLost);
+            Debug.LogError(scenario.thiefLocation);
+            Debug.LogError(scenario.scenarioString);
+        }));
+        suspect = SuspectGenerator.GenerateSuspect();
+        suspect.suspectImage = suspectImage;
         gptNpc.OnGPTResponseReceived += SuspectRespondHandler;
         InfoSheet.Instance.HideSheet();
         if (DontLoadImages)
@@ -74,6 +82,7 @@ public class DebugContent : MonoBehaviour
             SelectionPart.SetActive(false);
             gptNpc.SendMessage("You are guilty.");
         });
+        
     }
 
     private void Update()
@@ -89,14 +98,15 @@ public class DebugContent : MonoBehaviour
     {
         background.OnGenerationDone+= (_)=>
         {
-            suspectGenerator.GenerateSuspectFacesAsync(prompt, (sprites)=>
+            
+            suspectGenerator.GenerateSuspectFacesAsync(suspect.sexe == "Male",(sprites)=>
             {
                 suspect.emotions = sprites;
                 suspect.suspectImage.texture = suspect.emotions[EmotionType.Concentrated];
                 Debug.Log("Is Loaded !");
                 loadingCanvas.SetActive(false);
                 isLoaded = true;
-            });
+            },null);
         };
         background.Generate();
     }
@@ -120,3 +130,4 @@ public class DebugContent : MonoBehaviour
         SelectionPart.SetActive(true);
     }
 }
+*/

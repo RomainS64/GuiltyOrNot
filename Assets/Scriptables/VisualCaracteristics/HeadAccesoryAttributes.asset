@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be503a994ffe72545af18bbbe285fb91, type: 3}
+  m_Name: HeadAccesoryAttributes
+  m_EditorClassIdentifier: 
+  attributes:
+  - prompt: no head accessory
+    weights:
+      manProbabilityWeight: 5
+      womanProbabilityWeight: 5
+  - prompt: sunglasses
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
+  - prompt: glasses
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
+  - prompt: nose piercing
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1

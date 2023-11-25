@@ -32,7 +32,6 @@ public class StableDiffusionGenerator : MonoBehaviour
             // Deserialize the response to a class
             SDProgress sdp = JsonConvert.DeserializeObject<SDProgress>(responseBody);
             progress = sdp.progress;
-            Debug.Log(progress);
             //EditorUtility.DisplayProgressBar("Generation in progress", (progress*100).ToString("F1") + "%", progress);
         }
 #endif

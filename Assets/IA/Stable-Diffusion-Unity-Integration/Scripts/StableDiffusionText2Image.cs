@@ -59,7 +59,6 @@ public class StableDiffusionText2Image : StableDiffusionGenerator
     string filename = "";
 
 
-
     /// <summary>
     /// List of models to display as Drop-Down in the inspector
     /// </summary>

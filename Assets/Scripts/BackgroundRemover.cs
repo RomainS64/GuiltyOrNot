@@ -12,7 +12,6 @@ public class BackgroundRemover : MonoBehaviour
     {   
         runtimeModel = ModelLoader.Load(modelAsset);
         worker = WorkerFactory.CreateWorker(runtimeModel);
-        
     }
     private void Destroy()
     {
@@ -21,6 +20,7 @@ public class BackgroundRemover : MonoBehaviour
     public Texture2D RemoveBackground(Texture2D _inputTexture)
     {
         Tensor inputTensor = new Tensor(1, 1024, 1024, 3);
+        
         for (int h = 0; h < 1024; h++)
         {
             for (int w = 0; w < 1024; w++)
@@ -40,8 +40,11 @@ public class BackgroundRemover : MonoBehaviour
         
         for (int i = 0; i < mask.Length; i++)
         {
-            
             float value = mask[i];
+            if (i < _inputTexture.width || i%_inputTexture.width == _inputTexture.width-1)
+            {
+                value = 0;
+            }
             Color color = new Color(inputColors[i].r,inputColors[i].g,inputColors[i].b, value > 0.5f ? 1:0);
             outputColors[i] = color;
         }

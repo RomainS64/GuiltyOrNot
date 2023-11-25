@@ -136,7 +136,6 @@ public class StableDiffusionConfiguration : MonoBehaviour
                     // Send the POST request to the server
                     streamWriter.Write(json);
                 }
-
                 // Get the response of the server
                 var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
                 using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))

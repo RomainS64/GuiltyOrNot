@@ -4,9 +4,8 @@ using UnityEngine.EventSystems;
 
 public class MovableObject : MonoBehaviour, IPointerDownHandler,IPointerUpHandler
 {
-    [SerializeField] private int maxX,minX,maxY,minY;
-    [SerializeField] private float unknownFactor;
-    [SerializeField] private RectTransform canvas;
+    [SerializeField] private float unknownFactorX;
+    [SerializeField] private float unknownFactorY;
     private bool isMoving;
     private Vector2 firstMousePos;
     private Vector2 firstObjectPos;
@@ -18,10 +17,16 @@ public class MovableObject : MonoBehaviour, IPointerDownHandler,IPointerUpHandle
 
     private void Awake()
     {
-        objectTransform = GetComponent<RectTransform>();
+        if (TryGetComponent(out RectTransform rectTransform))
+        {
+            objectTransform = rectTransform;
+        }
+        else
+        {
+            objectTransform = GetComponentInChildren<RectTransform>();
+        }
         animator = GetComponent<Animator>();
     }
-
     public void OnPointerDown(PointerEventData _eventData)
     {
         animator.SetBool(holdParameter,true);
@@ -42,13 +47,9 @@ public class MovableObject : MonoBehaviour, IPointerDownHandler,IPointerUpHandle
         
         Vector2 currentPos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
         Vector2 delta = firstMousePos - currentPos;
-        Vector2 newPos = firstObjectPos - (delta * unknownFactor);
-        
-        newPos.x = newPos.x > maxX ? maxX : newPos.x;
-        newPos.x = newPos.x < minX ? minX : newPos.x;
-        newPos.y = newPos.y > maxY ? maxY : newPos.y;
-        newPos.y = newPos.y < minY ? minY : newPos.y;
-        
+        Vector2 newPos = new Vector2(firstObjectPos.x -(delta.x * unknownFactorX),firstObjectPos.y - (delta.y * unknownFactorY));
+
         objectTransform.anchoredPosition = newPos;
+        
     }
 }

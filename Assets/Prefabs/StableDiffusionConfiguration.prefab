@@ -66,6 +66,6 @@ MonoBehaviour:
   - DDIM
   - PLMS
   modelNames:
+  - majicmixRealistic_v7
   - anything-v3-fp16-pruned
   - dynavisionXLAllInOneStylized_release0534bakedvae
-  - f222

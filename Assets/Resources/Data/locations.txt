@@ -1,0 +1,150 @@
+Coffee shop
+Restaurant
+Park
+Library
+Shopping mall
+Gym
+Movie theater
+Bar
+Supermarket
+Museum
+Art gallery
+Hotel
+Bakery
+Bookstore
+Pharmacy
+Post office
+Bank
+Hospital
+School
+Gas station
+Taxi stand
+Bus stop
+Subway station
+Train station
+Airport
+Police station
+Fire station
+City hall
+Courthouse
+Car dealership
+Electronics store
+Clothing store
+Hair salon
+Nail salon
+Spa
+Laundromat
+Pet store
+Pet grooming salon
+Flower shop
+Farmers' market
+Food truck
+Yoga studio
+Music store
+Electronics repair shop
+Shoe store
+Sports stadium
+Concert venue
+Nightclub
+Public restroom
+Bike rental station
+Community center
+Hardware store
+Car wash
+Newsstand
+Daycare center
+Post office
+Bowling alley
+Car rental agency
+Tattoo studio
+Electronics repair shop
+Furniture store
+Antique shop
+Pet daycare
+Beauty salon
+Barber shop
+Sushi bar
+Juice bar
+Ice cream parlor
+Grocery store
+Farmers' market
+Food court
+Video game arcade
+Art supply store
+Comedy club
+Yoga studio
+Public park
+Bike shop
+Bus station
+Subway station
+Police precinct
+Fire department
+City council office
+Childcare center
+Fitness center
+Indoor swimming pool
+Local theater
+Tailor shop
+Antique store
+Stationery shop
+Hardware store
+Car repair shop
+Florist
+Wine bar
+Beer garden
+Delicatessen
+Juice bar
+Donut shop
+Pet supply store
+Pet grooming salon
+Pet boarding facility
+Beach
+Mountain
+Forest
+Desert
+Lake
+River
+Park
+Waterfall
+Island
+Canyon
+Cavern
+Glacier
+Prairie
+Wetland
+Volcano
+Savannah
+Tundra
+Plateau
+Oasis
+Cave
+Peninsula
+Archipelago
+Coral Reef
+Fjord
+Steppe
+Dune
+Delta
+Lagoon
+Marsh
+Bog
+Bay
+Inlet
+Harbor
+Estuary
+Canyonlands
+Rainforest
+Grassland
+Karst Landscape
+Badlands
+Savannah
+Prairie
+Steppe
+Highland
+Lowland
+Piedmont
+Iceberg
+Barrier Reef
+Sea Cliffs
+Karst Caves
+Wetlands
