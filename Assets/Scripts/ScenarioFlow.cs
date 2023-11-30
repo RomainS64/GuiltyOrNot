@@ -8,6 +8,8 @@ using UnityEngine.UI;
 
 public class ScenarioFlow : MonoSingleton<ScenarioFlow>
 {
+    [SerializeField] private Texture debugTexture;
+    [SerializeField] private bool generateImages;
     [SerializeField] private int numberOfSuspects;
     [SerializeField] private GameObject waitingCanvas;
     
@@ -24,8 +26,8 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
     public List<Suspect> GeneratedSuspects { get; private set;}
     private int neutralSuspectGenerated = 0;
     private int suspectGenerated = 0;
-
-
+    
+    
     public void StartGenerating()=>StartCoroutine(StartGeneratingCoroutine());
     
     private IEnumerator StartGeneratingCoroutine()
@@ -37,12 +39,6 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
         StartCoroutine(GenerateSuspectFirstInformations(numberOfSuspects));
         yield return new WaitUntil(() => GeneratedSuspects.Count>=numberOfSuspects);
         yield return new WaitUntil(() => isScenarioGenerated);
-        /*
-        StartCoroutine(GenerateSuspectEmotions(GeneratedSuspects[0], () =>
-        {
-            Debug.LogError("Salit salut c'est Romain");
-        }));
-        */
         DisplayCorkBoard();
     }
 
@@ -79,13 +75,24 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
         {
             Suspect generatedSuspect = SuspectGenerator.GenerateSuspect();
             Debug.LogError($"Generate Suspect {generatedSuspect.name}");
-            suspectGenerator.GenerateSuspectFaceAsync(generatedSuspect,EmotionType.Concentrated,true,(_result =>
+            if (generateImages)
+            {
+                suspectGenerator.GenerateSuspectFaceAsync(generatedSuspect,EmotionType.Concentrated,true,(_result =>
+                {
+                    generatedSuspect.emotions = new Dictionary<EmotionType, Texture>()
+                        { { EmotionType.Concentrated, _result.Item2 } };
+                    GeneratedSuspects.Add(generatedSuspect);
+                    generated++;
+                }));
+            }
+            else
             {
                 generatedSuspect.emotions = new Dictionary<EmotionType, Texture>()
-                    { { EmotionType.Concentrated, _result.Item2 } };
+                    { { EmotionType.Concentrated, debugTexture } };
                 GeneratedSuspects.Add(generatedSuspect);
                 generated++;
-            }));
+            }
+            
             yield return new WaitWhile(() => generated == i);
         }
     }

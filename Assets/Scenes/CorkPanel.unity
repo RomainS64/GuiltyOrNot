@@ -16326,9 +16326,17 @@ PrefabInstance:
       value: GON-CORE
       objectReference: {fileID: 0}
     - target: {fileID: 5775240283294973013, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
+      propertyPath: debugTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: 903f6dff831256f4db6f4f54fd3673bb, type: 3}
+    - target: {fileID: 5775240283294973013, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: waitingCanvas
       value: 
       objectReference: {fileID: 1276018106}
+    - target: {fileID: 5775240283294973013, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
+      propertyPath: generateImages
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5775240283294973013, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: numberOfSuspects
       value: 3
