@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9172a1580b9e4354091a38a03097c310, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfSuspects: 1
+  numberOfSuspects: 3
   waitingCanvas: {fileID: 0}
   scenarioGenerator: {fileID: 5930246028288180954}
   suspectGenerator: {fileID: 4238806531858969659}
@@ -162,10 +162,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3ef534ec5f1f3843812d16284aa9960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BoardCenter: {fileID: 0}
+  firstSuspectSceneIndex: 3
   BoardCanvas: {fileID: 0}
   scenarioSheet: {fileID: 0}
   suspectPhotoPrefab: {fileID: 1266166387970688003, guid: a05d7e72532eebe45be3717a75039b20, type: 3}
+  photoPositions:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &4555727201137463827
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,6 +571,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BackgroundRemover
       objectReference: {fileID: 0}
+    - target: {fileID: 9160420145759311270, guid: df697d2f61e9a88459fd8baaaffc9293, type: 3}
+      propertyPath: modelAsset
+      value: 
+      objectReference: {fileID: 5022602860645237092, guid: 86c257df410769c41a40b83b10cb9a66, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -659,6 +668,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3871201240506126184, guid: 19a38c1d34edd2943a2aac0416e278dc, type: 3}
+      propertyPath: ropeOffset.x
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 3871201240506126184, guid: 19a38c1d34edd2943a2aac0416e278dc, type: 3}
+      propertyPath: ropeOffset.y
+      value: -0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 3871201240506126184, guid: 19a38c1d34edd2943a2aac0416e278dc, type: 3}
       propertyPath: ropeOffset.z
       value: 1
       objectReference: {fileID: 0}
@@ -745,6 +762,10 @@ PrefabInstance:
     - target: {fileID: 7618791553996442629, guid: 19a38c1d34edd2943a2aac0416e278dc, type: 3}
       propertyPath: m_Name
       value: PinPlacement
+      objectReference: {fileID: 0}
+    - target: {fileID: 7932972218281065656, guid: 19a38c1d34edd2943a2aac0416e278dc, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.48
       objectReference: {fileID: 0}
     - target: {fileID: 8795047796911317566, guid: 19a38c1d34edd2943a2aac0416e278dc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -853,6 +874,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CameraManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6733594754900063663, guid: 4971076042a480e46855d6261f7257fa, type: 3}
+      propertyPath: scenes.Array.size
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8467482881337043688, guid: 4971076042a480e46855d6261f7257fa, type: 3}
       propertyPath: m_LocalPosition.x
       value: -216.5
@@ -893,7 +918,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4386954073826818386, guid: 4971076042a480e46855d6261f7257fa, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
