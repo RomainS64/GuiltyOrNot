@@ -23,9 +23,9 @@ public class CorkBoardFlowHandler : MonoSingleton<CorkBoardFlowHandler>
         Debug.Log("StartCorkBoard");
         scenarioSheet.DisplayText(_scenario.scenarioString);
         int i = 0;
+        
         TextSetter[] allTextSetters = FindObjectsOfType<TextSetter>(true);
         PhotoSetter[] photoSetters = FindObjectsOfType<PhotoSetter>(true);
-            
         dateSetters = allTextSetters.Where(textSetter => textSetter.GeSetterType() == TextType.Date).ToArray();
         sizeSetters = allTextSetters.Where(textSetter => textSetter.GeSetterType() == TextType.Size).ToArray();
         genderSetters = allTextSetters.Where(textSetter => textSetter.GeSetterType() == TextType.Gender).ToArray();
@@ -36,7 +36,10 @@ public class CorkBoardFlowHandler : MonoSingleton<CorkBoardFlowHandler>
             Vector3 position = photoPositions[i].position;
             GameObject newPhoto = Instantiate(suspectPhotoPrefab,position,Quaternion.identity);
             newPhoto.transform.parent = BoardCanvas;
-            newPhoto.GetComponent<PhotoSetter>().SetPhoto(suspect.emotions[EmotionType.Concentrated]);
+            newPhoto.transform.SetSiblingIndex(0);
+            PhotoSetter photoSetter =  newPhoto.GetComponent<PhotoSetter>();
+            photoSetter.SetPlayerId(i);
+            photoSetter.SetPhoto(suspect.emotions[EmotionType.Concentrated]);
             newPhoto.GetComponent<PhotoSceneSwith>().LinkedScene = firstSuspectSceneIndex + i;
 
             foreach (PhotoSetter setter in photoSetters)

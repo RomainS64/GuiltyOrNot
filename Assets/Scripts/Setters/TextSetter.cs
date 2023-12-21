@@ -14,6 +14,7 @@ public class TextSetter : MonoBehaviour
 
     public TextType GeSetterType() => setterType;
     public int GetPlayerId() => playerId;
+    public void SetPlayerId(int id) => playerId = id;
     
     public void SetText(string _text)
     {

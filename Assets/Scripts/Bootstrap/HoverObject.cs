@@ -7,13 +7,16 @@ public class HoverObject : MonoBehaviour,IPointerEnterHandler,IPointerExitHandle
 {
     [SerializeField] private Animator animator;
     private string hoverParameter = "hover";
+    public bool IsLock { get; set; } = false;
     public void OnPointerEnter(PointerEventData eventData)
     {
+        if (IsLock) return;
         animator.SetBool(hoverParameter,true);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        if (IsLock) return;
         animator.SetBool(hoverParameter,false);
     }
 }

@@ -146,8 +146,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9172a1580b9e4354091a38a03097c310, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugTexture: []
+  debugSuspects: []
+  generateImages: 0
+  generateSuspect: 0
   numberOfSuspects: 1
   waitingCanvas: {fileID: 0}
+  notebookCanvas: {fileID: 0}
   scenarioGenerator: {fileID: 5930246028288180954}
   suspectGenerator: {fileID: 4238806531858969659}
 --- !u!114 &7042417370774709050
@@ -162,10 +167,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3ef534ec5f1f3843812d16284aa9960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BoardCenter: {fileID: 0}
+  firstSuspectSceneIndex: 0
   BoardCanvas: {fileID: 0}
   scenarioSheet: {fileID: 0}
   suspectPhotoPrefab: {fileID: 1266166387970688003, guid: a05d7e72532eebe45be3717a75039b20, type: 3}
+  photoPositions: []
 --- !u!1 &4555727201137463827
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,6 +356,7 @@ GameObject:
   - component: {fileID: 764627486780040420}
   - component: {fileID: 5176087316948680144}
   - component: {fileID: 8310935138433332467}
+  - component: {fileID: 3547430120443993791}
   m_Layer: 0
   m_Name: SuspectGeneration
   m_TagString: Untagged
@@ -460,6 +467,88 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &3547430120443993791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6080318303171482198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 988e6ca824677044c8f10ff8c56e5d6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minAge: 15
+  maxAge: 80
+  ageDistribution:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.04166794
+      value: 0.21300125
+      inSlope: 1.4756191
+      outSlope: 1.4756191
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.49166667
+      value: 1
+      inSlope: 0.010109186
+      outSlope: 0.010109186
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.0291686
+      value: 0.21771932
+      inSlope: -1.4554007
+      outSlope: -1.4554007
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  minSize: 150
+  maxSize: 250
+  sizeDistribution:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.04166794
+      value: 0.21300125
+      inSlope: 1.4756191
+      outSlope: 1.4756191
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.49166667
+      value: 1
+      inSlope: 0.010109186
+      outSlope: 0.010109186
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.0291686
+      value: 0.21771932
+      inSlope: -1.4554007
+      outSlope: -1.4554007
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &7986342846038070158
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,6 +743,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 3871201240506126184, guid: 19a38c1d34edd2943a2aac0416e278dc, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 7711803702273583671}
     - target: {fileID: 3871201240506126184, guid: 19a38c1d34edd2943a2aac0416e278dc, type: 3}
       propertyPath: offset.z
       value: 0
@@ -901,5 +994,10 @@ PrefabInstance:
 --- !u!4 &473723832799200845 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8467482881337043688, guid: 4971076042a480e46855d6261f7257fa, type: 3}
+  m_PrefabInstance: {fileID: 8291561777354353829}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &7711803702273583671 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 1735116322790344338, guid: 4971076042a480e46855d6261f7257fa, type: 3}
   m_PrefabInstance: {fileID: 8291561777354353829}
   m_PrefabAsset: {fileID: 0}

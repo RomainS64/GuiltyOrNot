@@ -9,11 +9,15 @@ public class MovableObject : MonoBehaviour, IPointerDownHandler,IPointerUpHandle
     private bool isMoving;
     private Vector2 firstMousePos;
     private Vector2 firstObjectPos;
-
+    
     private Animator animator;
     private RectTransform objectTransform;
-    
     private const string holdParameter = "hold";
+
+    private bool isLock = false;
+
+    public void Lock(bool _lock)=>isLock = _lock;
+
 
     private void Awake()
     {
@@ -29,6 +33,7 @@ public class MovableObject : MonoBehaviour, IPointerDownHandler,IPointerUpHandle
     }
     public void OnPointerDown(PointerEventData _eventData)
     {
+        if (isLock) return;
         animator.SetBool(holdParameter,true);
         isMoving = true;
         firstMousePos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
@@ -37,6 +42,7 @@ public class MovableObject : MonoBehaviour, IPointerDownHandler,IPointerUpHandle
     
     public void OnPointerUp(PointerEventData _eventData)
     {
+        if (isLock) return;
         animator.SetBool(holdParameter,false);
         isMoving = false;
     }

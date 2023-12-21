@@ -48,7 +48,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7932972218281065656
 RectTransform:
   m_ObjectHideFlags: 0
@@ -222,6 +222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d01f4b43544734459987a876eba317a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  placePinAtStart: 0
   pinPrefab: {fileID: 3384646388600366538, guid: bfb44ef750896954489d245368bca35a, type: 3}
   pinCanvas: {fileID: 7618791553996442629}
   ropePrefab: {fileID: 2704824120275040905, guid: 19941e46572630640bcad89012bec10d, type: 3}

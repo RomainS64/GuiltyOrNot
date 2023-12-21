@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class PinableObject : MonoBehaviour,IPointerUpHandler,IPointerDownHandler
 {
+    [SerializeField] private bool infinitPin;
     [SerializeField]
     private MovableObject linkedMovable = null;
 
@@ -16,7 +17,7 @@ public class PinableObject : MonoBehaviour,IPointerUpHandler,IPointerDownHandler
         linkedMovable?.OnPointerUp(null);
         if (Time.time - downTime <0.2 && !isPined)
         {
-            isPined = true;
+            if(!infinitPin)isPined = true;
             PlacePin.Instance.PinablePined(gameObject.transform,forcedPinPosition);
         }
     }

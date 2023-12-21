@@ -2,11 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Rope;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class PlacePin : MonoSingleton<PlacePin>
 {
+    [SerializeField] private bool placePinAtStart = false;
+    [SerializeField ]private Camera camera;
     [SerializeField] private GameObject pinPrefab;
     [SerializeField] private GameObject pinCanvas;
     [SerializeField] private GameObject ropePrefab;
@@ -18,6 +21,10 @@ public class PlacePin : MonoSingleton<PlacePin>
     private bool isFirstPin = false;
     private bool isInPinMode = false;
 
+    private void Start()
+    {
+        SetPlacePinMode(placePinAtStart);
+    }
     public void SetPlacePinMode(bool _active) => isInPinMode = _active;
     public void PinablePined(Transform _pined,Transform _forcedPosition = null)
     {
@@ -42,12 +49,13 @@ public class PlacePin : MonoSingleton<PlacePin>
         }
         else
         {
-            currentRope.SetRightPoin(newPin.transform,ropeOffset);
+            currentRope.SetRightPoin(newPin.transform, ropeOffset);
         }
     }
-
+    
+    
     private void Update()
     {
-        mouseFollow.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 2));
+        mouseFollow.position = camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 2));
     }
 }
