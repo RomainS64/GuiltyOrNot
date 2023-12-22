@@ -20,7 +20,7 @@ public class ScenarioGenerator : MonoBehaviour
         TextAsset locations = Resources.Load<TextAsset>(DataFolder + _path);
         string[] allLocations = locations.text.Split("\n");
         string result = "examples:\n";
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 1; i++)
         {
             result += allLocations[Random.Range(0, allLocations.Length)] + "\n";
         }
@@ -40,17 +40,22 @@ public class ScenarioGenerator : MonoBehaviour
         thiefLocationGenerator.Presence_Penality = Random.Range(-2f, 2f);
 
         scenarioGenerator.SetUpConversation();
+        /*
         objectLostGenerator.SetUpConversation();
         thiefLocationGenerator.SetUpConversation();
-
+        */
 
         objectLostGenerator.OnGPTResponseReceived += (response) => objectLost = response;
         thiefLocationGenerator.OnGPTResponseReceived += (response) => thiefLocation = response;
 
+        /*
         objectLostGenerator.SendMessage("Be creative, give me an object that can be stolen like:\n" +
                                         GetRandomExamplesFrom(ObjectPath));
         thiefLocationGenerator.SendMessage("Be creative, give me a location like:\n" +
                                            GetRandomExamplesFrom(LocationPath));
+        */
+        objectLost = GetRandomExamplesFrom(ObjectPath);
+        thiefLocation = GetRandomExamplesFrom(LocationPath);
         while (objectLost == string.Empty || thiefLocation == string.Empty) await Task.Delay(50);
         Debug.LogError(objectLost);
 

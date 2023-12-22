@@ -8,7 +8,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CorkPanel.unity
     guid: 7954d44cc6ac3f940bdbb75b5a8f219f
-  - enabled: 1
-    path: Assets/Scenes/Rythm.unity
-    guid: a657d9342731c604a86a1a42f0073b87
   m_configObjects: {}

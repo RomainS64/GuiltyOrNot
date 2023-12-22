@@ -1116,7 +1116,7 @@ PrefabInstance:
     - target: {fileID: 2027009661075779578, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: settings
       value: 
-      objectReference: {fileID: 11400000, guid: 2f0a42d2a132f7144b35b4cabb576d34, type: 2}
+      objectReference: {fileID: 11400000, guid: 83cdc29a90decab4c8f8ae10f4162fb1, type: 2}
     - target: {fileID: 5637697761459922400, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 216.5
@@ -1161,6 +1161,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GON-CORE
       objectReference: {fileID: 0}
+    - target: {fileID: 7147220217706869574, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
+      propertyPath: modelAsset
+      value: 
+      objectReference: {fileID: 5022602860645237092, guid: 86c257df410769c41a40b83b10cb9a66, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

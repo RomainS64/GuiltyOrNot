@@ -19242,6 +19242,10 @@ PrefabInstance:
       propertyPath: suspectsFirstNameSetter.Array.data[2].firstNameSetter.Array.data[0]
       value: 
       objectReference: {fileID: 1746573889}
+    - target: {fileID: 7147220217706869574, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
+      propertyPath: modelAsset
+      value: 
+      objectReference: {fileID: 5022602860645237092, guid: 86c257df410769c41a40b83b10cb9a66, type: 3}
     - target: {fileID: 8358989877130616421, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
