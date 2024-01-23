@@ -110,8 +110,6 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
             {
                 generatedSuspect = debugSuspects[i];
             }
-            
-            Debug.LogError($"Generate Suspect {generatedSuspect.name}");
             if (generateImages)
             {
                 suspectGenerator.GenerateSuspectFaceAsync(generatedSuspect,EmotionType.Concentrated,true,(_result =>
@@ -129,7 +127,6 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
                 GeneratedSuspects.Add(generatedSuspect);
                 generated++;
             }
-            
             yield return new WaitWhile(() => generated == i);
         }
     }

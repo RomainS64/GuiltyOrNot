@@ -18,6 +18,7 @@ public class StableDiffusionGenerator : MonoBehaviour
     /// </summary>
     protected void UpdateGenerationProgress()
     {
+        
 #if UNITY_EDITOR
         // Stable diffusion API url for setting a model
         string url = sdc.settings.StableDiffusionServerURL + sdc.settings.ProgressAPI;

@@ -37,6 +37,8 @@ public class MainMenu : MonoBehaviour
     {
         ScenarioFlow.Instance.StartGenerating();
         PlacePin.Instance.SetPlacePinMode(false);
+        CameraHandler.Instance.ToggleCameraMovement(true);
         SceneCameraManager.Instance.LoadScene(2);
+        
     }
 }

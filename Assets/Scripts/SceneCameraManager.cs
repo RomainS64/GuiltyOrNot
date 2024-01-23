@@ -12,6 +12,7 @@ public struct CanvasScene
 }
 public class SceneCameraManager : MonoSingleton<SceneCameraManager>
 {
+    [SerializeField] private Transform followPoint;
     [SerializeField] private CinemachineVirtualCamera virtualCam;
     [SerializeField] private List<CanvasScene> scenes;
 
@@ -21,7 +22,7 @@ public class SceneCameraManager : MonoSingleton<SceneCameraManager>
     {
         if (currentCanvasScene.screenCanvas != null)currentCanvasScene.screenCanvas.SetActive(false);
         currentCanvasScene = scenes[_sceneIndex];
-        virtualCam.Follow = currentCanvasScene.worldCanvas.transform;
+        followPoint.transform.position = currentCanvasScene.worldCanvas.transform.position;
         if (currentCanvasScene.screenCanvas != null)currentCanvasScene.screenCanvas.SetActive(true);
     }
 }

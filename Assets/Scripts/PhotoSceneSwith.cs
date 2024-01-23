@@ -24,6 +24,7 @@ public class PhotoSceneSwith : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         if (eventData.button != PointerEventData.InputButton.Left || (crossPhoto != null  && crossPhoto.IsCrossed))return;
+        
         SceneCameraManager.Instance.LoadScene(LinkedScene);
         PlacePin.Instance.SetPlacePinMode(nextSceneIsPinable);
         notebook.HideNotebook(0.1f);

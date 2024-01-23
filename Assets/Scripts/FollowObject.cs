@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class FollowObject : MonoBehaviour
 {
+    [SerializeField] private bool followZoom;
+    [SerializeField] private float minZoom;
+    [SerializeField] private float maxZoom;
+    
     [SerializeField]private bool followX;
     [SerializeField]private bool followY;
     [SerializeField]private bool followZ;
@@ -13,6 +17,12 @@ public class FollowObject : MonoBehaviour
     [Range(0,1)] [SerializeField] private float lerpValue;
     void Update()
     {
+        if (followZoom)
+        {
+            float scale = Mathf.Lerp(minZoom, maxZoom, CameraHandler.Instance.ZoomLevel);
+            transform.localScale = new Vector3(scale,scale,1);
+        }
+        
         Vector3 newPos = new Vector3(
             followX ? objectToFollow.position.x + offset.x : followingObject.position.x,
             followY ? objectToFollow.position.y + offset.y : followingObject.position.y,
