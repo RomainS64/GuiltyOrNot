@@ -15,11 +15,38 @@ MonoBehaviour:
   Path: Assets/Sound/GuiltyOrNot_FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638406550354917012
+  lastModified: 638418564499178985
   FileSizes:
   - Name: Desktop
-    Value: 754
+    Value: 800
   Exists: 1
+--- !u!114 &-7912366141633323356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Pin
+  m_EditorClassIdentifier: 
+  Path: event:/Pin
+  Guid:
+    Data1: -2125335320
+    Data2: 1138345799
+    Data3: 65638064
+    Data4: -1947116550
+  Banks:
+  - {fileID: 4645021511547162914}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 342
 --- !u!114 &-7812055481701741761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,12 +91,13 @@ MonoBehaviour:
   - {fileID: 4645021511547162914}
   EditorEvents:
   - {fileID: -7812055481701741761}
+  - {fileID: -7912366141633323356}
   EditorParameters: []
   MasterBanks:
   - {fileID: 4645021511547162914}
   StringsBanks:
   - {fileID: -8920762047631395828}
-  cacheTime: 638406550354917012
+  cacheTime: 638418564499178985
   cacheVersion: 131609
 --- !u!114 &4645021511547162914
 MonoBehaviour:
@@ -86,8 +114,8 @@ MonoBehaviour:
   Path: Assets/Sound/GuiltyOrNot_FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638406550354906964
+  lastModified: 638418564499168807
   FileSizes:
   - Name: Desktop
-    Value: 1730
+    Value: 7264
   Exists: 1

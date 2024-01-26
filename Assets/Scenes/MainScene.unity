@@ -4185,14 +4185,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fmodEventsList:
-  - Name: First Event
+  - Name: Pin
     fmodEvent:
       Guid:
-        Data1: -1905061520
-        Data2: 1338906968
-        Data3: 1452872115
-        Data4: 253527045
-      Path: event:/Event
+        Data1: -2125335320
+        Data2: 1138345799
+        Data3: 65638064
+        Data4: -1947116550
+      Path: event:/Pin
 --- !u!4 &2051504792
 Transform:
   m_ObjectHideFlags: 0
