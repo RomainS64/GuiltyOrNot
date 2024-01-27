@@ -5,7 +5,11 @@ using FMODUnity;
 
 public class AudioManager : MonoBehaviour {
 
-    // For playing au FMod event in every scripts : AudioManager.instance.audioEvents["Audio Event Name"].Play();
+    // For playing an FMod event : AudioManager.instance.audioEvents["Audio Event Name"].Play();
+
+    // For stopping an FMod event : AudioManager.instance.audioEvents["Audio Event Name"].Stop();
+
+    // For modify a parameter : AudioManager.instance.audioEvents["Audio Event Name"].SetParameter("parameter_name", value);
 
     public static AudioManager instance;
     private void Awake()
@@ -63,6 +67,16 @@ public class AudioManager : MonoBehaviour {
             if (debugMessage)
             {
                 Debug.Log("FMod stopped : " + fmodEventEmitter.name);
+            }
+        }
+
+        public void SetParameter(string name, float value, bool debugMessage = true)
+        {
+            fmodEventEmitter.SetParameter(name, value, false);
+
+            if (debugMessage)
+            {
+                Debug.Log("FMod param : " + name + " set to : "+ value);
             }
         }
     }
