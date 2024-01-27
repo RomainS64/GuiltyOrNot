@@ -7,7 +7,6 @@ public class AudioManager : MonoBehaviour {
 
     // For playing au FMod event in every scripts : AudioManager.instance.audioEvents["Audio Event Name"].Play();
 
-
     public static AudioManager instance;
     private void Awake()
     {
@@ -34,7 +33,7 @@ public class AudioManager : MonoBehaviour {
                 fmodEventsList[i].Name,
                 new AudioEvent {
                     Name = fmodEventsList[i].Name,
-                    fmodEvent = fmodEventsList[i].fmodEvent
+                    fmodEventEmitter = fmodEventsList[i].fmodEventEmitter
                 }
             );
         }
@@ -45,14 +44,25 @@ public class AudioManager : MonoBehaviour {
     {
         public string Name;
 
-        public EventReference fmodEvent;
+        public StudioEventEmitter fmodEventEmitter;
 
         public void Play(bool debugMessage = true)
         {
-            RuntimeManager.PlayOneShot(fmodEvent);
+            fmodEventEmitter.Play();
+
             if (debugMessage)
             {
-                Debug.Log("FMod played : " + fmodEvent.Path.Remove(0, 7));
+                Debug.Log("FMod played : " + fmodEventEmitter.name);
+            }
+        }
+
+        public void Stop(bool debugMessage = true)
+        {
+            fmodEventEmitter.Stop();
+
+            if (debugMessage)
+            {
+                Debug.Log("FMod stopped : " + fmodEventEmitter.name);
             }
         }
     }

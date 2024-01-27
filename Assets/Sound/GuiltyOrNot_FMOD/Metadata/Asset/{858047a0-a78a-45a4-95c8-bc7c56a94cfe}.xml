@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EncodableAsset" id="{858047a0-a78a-45a4-95c8-bc7c56a94cfe}">
+		<property name="assetPath">
+			<value>SynthLong/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{e41c8dff-f0c7-415f-af88-e807283d7b00}</destination>
+		</relationship>
+	</object>
+</objects>
