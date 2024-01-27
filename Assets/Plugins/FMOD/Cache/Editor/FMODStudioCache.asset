@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: Assets/Sound/GuiltyOrNot_FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638419688675010202
+  lastModified: 638419731068836274
   FileSizes:
   - Name: Desktop
     Value: 854
@@ -47,6 +47,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 7012
+--- !u!114 &-7809692087628665691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/music_state
+  m_EditorClassIdentifier: 
+  Name: music_state
+  StudioPath: parameter:/music_state
+  Min: 0
+  Max: 7
+  Default: 0
+  ID:
+    data1: 980403208
+    data2: 3160514906
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-2297605954595477316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,12 +117,13 @@ MonoBehaviour:
   EditorEvents:
   - {fileID: -7912366141633323356}
   - {fileID: -2297605954595477316}
-  EditorParameters: []
+  EditorParameters:
+  - {fileID: -7809692087628665691}
   MasterBanks:
   - {fileID: 4645021511547162914}
   StringsBanks:
   - {fileID: -8920762047631395828}
-  cacheTime: 638419688675010202
+  cacheTime: 638419731068836274
   cacheVersion: 131609
 --- !u!114 &4645021511547162914
 MonoBehaviour:
@@ -115,10 +140,10 @@ MonoBehaviour:
   Path: Assets/Sound/GuiltyOrNot_FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638419688674980275
+  lastModified: 638419731068797524
   FileSizes:
   - Name: Desktop
-    Value: 4110272
+    Value: 4110080
   Exists: 1
 --- !u!114 &9086065704230446410
 MonoBehaviour:
@@ -141,6 +166,6 @@ MonoBehaviour:
     data1: 980403208
     data2: 3160514906
   Type: 0
-  IsGlobal: 0
+  IsGlobal: 1
   Labels: []
   Exists: 1

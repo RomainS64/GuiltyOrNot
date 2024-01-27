@@ -43,6 +43,26 @@ public class AudioManager : MonoBehaviour {
         }
     }
 
+    public void SetParameter(string name, float value, bool debugMessage = false)
+    {
+        RuntimeManager.StudioSystem.setParameterByName(name, value, false);
+
+        if (debugMessage)
+        {
+            Debug.Log("FMod param : " + name + " set to : " + value);
+        }
+    }
+
+    public float GetParameter(string name)
+    {
+        float value;
+        RuntimeManager.StudioSystem.getParameterByName(name, out value);
+        return value;
+    }
+
+    
+
+
     [System.Serializable]
     public class AudioEvent
     {
@@ -50,7 +70,7 @@ public class AudioManager : MonoBehaviour {
 
         public StudioEventEmitter fmodEventEmitter;
 
-        public void Play(bool debugMessage = true)
+        public void Play(bool debugMessage = false)
         {
             fmodEventEmitter.Play();
 
@@ -60,23 +80,13 @@ public class AudioManager : MonoBehaviour {
             }
         }
 
-        public void Stop(bool debugMessage = true)
+        public void Stop(bool debugMessage = false)
         {
             fmodEventEmitter.Stop();
 
             if (debugMessage)
             {
                 Debug.Log("FMod stopped : " + fmodEventEmitter.name);
-            }
-        }
-
-        public void SetParameter(string name, float value, bool debugMessage = true)
-        {
-            fmodEventEmitter.SetParameter(name, value, false);
-
-            if (debugMessage)
-            {
-                Debug.Log("FMod param : " + name + " set to : "+ value);
             }
         }
     }

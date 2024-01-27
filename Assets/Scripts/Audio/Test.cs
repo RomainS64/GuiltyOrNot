@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Test : MonoBehaviour
 {
+    public float paramValue = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,18 @@ public class Test : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Y))
         {
             AudioManager.instance.audioEvents["Game Music"].Stop();
+        }
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            paramValue--;
+            AudioManager.instance.SetParameter("music_state", paramValue);
+            Debug.Log(AudioManager.instance.GetParameter("music_state"));
+        }
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            paramValue++;
+            AudioManager.instance.SetParameter("music_state", paramValue);
+            Debug.Log(AudioManager.instance.GetParameter("music_state"));
         }
     }
 }
