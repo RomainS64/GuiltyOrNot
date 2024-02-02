@@ -60,7 +60,7 @@ public class SuspectVisualGenerator : MonoBehaviour
         if (generatePrompt)
         {
             seed = Random.Range(0, 1000000000);
-            suspectPrompt = GeneratePrompt(suspect.sexe == "Male");
+            suspectPrompt = GeneratePrompt(suspect.gender == "Male");
             suspect.visualPrompt = suspectPrompt;
             suspect.visualSeed = seed;
         }

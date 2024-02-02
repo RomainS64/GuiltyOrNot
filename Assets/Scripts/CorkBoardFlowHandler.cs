@@ -7,9 +7,6 @@ using UnityEngine;
 
 public class CorkBoardFlowHandler : MonoSingleton<CorkBoardFlowHandler>
 {
-    [SerializeField] private int firstSuspectSceneIndex;
-    [SerializeField] private Transform BoardCanvas;
-    [SerializeField] private ScenarioView scenarioSheet;
     [SerializeField] private GameObject suspectPhotoPrefab;
     [SerializeField] private Transform[] photoPositions;
     private PhotoSetter[] photoSetters; 
@@ -18,10 +15,8 @@ public class CorkBoardFlowHandler : MonoSingleton<CorkBoardFlowHandler>
     private TextSetter[] sizeSetters;
     private TextSetter[] dateSetters;
     private TextSetter[] genderSetters;
-    public void StartCorkBoard(Scenario _scenario,Suspect[] _suspects)
+    public void StartCorkBoard(Scenario _scenario,List<Suspect> _suspects)
     {
-        Debug.Log("StartCorkBoard");
-        scenarioSheet.DisplayText(_scenario.scenarioString);
         int i = 0;
         
         TextSetter[] allTextSetters = FindObjectsOfType<TextSetter>(true);
@@ -33,19 +28,19 @@ public class CorkBoardFlowHandler : MonoSingleton<CorkBoardFlowHandler>
         firstnameSetters = allTextSetters.Where(textSetter => textSetter.GeSetterType() == TextType.Firstname).ToArray();
         foreach (Suspect suspect in _suspects)
         {
+            /*
             Vector3 position = photoPositions[i].position;
             GameObject newPhoto = Instantiate(suspectPhotoPrefab,position,Quaternion.identity);
-            newPhoto.transform.parent = BoardCanvas;
             newPhoto.transform.SetSiblingIndex(0);
             PhotoSetter photoSetter =  newPhoto.GetComponent<PhotoSetter>();
             photoSetter.SetPlayerId(i);
-            photoSetter.SetPhoto(suspect.emotions[EmotionType.Concentrated]);
-            newPhoto.GetComponent<PhotoSceneSwith>().LinkedScene = firstSuspectSceneIndex + i;
+            photoSetter.SetPhoto(suspect.portrait);
+            */
 
             foreach (PhotoSetter setter in photoSetters)
             {
                 if (setter.GetPlayerId() != i) continue;
-                setter.SetPhoto(suspect.emotions[EmotionType.Concentrated]);
+                setter.SetPhoto(suspect.portrait);
             }
             foreach (TextSetter setter in firstnameSetters)
             {
@@ -70,7 +65,7 @@ public class CorkBoardFlowHandler : MonoSingleton<CorkBoardFlowHandler>
             foreach (TextSetter setter in genderSetters)
             {
                 if (setter.GetPlayerId() != i) continue;
-                setter.SetText(suspect.sexe == "Male"?"M":"F");
+                setter.SetText(suspect.gender == "Male"?"M":"F");
             }
             i++;
         }

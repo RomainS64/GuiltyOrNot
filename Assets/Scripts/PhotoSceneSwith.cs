@@ -27,6 +27,6 @@ public class PhotoSceneSwith : MonoBehaviour, IPointerClickHandler
         
         SceneCameraManager.Instance.LoadScene(LinkedScene);
         PlacePin.Instance.SetPlacePinMode(nextSceneIsPinable);
-        notebook.HideNotebook(0.1f);
+        notebook?.HideNotebook(0.1f);
     }
 }

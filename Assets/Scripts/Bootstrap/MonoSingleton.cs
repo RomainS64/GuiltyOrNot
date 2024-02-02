@@ -18,7 +18,8 @@ public abstract class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
         if (instance)
         {
             Debug.LogError($"Only one instance of {typeof(T)} available");
-        }Debug.Log(GetType().Name +"created");
+        }
+        Debug.Log(GetType().Name +"created");
         instance = FindObjectOfType<T>();
         exist = true;
         OnStarted?.Invoke();

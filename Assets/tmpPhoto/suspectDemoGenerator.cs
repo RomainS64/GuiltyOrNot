@@ -27,7 +27,7 @@ public class suspectDemoGenerator : MonoBehaviour
         size.text = "";
         gender.text = "";
         isGenerating = true;
-        generatedSuspect = SuspectGenerator.Instance.GenerateSuspect();
+        generatedSuspect = SuspectGenerator.Instance.GenerateSuspect(0);
         StartCoroutine(GenerateSuspect());
     }
     private IEnumerator GenerateSuspect()
@@ -35,14 +35,13 @@ public class suspectDemoGenerator : MonoBehaviour
         
         suspectGenerator.GenerateSuspectFaceAsync(generatedSuspect,EmotionType.Concentrated,true,(_result =>
         {
-            generatedSuspect.emotions = new Dictionary<EmotionType, Texture>()
-                { { EmotionType.Concentrated, _result.Item2 } };
+            generatedSuspect.portrait = _result.Item2;
             image.texture = _result.Item2;
             name.text = generatedSuspect.name;
             surname.text = generatedSuspect.surname;
             age.text = generatedSuspect.age + " yo";
             size.text = generatedSuspect.height + " cm";
-            gender.text = generatedSuspect.sexe == "Male" ? "M" : "F";
+            gender.text = generatedSuspect.gender == "Male" ? "M" : "F";
             isGenerating = false;
         }));
         yield return new WaitWhile(() => isGenerating);

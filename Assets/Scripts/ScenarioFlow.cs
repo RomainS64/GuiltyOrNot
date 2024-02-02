@@ -14,7 +14,6 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
     [SerializeField] private bool generateImages;
     [SerializeField] private bool generateSuspect;
     [SerializeField] private int numberOfSuspects;
-    [SerializeField] private GameObject waitingCanvas;
     [SerializeField] private GameObject notebookCanvas;
     [SerializeField] private ScenarioGenerator scenarioGenerator;
 
@@ -45,6 +44,7 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
 
     private void Start()
     {
+        StartGenerating();
         if(notebookCanvas != null)notebookCanvas.SetActive(false);
     }
 
@@ -52,98 +52,68 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
     
     public void StartGenerating()=>StartCoroutine(StartGeneratingCoroutine());
 
+    
+    
     private IEnumerator StartGeneratingCoroutine()
     {
         thresholdSpawnableObject = FindObjectsOfType<ThresholdSpawnableObject>(true);
         GeneratedSuspects = new List<Suspect>();
         ScenarioView.OnScenarioViewSkiped+= ()=> scenarioViewSkiped = true;
         notebookCanvas.SetActive(true);
-        //DisplayWaiting();
-        //StartCoroutine(GenerateScenario());
-        StartCoroutine(GenerateSuspectFirstInformations(numberOfSuspects));
+        StartCoroutine(GenerateScenario());
+        StartCoroutine(GenerateSuspects(numberOfSuspects));
         yield return new WaitUntil(() => GeneratedSuspects.Count>=numberOfSuspects);
-        //yield return new WaitUntil(() => isScenarioGenerated);
-        DisplayCorkBoard();
-        
-    }
-
-    void DisplayWaiting()
-    {
-        waitingCanvas.SetActive(true);
-    }
-    void DisplayCorkBoard()
-    {
-        foreach (var spawnable in thresholdSpawnableObject)
-        {
-            spawnable.NotifyThreshold(GetAlivedSuspectCout());
-        }
-        waitingCanvas.SetActive(false);
-        CorkBoardFlowHandler.Instance.StartCorkBoard(generatedScenario,GeneratedSuspects.ToArray());
+        yield return new WaitUntil(() => isScenarioGenerated);
+        InternetHistoryGenerator.Instance.GenerateRandomInternetHistory(generatedScenario,null);
+        CorkBoardFlowHandler.Instance.StartCorkBoard(generatedScenario,GeneratedSuspects);
+        Debug.Log(generatedScenario.scenarioString);
     }
     private IEnumerator GenerateScenario()
     {
         isScenarioGenerated = false;
         Scenario generatedScenario = new Scenario();
         bool isGenerated = false;
-        Debug.LogError("Generate Scenario");
+        Debug.Log("Generate Scenario");
         scenarioGenerator.GenerateScenario((_scenario) =>
         {
-            Debug.LogError("Scenario Generated");
             generatedScenario = _scenario;
             isGenerated = true;
         });
         yield return new WaitUntil(() => isGenerated);
-        Debug.LogError("Scenario Generated !");
+        Debug.Log("Scenario Generated");
         this.generatedScenario = generatedScenario;
         isScenarioGenerated = true;
     }
-    private IEnumerator GenerateSuspectFirstInformations(int numberOfSuspect)
+    private IEnumerator GenerateSuspects(int numberOfSuspect)
     {
         int generated = 0;
         for (int i = 0; i < numberOfSuspect; i++)
         {
             Suspect generatedSuspect;
-            if(generateSuspect){
-                generatedSuspect = SuspectGenerator.Instance.GenerateSuspect();
+            if(generateSuspect)
+            {
+                generatedSuspect = SuspectGenerator.Instance.GenerateSuspect(i);
             }
             else
-            {
+            { 
                 generatedSuspect = debugSuspects[i];
             }
             if (generateImages)
             {
                 suspectGenerator.GenerateSuspectFaceAsync(generatedSuspect,EmotionType.Concentrated,true,(_result =>
                 {
-                    generatedSuspect.emotions = new Dictionary<EmotionType, Texture>()
-                        { { EmotionType.Concentrated, _result.Item2 } };
+                    generatedSuspect.portrait = _result.Item2;
                     GeneratedSuspects.Add(generatedSuspect);
                     generated++;
                 }));
             }
             else
             {
-                generatedSuspect.emotions = new Dictionary<EmotionType, Texture>()
-                    { { EmotionType.Concentrated, debugTexture[generated] } };
+                generatedSuspect.portrait = debugTexture[generated];
                 GeneratedSuspects.Add(generatedSuspect);
                 generated++;
             }
             yield return new WaitWhile(() => generated == i);
         }
-    }
-    private IEnumerator GenerateSuspectEmotions(Suspect suspect,Action onGenerated)
-    {
-        int generated = 0;
-        for (int i=1;i<=(int)EmotionType.Scared;i++)
-        {
-            EmotionType emotion = (EmotionType)i;
-            Debug.Log($"Generate Suspect Emotion({emotion.ToString()}) {suspect.name}");
-            suspectGenerator.GenerateSuspectFaceAsync(suspect,emotion,false,(_result =>
-            {
-                suspect.emotions.Add((EmotionType)i,_result.Item2);
-                generated++;
-            }));
-            yield return new WaitWhile(() => generated == i-1);
-        }
-        onGenerated?.Invoke();
     }
 }

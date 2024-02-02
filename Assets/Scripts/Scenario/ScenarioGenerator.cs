@@ -44,7 +44,6 @@ public class ScenarioGenerator : MonoBehaviour
         objectLostGenerator.SetUpConversation();
         thiefLocationGenerator.SetUpConversation();
         */
-
         objectLostGenerator.OnGPTResponseReceived += (response) => objectLost = response;
         thiefLocationGenerator.OnGPTResponseReceived += (response) => thiefLocation = response;
 
@@ -57,7 +56,6 @@ public class ScenarioGenerator : MonoBehaviour
         objectLost = GetRandomExamplesFrom(ObjectPath);
         thiefLocation = GetRandomExamplesFrom(LocationPath);
         while (objectLost == string.Empty || thiefLocation == string.Empty) await Task.Delay(50);
-        Debug.LogError(objectLost);
 
         Scenario generatedScenario = new Scenario()
         {

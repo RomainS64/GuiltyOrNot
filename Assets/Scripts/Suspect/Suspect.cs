@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 [Serializable]
@@ -16,8 +17,18 @@ public struct Suspect
     
     public int age;
     public DateTime date;
-    public string sexe;
+    
+    public string gender;
     public int height;
-    public Dictionary<EmotionType, Texture> emotions;
+
+    public Texture portrait;
+
+    public InternetHistory internetHistory;
+    public BankAccountHistory bankAccountHistory;
+    public CriminalRecord criminalRecord;
 
 }
+
+public struct InternetHistory { }
+public struct BankAccountHistory { }
+public struct CriminalRecord { }

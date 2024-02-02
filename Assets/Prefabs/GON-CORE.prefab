@@ -1,5 +1,114 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3298362886178969138
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6543190523867916282}
+  - component: {fileID: 2638847540365014396}
+  m_Layer: 0
+  m_Name: guiltyGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6543190523867916282
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3298362886178969138}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4706683538979728103}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2638847540365014396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3298362886178969138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c90faf5c6665460478a05feb70e024aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PromptDirection: 'You must create lists of internet history. Do not create introductory
+    sentences.  Example of allowed formulation: Purchase of a vintage red jacket
+    (500 euros).  Allowed: Normal shopping, cultural, or educational websites.  Not
+    allowed: Sites present on the Dark Web. Sites containing information on lethal,
+    chemical, or dangerous weapons. Sites for information on encryption or overly
+    complex computer science. Sites that are too strange and unrelated to the investigation. 
+    Your responses should have connection to the investigation.  You should be funny.'
+  TrackConversation: 0
+  MaximumTokens: 600
+  Temperature: 1
+  Top_P: 0
+  Frequency_Penality: 0
+  Presence_Penality: 0
+--- !u!1 &3316288542590129282
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4706683538979728103}
+  - component: {fileID: 2847388343977115021}
+  m_Layer: 0
+  m_Name: InternetHistoryGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4706683538979728103
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3316288542590129282}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1198460960776811549}
+  - {fileID: 6543190523867916282}
+  m_Father: {fileID: 5071569931099388403}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2847388343977115021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3316288542590129282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed038f454eeae7445b9f85c12e623d30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guiltyPrompt: 'Provide directly a list of 20 internet histories related to the
+    investigation. Here is the investigation:'
+  innocentPrompt: 'Provide directly a list of 100 internet histories NOT related
+    to the investigation. Here is the investigation:'
+  guiltyGeneration: {fileID: 2638847540365014396}
+  innocentGeneration: {fileID: 7311933166498776930}
 --- !u!1 &3627062120361650677
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,100 +275,111 @@ MonoBehaviour:
     name: Jean
     surname: Dupont
     age: 30
-    sexe: Male
+    gender: 
     height: 189
+    portrait: {fileID: 0}
   - visualSeed: 0
     visualPrompt: 
     isEliminated: 0
     name: Zakari
     surname: Soumed
     age: 33
-    sexe: Male
+    gender: 
     height: 187
+    portrait: {fileID: 0}
   - visualSeed: 0
     visualPrompt: 
     isEliminated: 0
     name: Lea
     surname: Dufresne
     age: 27
-    sexe: Female
+    gender: 
     height: 181
+    portrait: {fileID: 0}
   - visualSeed: 0
     visualPrompt: 
     isEliminated: 0
     name: Alice
     surname: Dupont
     age: 31
-    sexe: Female
+    gender: 
     height: 189
+    portrait: {fileID: 0}
   - visualSeed: 0
     visualPrompt: 
     isEliminated: 0
     name: Lucas
     surname: Martin
     age: 41
-    sexe: Male
+    gender: 
     height: 165
+    portrait: {fileID: 0}
   - visualSeed: 0
     visualPrompt: 
     isEliminated: 0
     name: Antoine
     surname: Leroux
     age: 71
-    sexe: Male
+    gender: 
     height: 165
+    portrait: {fileID: 0}
   - visualSeed: 0
     visualPrompt: 
     isEliminated: 0
     name: Hugo
     surname: Riviere
     age: 34
-    sexe: Male
+    gender: 
     height: 181
+    portrait: {fileID: 0}
   - visualSeed: 0
     visualPrompt: 
     isEliminated: 0
     name: Carla
     surname: Deschamps
     age: 25
-    sexe: Female
+    gender: 
     height: 168
+    portrait: {fileID: 0}
   - visualSeed: 0
     visualPrompt: 
     isEliminated: 0
     name: Martin
     surname: Leon
     age: 26
-    sexe: Male
+    gender: 
     height: 185
+    portrait: {fileID: 0}
   - visualSeed: 0
     visualPrompt: 
     isEliminated: 0
     name: Emma
     surname: Blanchard
     age: 25
-    sexe: Female
+    gender: 
     height: 177
+    portrait: {fileID: 0}
   - visualSeed: 0
     visualPrompt: 
     isEliminated: 0
     name: "J\xE9r\xF4me"
     surname: Dubois
     age: 29
-    sexe: Male
+    gender: 
     height: 182
+    portrait: {fileID: 0}
   - visualSeed: 0
     visualPrompt: 
     isEliminated: 0
     name: Francois
     surname: Leclerc
     age: 77
-    sexe: Male
+    gender: 
     height: 182
+    portrait: {fileID: 0}
   generateImages: 0
   generateSuspect: 0
   numberOfSuspects: 12
-  waitingCanvas: {fileID: 0}
   notebookCanvas: {fileID: 0}
   scenarioGenerator: {fileID: 5930246028288180954}
   suspectGenerator: {fileID: 4238806531858969659}
@@ -275,9 +395,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3ef534ec5f1f3843812d16284aa9960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstSuspectSceneIndex: 3
-  BoardCanvas: {fileID: 0}
-  scenarioSheet: {fileID: 0}
   suspectPhotoPrefab: {fileID: 1266166387970688003, guid: a05d7e72532eebe45be3717a75039b20, type: 3}
   photoPositions:
   - {fileID: 0}
@@ -360,6 +477,63 @@ MonoBehaviour:
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
   m_ForceModuleActive: 0
+--- !u!1 &4810620313061819873
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1198460960776811549}
+  - component: {fileID: 7311933166498776930}
+  m_Layer: 0
+  m_Name: InnocentGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1198460960776811549
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4810620313061819873}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4706683538979728103}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7311933166498776930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4810620313061819873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c90faf5c6665460478a05feb70e024aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PromptDirection: 'You must create lists of internet history. Do not create introductory
+    sentences.  Example of allowed formulation: Purchase of a vintage red jacket
+    (500 euros).  Allowed: Normal shopping, cultural, or educational websites.  Not
+    allowed: Sites present on the Dark Web. Sites containing information on lethal,
+    chemical, or dangerous weapons. Sites for information on encryption or overly
+    complex computer science. Sites that are too strange and unrelated to the investigation. 
+    Your responses should have NO connection to the investigation.'
+  TrackConversation: 0
+  MaximumTokens: 600
+  Temperature: 1
+  Top_P: 0
+  Frequency_Penality: 0
+  Presence_Penality: 0
 --- !u!1 &5252177951768278698
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,6 +869,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 4706683538979728103}
   - {fileID: 3630705391847696732}
   - {fileID: 7610510363891946615}
   - {fileID: 1824071420245615057}
@@ -917,6 +1092,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3871201240506126184, guid: 19a38c1d34edd2943a2aac0416e278dc, type: 3}
       propertyPath: ropeOffset.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3871201240506126184, guid: 19a38c1d34edd2943a2aac0416e278dc, type: 3}
+      propertyPath: placePinAtStart
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5285520219670423268, guid: 19a38c1d34edd2943a2aac0416e278dc, type: 3}
@@ -1112,7 +1291,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 990736793685822725, guid: 4971076042a480e46855d6261f7257fa, type: 3}
       propertyPath: scenes.Array.size
-      value: 0
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1777065058731047952, guid: 4971076042a480e46855d6261f7257fa, type: 3}
+      propertyPath: minZoom
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1777065058731047952, guid: 4971076042a480e46855d6261f7257fa, type: 3}
+      propertyPath: toggleOnStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2713493131598398673, guid: 4971076042a480e46855d6261f7257fa, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 110
+      objectReference: {fileID: 0}
+    - target: {fileID: 2713493131598398673, guid: 4971076042a480e46855d6261f7257fa, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 2713493131598398673, guid: 4971076042a480e46855d6261f7257fa, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.0379
       objectReference: {fileID: 0}
     - target: {fileID: 3524432495221230054, guid: 4971076042a480e46855d6261f7257fa, type: 3}
       propertyPath: m_Name

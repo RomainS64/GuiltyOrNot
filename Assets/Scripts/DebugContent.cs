@@ -39,7 +39,7 @@ public class DebugContent : MonoBehaviour
             suspect.name,
             suspect.surname,
             suspect.age,
-            suspect.sexe,
+            suspect.gender,
             suspect.height,
             suspect.criminalRecord);
     }
@@ -97,7 +97,7 @@ public class DebugContent : MonoBehaviour
         background.OnGenerationDone+= (_)=>
         {
             
-            suspectGenerator.GenerateSuspectFacesAsync(suspect.sexe == "Male",(sprites)=>
+            suspectGenerator.GenerateSuspectFacesAsync(suspect.gender == "Male",(sprites)=>
             {
                 suspect.emotions = sprites;
                 suspect.suspectImage.texture = suspect.emotions[EmotionType.Concentrated];

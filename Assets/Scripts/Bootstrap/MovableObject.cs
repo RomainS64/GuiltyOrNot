@@ -34,6 +34,7 @@ public class MovableObject : MonoBehaviour, IPointerDownHandler,IPointerUpHandle
     public void OnPointerDown(PointerEventData _eventData)
     {
         if (isLock) return;
+        transform.SetAsLastSibling();
         animator.SetBool(holdParameter,true);
         isMoving = true;
         firstMousePos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
