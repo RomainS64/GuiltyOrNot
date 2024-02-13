@@ -26,9 +26,18 @@ public struct Suspect
     public InternetHistory internetHistory;
     public BankAccountHistory bankAccountHistory;
     public CriminalRecord criminalRecord;
-
+    
 }
 
-public struct InternetHistory { }
-public struct BankAccountHistory { }
+public struct InternetHistory
+{
+    public List<string> stringList;
+}
+
+public struct BankAccountHistory
+{
+    public float current;
+    public float saving;
+    public List<KeyValuePair<string,float>> transactions;
+}
 public struct CriminalRecord { }

@@ -1,0 +1,166 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1343823358968835993
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8508920062348856682}
+  - component: {fileID: 7236652782271559320}
+  m_Layer: 0
+  m_Name: InnocentGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8508920062348856682
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343823358968835993}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1501815855223384717}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7236652782271559320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343823358968835993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c90faf5c6665460478a05feb70e024aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PromptDirection: You must create lists of bank statements. Do not create introductory
+    sentences.Unauthorized presentation format:Here is a list of 20 bank statements
+    related to the investigation.Bank statements related to the investigation.Allowed
+    presentation format:A red vintage jacket [-500].A blue pen [-199.99].Mom credit
+    [+200]."+" mean a a gain of money/a reward/an interest,"-" mean a debit financial
+    transactions, a lost of money.Not allowed:Deadly or dangerous weapons.The list
+    should be minimal, at a local and realistic scale.Your responses should have
+    NO connection to the investigation.You should be funny or WTF.
+  TrackConversation: 0
+  MaximumTokens: 600
+  Temperature: 1
+  Top_P: 1
+  Frequency_Penality: 0
+  Presence_Penality: 0
+--- !u!1 &6882048589033842051
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1501815855223384717}
+  - component: {fileID: 6993612938038482589}
+  m_Layer: 0
+  m_Name: BankAccountGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1501815855223384717
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6882048589033842051}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6117138396398159584}
+  - {fileID: 8508920062348856682}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6993612938038482589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6882048589033842051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9cb81a648f67754e896078e2dc01141, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guiltyGeneration: {fileID: 4624652765664644269}
+  innocentGeneration: {fileID: 7236652782271559320}
+--- !u!1 &8162607572905547235
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6117138396398159584}
+  - component: {fileID: 4624652765664644269}
+  m_Layer: 0
+  m_Name: guiltyGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6117138396398159584
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8162607572905547235}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1501815855223384717}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4624652765664644269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8162607572905547235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c90faf5c6665460478a05feb70e024aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PromptDirection: You must create lists of bank statements. Do not create introductory
+    sentences.Unauthorized presentation format:Here is a list of 20 bank statements
+    related to the investigation.Bank statements related to the investigation.Allowed
+    presentation format:A red vintage jacket [-500].A blue pen [-199.99].Mom credit
+    [+200]."+" mean a a gain of money/a reward/an interest,"-" mean a debit financial
+    transactions, a lost of money.Not allowed:Deadly or dangerous weapons.The list
+    should be minimal, at a local and realistic scale.Your responses should have
+    connection to the investigation.You should be funny or WTF.
+  TrackConversation: 0
+  MaximumTokens: 600
+  Temperature: 1
+  Top_P: 1
+  Frequency_Penality: 0
+  Presence_Penality: 0

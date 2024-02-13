@@ -25,6 +25,7 @@ public class CameraHandler : MonoSingleton<CameraHandler>,IPointerDownHandler,IP
     [SerializeField] private CinemachineVirtualCamera camera;
     [SerializeField] private float minZoom = 1f;
     [SerializeField] private float maxZoom = 10f;
+    [SerializeField] private float zoomLerp = 0.5f;
     [SerializeField] private Limits minLimit;
     [SerializeField] private Limits maxLimit;
     private IEnumerator movingBehaviour = null;
@@ -111,17 +112,31 @@ public class CameraHandler : MonoSingleton<CameraHandler>,IPointerDownHandler,IP
     {
         while (true)
         {
-            if ((Input.mouseScrollDelta.y > 0 && camera.m_Lens.OrthographicSize < maxZoom) ||
-                (Input.mouseScrollDelta.y < 0 && camera.m_Lens.OrthographicSize > minZoom))
+            if (Input.mouseScrollDelta.y < 0 && camera.m_Lens.OrthographicSize < maxZoom)
             {
-                camera.m_Lens.OrthographicSize += Input.mouseScrollDelta.y * Time.deltaTime * scrollMultiplicator;
-                RecalibrateCamera();
+                camera.m_Lens.OrthographicSize += -Input.mouseScrollDelta.y * Time.deltaTime * scrollMultiplicator;
+                RecalibrateZoom();
+                RecalibrateBounds();
+            }
+            else if (Input.mouseScrollDelta.y > 0 && camera.m_Lens.OrthographicSize > minZoom)
+            {
+                camera.m_Lens.OrthographicSize += -Input.mouseScrollDelta.y * Time.deltaTime * scrollMultiplicator;
+                RecalibrateZoom();
+                RecalibrateBounds();
             }
 
             yield return null;
         }
     }
-    private void RecalibrateCamera()
+
+    private void RecalibrateZoom()
+    {
+        float longestDist = maxZoom - minZoom;
+        float currentDist = camera.m_Lens.OrthographicSize - minZoom;
+        Vector2 newPos = Vector2.Lerp(Camera.main.ScreenToWorldPoint(Input.mousePosition), camera.transform.position,zoomLerp);
+        cameraTarget.position = new Vector3(newPos.x,newPos.y,cameraTarget.position.z);
+    }
+    private void RecalibrateBounds()
     {
         ZoomLevel = Mathf.InverseLerp(minZoom, maxZoom, camera.m_Lens.OrthographicSize);
         Vector3 limitTop = Vector3.Lerp(minLimit.limTop.position,maxLimit.limTop.position, ZoomLevel);

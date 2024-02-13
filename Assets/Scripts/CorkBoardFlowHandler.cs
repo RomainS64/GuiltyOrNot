@@ -9,6 +9,8 @@ public class CorkBoardFlowHandler : MonoSingleton<CorkBoardFlowHandler>
 {
     [SerializeField] private GameObject suspectPhotoPrefab;
     [SerializeField] private Transform[] photoPositions;
+    private InternetHistoryPaper[] internetHistoryPapers;
+    private BankAccountPaper[] bankAccountPapers;
     private PhotoSetter[] photoSetters; 
     private TextSetter[] firstnameSetters;
     private TextSetter[] surnameSetters;
@@ -21,6 +23,8 @@ public class CorkBoardFlowHandler : MonoSingleton<CorkBoardFlowHandler>
         
         TextSetter[] allTextSetters = FindObjectsOfType<TextSetter>(true);
         PhotoSetter[] photoSetters = FindObjectsOfType<PhotoSetter>(true);
+        internetHistoryPapers = FindObjectsOfType<InternetHistoryPaper>(true);
+        bankAccountPapers = FindObjectsOfType<BankAccountPaper>(true);
         dateSetters = allTextSetters.Where(textSetter => textSetter.GeSetterType() == TextType.Date).ToArray();
         sizeSetters = allTextSetters.Where(textSetter => textSetter.GeSetterType() == TextType.Size).ToArray();
         genderSetters = allTextSetters.Where(textSetter => textSetter.GeSetterType() == TextType.Gender).ToArray();
@@ -28,6 +32,14 @@ public class CorkBoardFlowHandler : MonoSingleton<CorkBoardFlowHandler>
         firstnameSetters = allTextSetters.Where(textSetter => textSetter.GeSetterType() == TextType.Firstname).ToArray();
         foreach (Suspect suspect in _suspects)
         {
+            foreach (InternetHistoryPaper history in internetHistoryPapers.Where(paper => paper.GetPlayerId() == i))
+            {
+                history.SetInternetHistory(suspect.internetHistory.stringList);
+            }
+            foreach (BankAccountPaper bankAccount in bankAccountPapers.Where(paper => paper.GetPlayerId() == i))
+            {
+                bankAccount.SetBankAccountTransactions(suspect.bankAccountHistory.current,suspect.bankAccountHistory.saving,suspect.bankAccountHistory.transactions);
+            }
             /*
             Vector3 position = photoPositions[i].position;
             GameObject newPhoto = Instantiate(suspectPhotoPrefab,position,Quaternion.identity);

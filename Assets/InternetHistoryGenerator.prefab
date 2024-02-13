@@ -1,0 +1,164 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3487936007198669119
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7062958246688753859}
+  - component: {fileID: 1719344298983717820}
+  m_Layer: 0
+  m_Name: InnocentGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7062958246688753859
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3487936007198669119}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3743649366302938681}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1719344298983717820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3487936007198669119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c90faf5c6665460478a05feb70e024aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PromptDirection: 'You must create lists of internet history. Do not create introductory
+    sentences.  Example of allowed formulation: Purchase of a vintage red jacket
+    (500 euros).  Allowed: Normal shopping, cultural, or educational websites.  Not
+    allowed: Sites present on the Dark Web. Sites containing information on lethal,
+    chemical, or dangerous weapons. Sites for information on encryption or overly
+    complex computer science. Sites that are too strange and unrelated to the investigation. 
+    Your responses should have NO connection to the investigation.'
+  TrackConversation: 0
+  MaximumTokens: 600
+  Temperature: 1
+  Top_P: 1
+  Frequency_Penality: 0
+  Presence_Penality: 0
+--- !u!1 &6674528323420465244
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3743649366302938681}
+  - component: {fileID: 6135756892495741267}
+  m_Layer: 0
+  m_Name: InternetHistoryGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3743649366302938681
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6674528323420465244}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7062958246688753859}
+  - {fileID: 2912553402776132388}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6135756892495741267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6674528323420465244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed038f454eeae7445b9f85c12e623d30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guiltyGeneration: {fileID: 6213405239112124834}
+  innocentGeneration: {fileID: 1719344298983717820}
+--- !u!1 &6873409403476601580
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2912553402776132388}
+  - component: {fileID: 6213405239112124834}
+  m_Layer: 0
+  m_Name: guiltyGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2912553402776132388
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6873409403476601580}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3743649366302938681}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6213405239112124834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6873409403476601580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c90faf5c6665460478a05feb70e024aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PromptDirection: 'You must create lists of internet history. Do not create introductory
+    sentences.  Example of allowed formulation: Purchase of a vintage red jacket
+    (500 euros).  Allowed: Normal shopping, cultural, or educational websites.  Not
+    allowed: Sites present on the Dark Web. Sites containing information on lethal,
+    chemical, or dangerous weapons. Sites for information on encryption or overly
+    complex computer science. Sites that are too strange and unrelated to the investigation. 
+    Your responses should have connection to the investigation.  You should be funny.'
+  TrackConversation: 0
+  MaximumTokens: 600
+  Temperature: 2
+  Top_P: 1
+  Frequency_Penality: 0
+  Presence_Penality: 0

@@ -6,6 +6,7 @@ public class MovableObject : MonoBehaviour, IPointerDownHandler,IPointerUpHandle
 {
     [SerializeField] private float unknownFactorX;
     [SerializeField] private float unknownFactorY;
+    [SerializeField] private float zoomMaxMultiplicator;
     private bool isMoving;
     private Vector2 firstMousePos;
     private Vector2 firstObjectPos;
@@ -51,10 +52,10 @@ public class MovableObject : MonoBehaviour, IPointerDownHandler,IPointerUpHandle
     public void Update()
     {
         if (!isMoving) return;
-        
+        float zoomMultiplicator = Mathf.Lerp(1, zoomMaxMultiplicator, CameraHandler.Instance.ZoomLevel);
         Vector2 currentPos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
         Vector2 delta = firstMousePos - currentPos;
-        Vector2 newPos = new Vector2(firstObjectPos.x -(delta.x * unknownFactorX),firstObjectPos.y - (delta.y * unknownFactorY));
+        Vector2 newPos = new Vector2(firstObjectPos.x -(delta.x * unknownFactorX * zoomMultiplicator),firstObjectPos.y - (delta.y * unknownFactorY * zoomMultiplicator));
 
         objectTransform.anchoredPosition = newPos;
         
