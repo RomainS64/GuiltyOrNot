@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{8151f4e8-c747-43d9-b08e-e903fa5bf18b}">
 		<property name="name">
-			<value>Pin</value>
+			<value>sfx_pin</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
 		</property>
 		<relationship name="folder">
-			<destination>{c45a24d7-7a69-43d8-b1fc-fa7e40a87721}</destination>
+			<destination>{bdbb8bc8-3aff-45a9-949e-db40cbe9b4e7}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{a212a2a0-d8ca-488a-82df-adf6bdca0036}</destination>
@@ -92,6 +92,9 @@
 		<property name="length">
 			<value>0.44165624999999997</value>
 		</property>
+		<relationship name="modulators">
+			<destination>{7ab55584-301f-4c38-956a-09ddc70de6ac}</destination>
+		</relationship>
 		<relationship name="sounds">
 			<destination>{db1b7074-9e57-4620-8473-f01cdd9b3c93}</destination>
 			<destination>{8e7a0bf2-82e8-49a9-adf1-9d1d24a3f9df}</destination>
@@ -120,6 +123,14 @@
 	</object>
 	<object class="MixerBusPanner" id="{5238444f-6244-4cc8-a5c8-20a138baa1f8}" />
 	<object class="MixerBusFader" id="{574393fa-6e62-4c7d-97d3-8f634fc8e814}" />
+	<object class="RandomizerModulator" id="{7ab55584-301f-4c38-956a-09ddc70de6ac}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
+		</property>
+		<property name="amount">
+			<value>6.5</value>
+		</property>
+	</object>
 	<object class="SingleSound" id="{db1b7074-9e57-4620-8473-f01cdd9b3c93}">
 		<relationship name="audioFile">
 			<destination>{6e706cab-f0b9-4a78-a5da-25f47ef57cdc}</destination>
