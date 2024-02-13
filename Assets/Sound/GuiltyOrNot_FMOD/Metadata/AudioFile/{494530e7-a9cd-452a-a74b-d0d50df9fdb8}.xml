@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{494530e7-a9cd-452a-a74b-d0d50df9fdb8}">
 		<property name="assetPath">
-			<value>SynthShort/SynthShort_06.wav</value>
+			<value>MUSIC/SynthShort/SynthShort_06.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

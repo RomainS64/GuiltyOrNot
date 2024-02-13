@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{9b79b6f2-c9cb-400a-aa9a-e3083da1eb37}">
 		<property name="assetPath">
-			<value>Percs/Percs_04.wav</value>
+			<value>MUSIC/Percs/Percs_04.wav</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>
