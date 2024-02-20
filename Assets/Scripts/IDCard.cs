@@ -5,7 +5,8 @@ using UnityEngine;
 public class IDCard : MonoBehaviour
 {
     [SerializeField] private int suspectId;
-   
+    public int GetPlayerId() => suspectId;
+    
     [SerializeField] private PhotoSetter picture;
     [SerializeField] private TextSetter name,surname,gender,size,date;
     void Start()

@@ -40,4 +40,8 @@ public struct BankAccountHistory
     public float saving;
     public List<KeyValuePair<string,float>> transactions;
 }
-public struct CriminalRecord { }
+
+public struct CriminalRecord
+{
+    public List<KeyValuePair<string,string>> records;
+}

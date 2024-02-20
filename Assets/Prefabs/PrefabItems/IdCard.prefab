@@ -59,7 +59,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerId: 0
-  photo: {fileID: 1175322196081257748}
+  rawPhoto: {fileID: 1175322196081257748}
+  photo: {fileID: 0}
 --- !u!114 &1175322196081257748
 MonoBehaviour:
   m_ObjectHideFlags: 0

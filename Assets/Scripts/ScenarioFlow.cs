@@ -21,7 +21,8 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
     [SerializeField] private ScenarioGenerator scenarioGenerator;
     [SerializeField] private InternetHistoryGenerator[] internetHistoryGenerator;
     [SerializeField] private BankAccountGenerator[] bankAccountGenerator;
-
+    [SerializeField] private CriminalRecordGenerator[] criminalRecords;
+    
     [SerializeField] private SuspectVisualGenerator suspectGenerator;
     private bool scenarioViewSkiped;
 
@@ -38,6 +39,8 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
     private bool isInternetHistoryGenerated = false;
     //BANK ACCOUNT
     private bool isBankAccountGenerated = false;
+    //CRIMINAL RECORD
+    private bool isCriminalRecordGenerated = false;
     
     private ThresholdSpawnableObject[] thresholdSpawnableObject;
 
@@ -75,11 +78,12 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
         yield return new WaitUntil(() => isScenarioGenerated);
         StartCoroutine(GenerateInternetHystory(numberOfSuspects));
         StartCoroutine(GenerateBankAccount(numberOfSuspects));
+        StartCoroutine(GenerateCriminalRecord(numberOfSuspects));
         yield return new WaitUntil(() => GeneratedSuspects.Count>=numberOfSuspects);
         yield return new WaitUntil(() => isInternetHistoryGenerated);
         yield return new WaitUntil(() => isBankAccountGenerated);
+        yield return new WaitUntil(() => isCriminalRecordGenerated);
         CorkBoardFlowHandler.Instance.StartCorkBoard(generatedScenario,GeneratedSuspects);
-        Debug.Log(generatedScenario.scenarioString);
     }
 
     public List<string> innocentInternetHistory = new ();
@@ -149,6 +153,38 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
         }
         isBankAccountGenerated = true;
     }
+    public List<KeyValuePair<string,string>> innocentCriminalRecord = new ();
+    public List<KeyValuePair<string,string>> guiltyCriminalRecord = new ();
+    private IEnumerator GenerateCriminalRecord(int _numberOfSuspect)
+    {
+        int nbGenerated = 0;
+        for (int i = 0; i < _numberOfSuspect; i++)
+        {
+            void OnInnocentCriminalRecord(List<KeyValuePair<string,string>> _generated)
+            {
+                innocentCriminalRecord.AddRange(_generated);
+                nbGenerated++;
+            }
+            void OnGuiltyCriminalRecord(List<KeyValuePair<string,string>> _generated)
+            {
+                guiltyCriminalRecord.AddRange(_generated);
+                nbGenerated++;
+            } 
+            criminalRecords[i].GenerateRandomCriminalRecordAsync(generatedScenario,false,10,OnInnocentCriminalRecord);
+            //internetHistoryGenerator[i].GenerateRandomInternetHistoryAsync(generatedScenario,true,5,OnGuiltyHistoryGenerated);
+        }
+        yield return new WaitWhile(() => nbGenerated < _numberOfSuspect);
+        for(int i=0;i<GeneratedSuspects.Count;++i)
+        {
+            Shuffle(innocentCriminalRecord);
+            Shuffle(guiltyCriminalRecord);
+            var suspect = GeneratedSuspects[i];
+            suspect.criminalRecord.records = innocentCriminalRecord.GetRange(0, 5);
+            Shuffle(suspect.criminalRecord.records);
+            GeneratedSuspects[i] = suspect;
+        }
+        isCriminalRecordGenerated = true;
+    }
     private IEnumerator GenerateScenario()
     {
         isScenarioGenerated = false;
@@ -201,7 +237,7 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
         }
     }
     // Fisher-Yates shuffle algorithm
-    void Shuffle<T>(List<T> list)
+    static public void Shuffle<T>(List<T> list)
     {
         int n = list.Count;
         System.Random rng = new System.Random();

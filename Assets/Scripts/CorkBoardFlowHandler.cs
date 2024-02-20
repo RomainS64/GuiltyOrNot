@@ -11,6 +11,8 @@ public class CorkBoardFlowHandler : MonoSingleton<CorkBoardFlowHandler>
     [SerializeField] private Transform[] photoPositions;
     private InternetHistoryPaper[] internetHistoryPapers;
     private BankAccountPaper[] bankAccountPapers;
+    private CriminalRecordPaper[] criminalRecordPapers;
+    private IDCard[] idCards;
     private PhotoSetter[] photoSetters; 
     private TextSetter[] firstnameSetters;
     private TextSetter[] surnameSetters;
@@ -23,8 +25,12 @@ public class CorkBoardFlowHandler : MonoSingleton<CorkBoardFlowHandler>
         
         TextSetter[] allTextSetters = FindObjectsOfType<TextSetter>(true);
         PhotoSetter[] photoSetters = FindObjectsOfType<PhotoSetter>(true);
+        
         internetHistoryPapers = FindObjectsOfType<InternetHistoryPaper>(true);
         bankAccountPapers = FindObjectsOfType<BankAccountPaper>(true);
+        criminalRecordPapers = FindObjectsOfType<CriminalRecordPaper>(true);
+        idCards = FindObjectsOfType<IDCard>(true);
+        
         dateSetters = allTextSetters.Where(textSetter => textSetter.GeSetterType() == TextType.Date).ToArray();
         sizeSetters = allTextSetters.Where(textSetter => textSetter.GeSetterType() == TextType.Size).ToArray();
         genderSetters = allTextSetters.Where(textSetter => textSetter.GeSetterType() == TextType.Gender).ToArray();
@@ -32,14 +38,31 @@ public class CorkBoardFlowHandler : MonoSingleton<CorkBoardFlowHandler>
         firstnameSetters = allTextSetters.Where(textSetter => textSetter.GeSetterType() == TextType.Firstname).ToArray();
         foreach (Suspect suspect in _suspects)
         {
+            List<Transform> documents = new();
+            foreach (IDCard idCard in idCards.Where(paper => paper.GetPlayerId()== i))
+            {
+                documents.Add(idCard.transform);
+                break;
+            }
             foreach (InternetHistoryPaper history in internetHistoryPapers.Where(paper => paper.GetPlayerId() == i))
             {
+                documents.Add(history.transform);
                 history.SetInternetHistory(suspect.internetHistory.stringList);
+                break;
             }
             foreach (BankAccountPaper bankAccount in bankAccountPapers.Where(paper => paper.GetPlayerId() == i))
             {
+                documents.Add(bankAccount.transform);
                 bankAccount.SetBankAccountTransactions(suspect.bankAccountHistory.current,suspect.bankAccountHistory.saving,suspect.bankAccountHistory.transactions);
+                break;
             }
+            foreach (CriminalRecordPaper criminalRecord in criminalRecordPapers.Where(paper => paper.GetPlayerId() == i))
+            {
+                documents.Add(criminalRecord.transform);
+                criminalRecord.SetCriminalRecords(suspect.criminalRecord.records);
+                break;
+            }
+            DocumentPlacement.Instance.PlaceDocument(i,documents);
             /*
             Vector3 position = photoPositions[i].position;
             GameObject newPhoto = Instantiate(suspectPhotoPrefab,position,Quaternion.identity);

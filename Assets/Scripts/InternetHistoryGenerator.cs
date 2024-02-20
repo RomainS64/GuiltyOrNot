@@ -47,12 +47,13 @@ public class InternetHistoryGenerator : MonoBehaviour
 
     private List<string> SplitString(string _string)
     {
-        var regex = new Regex(@"^\d*");
+        string startPattern = @"^\d+[.\-]? ";
         List<string> values =  new List<string>(_string.Split("\n").ToArray());
         for (int i = 0; i < values.Count; i++)
         {
-            values[i] =  regex.Replace(values[i], string.Empty);
+            values[i] =  Regex.Replace(values[i],startPattern, string.Empty);
         }
+        
 
         return values;
     }

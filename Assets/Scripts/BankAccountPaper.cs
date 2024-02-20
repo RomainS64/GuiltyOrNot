@@ -40,5 +40,4 @@ public class BankAccountPaper : MonoBehaviour
             ++i;
         }
     }
-
 }

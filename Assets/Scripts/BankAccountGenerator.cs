@@ -49,6 +49,7 @@ public class BankAccountGenerator : MonoBehaviour
     private List<KeyValuePair<string,float>> GenerateValues(string _string)
     {
         string pattern = @"\[([^\]]*)\]";
+        string startPattern = @"^\d+[.\-]? ";
         List<string> values =  new List<string>(_string.Split("\n").ToArray());
         List<KeyValuePair<string, float>> transactions = new List<KeyValuePair<string, float>>();
         for (int i = 0; i < values.Count; i++)
@@ -59,8 +60,9 @@ public class BankAccountGenerator : MonoBehaviour
             string money = matches[0].Value.Replace("[",String.Empty).Replace("]",String.Empty);
             if (float.TryParse(money,NumberStyles.Any,CultureInfo.InvariantCulture,out float result))
             {
+                string text  = Regex.Replace( values[i].Replace(matches[0].Value,String.Empty), startPattern, String.Empty);
                 Debug.Log("value parsed:"+result.ToString("F")+"$");
-                transactions.Add(new KeyValuePair<string, float>(values[i].Replace(matches[0].Value,String.Empty),result));
+                transactions.Add(new KeyValuePair<string, float>(text,result));
             }
         }
         return transactions;
