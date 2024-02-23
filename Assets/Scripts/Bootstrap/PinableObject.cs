@@ -15,7 +15,7 @@ public class PinableObject : MonoBehaviour,IPointerUpHandler,IPointerDownHandler
     public void OnPointerUp(PointerEventData eventData)
     {
         linkedMovable?.OnPointerUp(null);
-        if (Time.time - downTime <0.2 && !isPined)
+        if (Time.time - downTime <0.15 && !isPined)
         {
             if(!infinitPin)isPined = true;
             PlacePin.Instance.PinablePined(gameObject.transform,forcedPinPosition);

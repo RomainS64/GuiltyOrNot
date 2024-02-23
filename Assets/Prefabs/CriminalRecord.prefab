@@ -2630,6 +2630,7 @@ GameObject:
   - component: {fileID: 5136159254307805198}
   - component: {fileID: 5019388581554246086}
   - component: {fileID: 5541177981528593406}
+  - component: {fileID: 2156606756290525913}
   m_Layer: 5
   m_Name: CriminalRecord
   m_TagString: Untagged
@@ -2742,6 +2743,19 @@ MonoBehaviour:
     date: {fileID: 6960092872818393700}
   - text: {fileID: 4549291314870938606}
     date: {fileID: 952612760867834557}
+--- !u!114 &2156606756290525913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7330011123410464331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 552c3d75d50144146a258b9dbe01caf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnThreshold: 4
 --- !u!1 &7353097062052570578
 GameObject:
   m_ObjectHideFlags: 0

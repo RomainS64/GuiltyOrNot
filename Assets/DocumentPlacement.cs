@@ -13,6 +13,7 @@ enum Direction
 
 public struct DocumentPositions
 {
+    public int documentTypeId;
     public Transform document;
     public Vector3 documentGroupedPosition;
     public Vector3 suspectGroupedPosition;
@@ -21,6 +22,7 @@ public class DocumentPlacement : MonoSingleton<DocumentPlacement>
 {
     private List<DocumentPositions> documentPositions = new();
     [SerializeField] private Transform[] placementZones;
+    [SerializeField] private Transform[] documentPlacementZones;
 
     [SerializeField] private float distance;
     [SerializeField] private float randomNoiseDistance;
@@ -30,6 +32,13 @@ public class DocumentPlacement : MonoSingleton<DocumentPlacement>
     {
         ScenarioFlow.Shuffle(directions);
         documents[0].position = placementZones[id].position;
+        documentPositions.Add(new DocumentPositions()
+        {
+            documentTypeId = 0,
+            document = documents[0],
+            documentGroupedPosition = SpiralPlacement(documentPlacementZones[0],id,0),
+            suspectGroupedPosition =  placementZones[id].position
+        });
         for (int i = 1; i < 4; i++)
         {
             Vector3 displacement = Vector3.zero;
@@ -58,28 +67,73 @@ public class DocumentPlacement : MonoSingleton<DocumentPlacement>
                         0);
                     break;
             }
+            int documentId = i;
             documentPositions.Add(new DocumentPositions()
             {
+                documentTypeId = documentId,
                 document = documents[i],
-                documentGroupedPosition = placementZones[id].position+displacement,
+                documentGroupedPosition = SpiralPlacement(documentPlacementZones[i],id,documentId),
                 suspectGroupedPosition =  placementZones[id].position+displacement
             });
             documents[i].position = placementZones[id].position+displacement;
         }
     }
+    
+    [SerializeField] private float[] spiralDistanceStart;
+    [SerializeField] private float[] spiralAddition;
+    [SerializeField] private float[] spiralAngle;
+    [SerializeField] private float[] spiralAngleRdm;
+    [SerializeField] private float[] spiralRdm;
+    [SerializeField] private float[] xRdm;
+    [SerializeField] private float[] yRdm;
+     
+    public Vector3 SpiralPlacement(Transform _placementPoint,int id,int docId)
+    {
+        Vector3 basePos = _placementPoint.position; 
+        _placementPoint.rotation = Quaternion.identity;
+        float distanceMultiplicator = spiralDistanceStart[docId];
+        for (int i = 0; i < id; i++)
+        {
+            Vector3 up = _placementPoint.up * (distanceMultiplicator+Random.Range(-spiralRdm[docId],spiralRdm[docId]));
+            distanceMultiplicator += spiralAddition[docId];
+            _placementPoint.position += up;
+            _placementPoint.Rotate(Vector3.forward,spiralAngle[docId]+Random.Range(-spiralAngleRdm[docId],spiralAngleRdm[docId]));
+        }
+        Vector3 position =  _placementPoint.position;
+        _placementPoint.rotation = Quaternion.identity;
+        _placementPoint.position = basePos+new Vector3(Random.Range(-xRdm[docId],xRdm[docId]),Random.Range(-yRdm[docId],yRdm[docId]),0);
+        return position;
+    }
 
     public void GroupBySuspect()
     {
+        int i = 0;
         foreach (var document in documentPositions)
         {
-            StartCoroutine(MoveTo(document.document, document.suspectGroupedPosition, 1f));
+            if (!document.document.gameObject.activeSelf) continue;
+            if (Vector2.Distance(document.document.position, document.suspectGroupedPosition) > 1)
+            {
+                StartCoroutine(MoveTo(document.document, document.suspectGroupedPosition, 0.2f,i<4));
+            }
+
+            ++i;
         }
     }
-    public void GroupByDocuments()
+    public void GroupByDocuments(int documentTypeId = -1)
     {
+        int i = 0;
         foreach (var document in documentPositions)
         {
-            StartCoroutine(MoveTo(document.document, document.documentGroupedPosition, 1f));
+            
+            if (!document.document.gameObject.activeSelf) continue;
+            if (documentTypeId != -1 &&
+                document.documentTypeId != documentTypeId) continue;
+            if (Vector2.Distance(document.document.position, document.documentGroupedPosition) > 1)
+            {
+                StartCoroutine(MoveTo(document.document, document.documentGroupedPosition, 0.2f,i<4));
+            }
+
+            ++i;
         }
     }
 
@@ -93,16 +147,41 @@ public class DocumentPlacement : MonoSingleton<DocumentPlacement>
         {
             GroupByDocuments();
         }
+        if (Input.GetKey(KeyCode.Alpha3))
+        {
+            GroupByDocuments(0);
+        }
+        if (Input.GetKey(KeyCode.Alpha4))
+        {
+            GroupByDocuments(1);
+        }
+        if (Input.GetKey(KeyCode.Alpha5))
+        {
+            GroupByDocuments(2);
+        }
+        if (Input.GetKey(KeyCode.Alpha6))
+        {
+            GroupByDocuments(3);
+        }
+        if (Input.GetKey(KeyCode.Alpha7))
+        {
+            GroupByDocuments(4);
+        }
     }
 
-    IEnumerator MoveTo(Transform toMove,Vector3 where,float time)
+    IEnumerator MoveTo(Transform targetTransform, Vector3 destination, float time,bool playSound)
     {
-        float precision = 100;
-        Vector3 startPos = toMove.position;
-        for (int i = 0; i < precision; i++)
+        if(playSound)AudioManager.instance.audioEvents[Random.Range(0,2)==0?"Object Grab":"Object Release"].Play();
+        Vector3 startPos = targetTransform.position;
+        float elapsedTime = 0;
+        while (elapsedTime < time)
         {
-            toMove.position = Vector3.Lerp(startPos, where, 1f / (precision-i));
-            yield return new WaitForSeconds(time / precision);
+            targetTransform.position = Vector3.Lerp(startPos, destination, elapsedTime / time);
+            
+            elapsedTime += Time.deltaTime;
+            
+            yield return null;
         }
+        targetTransform.position = destination;
     }
 }

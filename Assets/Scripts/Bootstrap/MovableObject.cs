@@ -37,6 +37,7 @@ public class MovableObject : MonoBehaviour, IPointerDownHandler,IPointerUpHandle
         if (isLock) return;
         transform.SetAsLastSibling();
         animator.SetBool(holdParameter,true);
+        AudioManager.instance.audioEvents["Object Grab"].Play();
         isMoving = true;
         firstMousePos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
         firstObjectPos = objectTransform.anchoredPosition;
@@ -46,6 +47,7 @@ public class MovableObject : MonoBehaviour, IPointerDownHandler,IPointerUpHandle
     {
         if (isLock) return;
         animator.SetBool(holdParameter,false);
+        AudioManager.instance.audioEvents["Object Release"].Play();
         isMoving = false;
     }
 

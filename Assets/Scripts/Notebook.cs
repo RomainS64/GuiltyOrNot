@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Random = UnityEngine.Random;
 
 
 [Serializable]
@@ -63,6 +64,8 @@ public class Notebook : MonoBehaviour
 
     private void ShowPage(int _index)
     {
+        
+        AudioManager.instance.audioEvents[Random.Range(0,2)==0?"Object Grab":"Object Release"].Play();
         for (int i = 0; i < pages.Length; ++i)
         {
             pages[i].pageObject.SetActive(_index == i);

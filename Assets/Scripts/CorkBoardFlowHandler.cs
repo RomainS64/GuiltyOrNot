@@ -22,7 +22,7 @@ public class CorkBoardFlowHandler : MonoSingleton<CorkBoardFlowHandler>
     public void StartCorkBoard(Scenario _scenario,List<Suspect> _suspects)
     {
         int i = 0;
-        
+        AudioManager.instance.audioEvents["Game Music"].Play();
         TextSetter[] allTextSetters = FindObjectsOfType<TextSetter>(true);
         PhotoSetter[] photoSetters = FindObjectsOfType<PhotoSetter>(true);
         

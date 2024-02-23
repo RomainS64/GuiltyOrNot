@@ -28,6 +28,7 @@ public class PlacePin : MonoSingleton<PlacePin>
     public void SetPlacePinMode(bool _active) => isInPinMode = _active;
     public void PinablePined(Transform _pined,Transform _forcedPosition = null)
     {
+        AudioManager.instance.audioEvents["Pin"].Play();
         if (!isInPinMode) return;
         isFirstPin = !isFirstPin;
 

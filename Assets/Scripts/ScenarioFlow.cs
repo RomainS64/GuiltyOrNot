@@ -2,11 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using FMOD;
 using UnityEngine;
 using UnityEngine.Serialization;
-using UnityEngine.UI;
 using Debug = UnityEngine.Debug;
 using Random = UnityEngine.Random;
 
@@ -14,6 +11,8 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
 {
     [SerializeField] private Texture[] debugTexture;
     [SerializeField] private Suspect[] debugSuspects;
+    [SerializeField] private string[] debugText;
+    [SerializeField] private bool generateTexts;
     [SerializeField] private bool generateImages;
     [SerializeField] private bool generateSuspect;
     [SerializeField] private int numberOfSuspects;
@@ -29,6 +28,7 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
     //SCENRAIO
     private Scenario generatedScenario;
     private bool isScenarioGenerated;
+    
     
     //SUSPECT
     public List<Suspect> GeneratedSuspects { get; private set;}
@@ -76,14 +76,18 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
         StartCoroutine(GenerateScenario());
         StartCoroutine(GenerateSuspects(numberOfSuspects));
         yield return new WaitUntil(() => isScenarioGenerated);
+        yield return new WaitUntil(() => GeneratedSuspects.Count>=numberOfSuspects);
+        
         StartCoroutine(GenerateInternetHystory(numberOfSuspects));
         StartCoroutine(GenerateBankAccount(numberOfSuspects));
         StartCoroutine(GenerateCriminalRecord(numberOfSuspects));
-        yield return new WaitUntil(() => GeneratedSuspects.Count>=numberOfSuspects);
+        
         yield return new WaitUntil(() => isInternetHistoryGenerated);
         yield return new WaitUntil(() => isBankAccountGenerated);
         yield return new WaitUntil(() => isCriminalRecordGenerated);
+        
         CorkBoardFlowHandler.Instance.StartCorkBoard(generatedScenario,GeneratedSuspects);
+        foreach (var spawnable in thresholdSpawnableObject) spawnable.NotifyThreshold(GetAlivedSuspectCout());
     }
 
     public List<string> innocentInternetHistory = new ();
@@ -91,22 +95,34 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
     private IEnumerator GenerateInternetHystory(int _numberOfSuspect)
     {
         int nbGenerated = 0;
-        for (int i = 0; i < _numberOfSuspect; i++)
+        if (generateTexts)
         {
-            void OnInnocentHistoryGenerated(List<string> _generated)
+            for (int i = 0; i < _numberOfSuspect; i++)
             {
-                innocentInternetHistory.AddRange(_generated);
-                nbGenerated++;
+                void OnInnocentHistoryGenerated(List<string> _generated)
+                {
+                    innocentInternetHistory.AddRange(_generated);
+                    nbGenerated++;
+                }
+                void OnGuiltyHistoryGenerated(List<string> _generated)
+                {
+                    guiltyInternetHistory.AddRange(_generated);
+                    nbGenerated++;
+                }
+                internetHistoryGenerator[i].GenerateRandomInternetHistoryAsync(generatedScenario,false,10,OnInnocentHistoryGenerated);
+                //internetHistoryGenerator[i].GenerateRandomInternetHistoryAsync(generatedScenario,true,5,OnGuiltyHistoryGenerated);
             }
-            void OnGuiltyHistoryGenerated(List<string> _generated)
-            {
-                guiltyInternetHistory.AddRange(_generated);
-                nbGenerated++;
-            }
-            internetHistoryGenerator[i].GenerateRandomInternetHistoryAsync(generatedScenario,false,10,OnInnocentHistoryGenerated);
-            //internetHistoryGenerator[i].GenerateRandomInternetHistoryAsync(generatedScenario,true,5,OnGuiltyHistoryGenerated);
+            yield return new WaitWhile(() => nbGenerated < _numberOfSuspect);
         }
-        yield return new WaitWhile(() => nbGenerated < _numberOfSuspect);
+        else
+        {
+            foreach (var history in debugText)
+            {
+                innocentInternetHistory.Add(history);
+                guiltyInternetHistory.Add(history);
+            }
+        }
+        
         for(int i=0;i<GeneratedSuspects.Count;++i)
         {
             Shuffle(innocentInternetHistory);
@@ -125,22 +141,39 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
     private IEnumerator GenerateBankAccount(int _numberOfSuspect)
     {
         int nbGenerated = 0;
-        for (int i = 0; i < _numberOfSuspect; i++)
+        if (generateTexts)
         {
-            void OnInnocentBankAccountGenerated(List<KeyValuePair<string,float>> _generated)
+            for (int i = 0; i < _numberOfSuspect; i++)
             {
-                innocentBankAccount.AddRange(_generated);
-                nbGenerated++;
+                void OnInnocentBankAccountGenerated(List<KeyValuePair<string, float>> _generated)
+                {
+                    innocentBankAccount.AddRange(_generated);
+                    nbGenerated++;
+                }
+
+                void OnGuiltyBankAccountGenerated(List<KeyValuePair<string, float>> _generated)
+                {
+                    guiltyBankAccount.AddRange(_generated);
+                    nbGenerated++;
+                }
+
+                bankAccountGenerator[i]
+                    .GenerateRandomBankAccountAsync(generatedScenario, false, 10, OnInnocentBankAccountGenerated);
+                //internetHistoryGenerator[i].GenerateRandomInternetHistoryAsync(generatedScenario,true,5,OnGuiltyHistoryGenerated);
             }
-            void OnGuiltyBankAccountGenerated(List<KeyValuePair<string,float>> _generated)
-            {
-                guiltyBankAccount.AddRange(_generated);
-                nbGenerated++;
-            }
-            bankAccountGenerator[i].GenerateRandomBankAccountAsync(generatedScenario,false,10,OnInnocentBankAccountGenerated);
-            //internetHistoryGenerator[i].GenerateRandomInternetHistoryAsync(generatedScenario,true,5,OnGuiltyHistoryGenerated);
+
+            yield return new WaitWhile(() => nbGenerated < _numberOfSuspect);
         }
-        yield return new WaitWhile(() => nbGenerated < _numberOfSuspect);
+        else
+        {
+            foreach (var history in debugText)
+            {
+                innocentBankAccount.Add(new KeyValuePair<string, float>(history,0));
+                guiltyBankAccount.Add(new KeyValuePair<string, float>(history,0));
+                
+            }
+        }
+
         for(int i=0;i<GeneratedSuspects.Count;++i)
         {
             Shuffle(innocentBankAccount);
@@ -158,22 +191,39 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
     private IEnumerator GenerateCriminalRecord(int _numberOfSuspect)
     {
         int nbGenerated = 0;
-        for (int i = 0; i < _numberOfSuspect; i++)
+        if (generateTexts)
         {
-            void OnInnocentCriminalRecord(List<KeyValuePair<string,string>> _generated)
+            for (int i = 0; i < _numberOfSuspect; i++)
             {
-                innocentCriminalRecord.AddRange(_generated);
-                nbGenerated++;
+                void OnInnocentCriminalRecord(List<KeyValuePair<string, string>> _generated)
+                {
+                    innocentCriminalRecord.AddRange(_generated);
+                    nbGenerated++;
+                }
+
+                void OnGuiltyCriminalRecord(List<KeyValuePair<string, string>> _generated)
+                {
+                    guiltyCriminalRecord.AddRange(_generated);
+                    nbGenerated++;
+                }
+
+                criminalRecords[i]
+                    .GenerateRandomCriminalRecordAsync(generatedScenario, false, 10, OnInnocentCriminalRecord);
+                //internetHistoryGenerator[i].GenerateRandomInternetHistoryAsync(generatedScenario,true,5,OnGuiltyHistoryGenerated);
             }
-            void OnGuiltyCriminalRecord(List<KeyValuePair<string,string>> _generated)
-            {
-                guiltyCriminalRecord.AddRange(_generated);
-                nbGenerated++;
-            } 
-            criminalRecords[i].GenerateRandomCriminalRecordAsync(generatedScenario,false,10,OnInnocentCriminalRecord);
-            //internetHistoryGenerator[i].GenerateRandomInternetHistoryAsync(generatedScenario,true,5,OnGuiltyHistoryGenerated);
+
+            yield return new WaitWhile(() => nbGenerated < _numberOfSuspect);
         }
-        yield return new WaitWhile(() => nbGenerated < _numberOfSuspect);
+        else
+        {
+            foreach (var history in debugText)
+            {
+                innocentCriminalRecord.Add(new KeyValuePair<string, string>(history,history));
+                guiltyCriminalRecord.Add(new KeyValuePair<string, string>(history,history));
+                
+            }
+        }
+
         for(int i=0;i<GeneratedSuspects.Count;++i)
         {
             Shuffle(innocentCriminalRecord);
@@ -191,12 +241,19 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
         Scenario generatedScenario = new Scenario();
         bool isGenerated = false;
         Debug.Log("Generate Scenario");
-        scenarioGenerator.GenerateScenario((_scenario) =>
+        if (generateTexts)
         {
-            generatedScenario = _scenario;
-            isGenerated = true;
-        });
-        yield return new WaitUntil(() => isGenerated);
+            scenarioGenerator.GenerateScenario((_scenario) =>
+            {
+                generatedScenario = _scenario;
+                isGenerated = true;
+            });
+            yield return new WaitUntil(() => isGenerated);
+        }
+        else
+        {
+            generatedScenario.scenarioString = "[DEBUG] Scenario not generated";
+        }
         Debug.Log("Scenario Generated");
         this.generatedScenario = generatedScenario;
         isScenarioGenerated = true;

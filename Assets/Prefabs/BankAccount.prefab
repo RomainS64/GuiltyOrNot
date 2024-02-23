@@ -2535,6 +2535,7 @@ GameObject:
   - component: {fileID: 1024259800166441164}
   - component: {fileID: 3909586210842491341}
   - component: {fileID: 6614396091971216189}
+  - component: {fileID: 1221407962982787902}
   m_Layer: 5
   m_Name: BankAccount
   m_TagString: Untagged
@@ -2660,6 +2661,19 @@ MonoBehaviour:
   infinitPin: 1
   linkedMovable: {fileID: 0}
   forcedPinPosition: {fileID: 0}
+--- !u!114 &1221407962982787902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5449131632037438279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 552c3d75d50144146a258b9dbe01caf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnThreshold: 6
 --- !u!1 &5766728792288644933
 GameObject:
   m_ObjectHideFlags: 0
