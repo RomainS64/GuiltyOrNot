@@ -58,7 +58,7 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
     private void Start()
     {
         StartGenerating();
-        if(notebookCanvas != null)notebookCanvas.SetActive(false);
+        //if(notebookCanvas != null)notebookCanvas.SetActive(false);
     }
 
     private int GetAlivedSuspectCout()=>GeneratedSuspects.Count(suspect => !suspect.isEliminated);
@@ -72,7 +72,7 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
         thresholdSpawnableObject = FindObjectsOfType<ThresholdSpawnableObject>(true);
         GeneratedSuspects = new List<Suspect>();
         ScenarioView.OnScenarioViewSkiped+= ()=> scenarioViewSkiped = true;
-        notebookCanvas.SetActive(true);
+        //notebookCanvas.SetActive(true);
         StartCoroutine(GenerateScenario());
         StartCoroutine(GenerateSuspects(numberOfSuspects));
         yield return new WaitUntil(() => isScenarioGenerated);

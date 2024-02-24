@@ -64,8 +64,11 @@ public class Notebook : MonoBehaviour
 
     private void ShowPage(int _index)
     {
+        if(AudioManager.instance != null)
+        {
+            AudioManager.instance.audioEvents[Random.Range(0,2)==0?"Object Grab":"Object Release"].Play();
+        }
         
-        AudioManager.instance.audioEvents[Random.Range(0,2)==0?"Object Grab":"Object Release"].Play();
         for (int i = 0; i < pages.Length; ++i)
         {
             pages[i].pageObject.SetActive(_index == i);
@@ -89,6 +92,7 @@ public class Notebook : MonoBehaviour
     }
     public void HideNotebook(float _speed = 0.3f)
     {
+        
         isDisplayed = false;
         clickable.IsLock = false;
         hover.IsLock = false;
