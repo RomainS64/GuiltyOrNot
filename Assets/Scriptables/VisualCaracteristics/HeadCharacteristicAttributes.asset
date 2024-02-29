@@ -10,22 +10,38 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be503a994ffe72545af18bbbe285fb91, type: 3}
-  m_Name: HeadAccesoryAttributes
+  m_Name: HeadCharacteristicAttributes
   m_EditorClassIdentifier: 
   attributes:
   - prompt: no head accessory
     weights:
-      manProbabilityWeight: 5
-      womanProbabilityWeight: 5
-  - prompt: sunglasses
-    weights:
-      manProbabilityWeight: 1
-      womanProbabilityWeight: 1
-  - prompt: glasses
-    weights:
-      manProbabilityWeight: 1
-      womanProbabilityWeight: 1
+      manProbabilityWeight: 0
+      womanProbabilityWeight: 0
   - prompt: nose piercing
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
+  - prompt: moles on the nose
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
+  - prompt: freckles
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
+  - prompt: milia on the face
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
+  - prompt: dark skin
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
+  - prompt: light skin
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
+  - prompt: moderate skin
     weights:
       manProbabilityWeight: 1
       womanProbabilityWeight: 1

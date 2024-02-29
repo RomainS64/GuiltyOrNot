@@ -37,3 +37,27 @@ MonoBehaviour:
     weights:
       manProbabilityWeight: 1
       womanProbabilityWeight: 1
+  - prompt: brunette
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
+  - prompt: auburn
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
+  - prompt: silver
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
+  - prompt: balayage
+    weights:
+      manProbabilityWeight: 0
+      womanProbabilityWeight: 1
+  - prompt: jet black
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
+  - prompt: highlights
+    weights:
+      manProbabilityWeight: 0
+      womanProbabilityWeight: 1
