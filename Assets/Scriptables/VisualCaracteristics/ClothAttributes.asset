@@ -41,3 +41,31 @@ MonoBehaviour:
     weights:
       manProbabilityWeight: 1
       womanProbabilityWeight: 1
+  - prompt: polo shirts
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 0
+  - prompt: blouses
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
+  - prompt: button-down shirts
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
+  - prompt: sweaters
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
+  - prompt: crop tops
+    weights:
+      manProbabilityWeight: 0
+      womanProbabilityWeight: 1
+  - prompt: peplum tops
+    weights:
+      manProbabilityWeight: 0
+      womanProbabilityWeight: 1
+  - prompt: cardigans
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1

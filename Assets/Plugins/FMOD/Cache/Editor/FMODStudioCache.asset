@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: Assets/Sound/GuiltyOrNot_FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638434617299417579
+  lastModified: 638444553319119550
   FileSizes:
   - Name: Desktop
-    Value: 1456
+    Value: 1514
   Exists: 1
 --- !u!114 &-7809692087628665691
 MonoBehaviour:
@@ -70,7 +70,55 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 694
+  Length: 539
+--- !u!114 &-6577469747039466111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Camera_Velocity
+  m_EditorClassIdentifier: 
+  Name: Camera_Velocity
+  StudioPath: parameter:/Camera_Velocity
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1198253931
+    data2: 693608753
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-4997759254234907032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/sfx_camera_movement/Camera_Velocity
+  m_EditorClassIdentifier: 
+  Name: Camera_Velocity
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1198253931
+    data2: 693608753
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-2776277610551641503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,11 +168,12 @@ MonoBehaviour:
   - {fileID: 4645021511547162914}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 1
-  Parameters: []
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -4997759254234907032}
   MinDistance: 1
   MaxDistance: 20
-  Length: 1502
+  Length: 1030
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,11 +205,12 @@ MonoBehaviour:
   - {fileID: 5784689727849356758}
   EditorParameters:
   - {fileID: -7809692087628665691}
+  - {fileID: -6577469747039466111}
   MasterBanks:
   - {fileID: 4645021511547162914}
   StringsBanks:
   - {fileID: -8920762047631395828}
-  cacheTime: 638434617299417579
+  cacheTime: 638444553319119550
   cacheVersion: 131609
 --- !u!114 &1320764093547851049
 MonoBehaviour:
@@ -255,10 +305,10 @@ MonoBehaviour:
   Path: Assets/Sound/GuiltyOrNot_FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638434617299417579
+  lastModified: 638444553319088206
   FileSizes:
   - Name: Desktop
-    Value: 4243840
+    Value: 4207328
   Exists: 1
 --- !u!114 &5784689727849356758
 MonoBehaviour:
@@ -341,7 +391,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 467
+  Length: 398
 --- !u!114 &7477948798666271984
 MonoBehaviour:
   m_ObjectHideFlags: 0

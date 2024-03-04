@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{b80e6d34-25b2-4988-89ba-9b037e4f3429}">
+		<property name="name">
+			<value>Camera_Velocity</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ca934063-4828-44ab-8fde-0b0a62914a21}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{c3ca8cbb-a1f0-4b4e-8ed6-93d1da4dcf19}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{c3ca8cbb-a1f0-4b4e-8ed6-93d1da4dcf19}">
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>2.4000000953674316</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>
