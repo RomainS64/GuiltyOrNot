@@ -159,6 +159,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9192566045495703123}
+  - component: {fileID: 1477639226768898678}
   m_Layer: 5
   m_Name: pin
   m_TagString: Untagged
@@ -189,6 +190,18 @@ RectTransform:
   m_AnchoredPosition: {x: 2.4900007, y: 5.25}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1477639226768898678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3384646388600366538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4c2428ebc16a0e4bab82aacdae1d569, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6911374106613573411
 GameObject:
   m_ObjectHideFlags: 0

@@ -770,7 +770,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unknownFactorX: 15
   unknownFactorY: 10
-  zoomMaxMultiplicator: 4
+  zoomMaxMultiplicator: 5
 --- !u!95 &4987664775263998553
 Animator:
   serializedVersion: 5

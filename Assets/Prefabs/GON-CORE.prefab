@@ -206,6 +206,7 @@ MonoBehaviour:
   - visualSeed: 0
     visualPrompt: 
     isEliminated: 0
+    aliveCountWhenEliminated: 0
     name: Jean
     surname: Dupont
     age: 30
@@ -215,6 +216,7 @@ MonoBehaviour:
   - visualSeed: 0
     visualPrompt: 
     isEliminated: 0
+    aliveCountWhenEliminated: 0
     name: Zakari
     surname: Soumed
     age: 33
@@ -224,6 +226,7 @@ MonoBehaviour:
   - visualSeed: 0
     visualPrompt: 
     isEliminated: 0
+    aliveCountWhenEliminated: 0
     name: Lea
     surname: Dufresne
     age: 27
@@ -233,6 +236,7 @@ MonoBehaviour:
   - visualSeed: 0
     visualPrompt: 
     isEliminated: 0
+    aliveCountWhenEliminated: 0
     name: Alice
     surname: Dupont
     age: 31
@@ -242,6 +246,7 @@ MonoBehaviour:
   - visualSeed: 0
     visualPrompt: 
     isEliminated: 0
+    aliveCountWhenEliminated: 0
     name: Lucas
     surname: Martin
     age: 41
@@ -251,6 +256,7 @@ MonoBehaviour:
   - visualSeed: 0
     visualPrompt: 
     isEliminated: 0
+    aliveCountWhenEliminated: 0
     name: Antoine
     surname: Leroux
     age: 71
@@ -260,6 +266,7 @@ MonoBehaviour:
   - visualSeed: 0
     visualPrompt: 
     isEliminated: 0
+    aliveCountWhenEliminated: 0
     name: Hugo
     surname: Riviere
     age: 34
@@ -269,6 +276,7 @@ MonoBehaviour:
   - visualSeed: 0
     visualPrompt: 
     isEliminated: 0
+    aliveCountWhenEliminated: 0
     name: Carla
     surname: Deschamps
     age: 25
@@ -278,6 +286,7 @@ MonoBehaviour:
   - visualSeed: 0
     visualPrompt: 
     isEliminated: 0
+    aliveCountWhenEliminated: 0
     name: Martin
     surname: Leon
     age: 26
@@ -287,6 +296,7 @@ MonoBehaviour:
   - visualSeed: 0
     visualPrompt: 
     isEliminated: 0
+    aliveCountWhenEliminated: 0
     name: Emma
     surname: Blanchard
     age: 25
@@ -296,6 +306,7 @@ MonoBehaviour:
   - visualSeed: 0
     visualPrompt: 
     isEliminated: 0
+    aliveCountWhenEliminated: 0
     name: "J\xE9r\xF4me"
     surname: Dubois
     age: 29
@@ -305,12 +316,16 @@ MonoBehaviour:
   - visualSeed: 0
     visualPrompt: 
     isEliminated: 0
+    aliveCountWhenEliminated: 0
     name: Francois
     surname: Leclerc
     age: 77
     gender: 
     height: 182
     portrait: {fileID: 0}
+  debugText: []
+  generateAtStart: 1
+  generateTexts: 0
   generateImages: 0
   generateSuspect: 1
   numberOfSuspects: 12
@@ -502,6 +517,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5637697761459922400}
   - component: {fileID: 737399315263018551}
+  - component: {fileID: 7938982910187981510}
   m_Layer: 0
   m_Name: GON-CORE
   m_TagString: Untagged
@@ -539,6 +555,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4076c3a7dda568a4b909f24764af139e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7938982910187981510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5692157101812036167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0ef518a247c6c140bcabfe838cbbe18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6080318303171482198

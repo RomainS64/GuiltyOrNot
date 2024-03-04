@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +16,13 @@ public class FollowObject : MonoBehaviour
     [SerializeField] private Transform followingObject;
     [SerializeField] private Transform objectToFollow;
     [Range(0,1)] [SerializeField] private float lerpValue;
+
+    private void Start()
+    {
+        float scale = Mathf.Lerp(minZoom, maxZoom, CameraHandler.Instance.ZoomLevel);
+        transform.localScale = new Vector3(scale,scale,1);
+    }
+
     void Update()
     {
         if (followZoom)

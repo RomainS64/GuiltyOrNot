@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 
 public class MovableObject : MonoBehaviour, IPointerDownHandler,IPointerUpHandler
 {
+    [SerializeField] private DocumentType documentType;
     [SerializeField] private float unknownFactorX;
     [SerializeField] private float unknownFactorY;
     [SerializeField] private float zoomMaxMultiplicator;
@@ -35,6 +36,8 @@ public class MovableObject : MonoBehaviour, IPointerDownHandler,IPointerUpHandle
     public void OnPointerDown(PointerEventData _eventData)
     {
         if (isLock) return;
+        LastTouchedDocument.Instance.NotifyTouchedDocument(documentType);
+        
         transform.SetAsLastSibling();
         animator.SetBool(holdParameter,true);
         AudioManager.instance.audioEvents["Object Grab"].Play();

@@ -12,8 +12,18 @@ public class PinableObject : MonoBehaviour,IPointerUpHandler,IPointerDownHandler
     [SerializeField] private Transform forcedPinPosition = null;
     private float downTime;
     private bool isPined = false;
+    public List<int> PinIds { get; set; } = new();
+
+    public void AddPin(int pinId)
+    {
+        if (!PinIds.Contains(pinId))
+        {
+            PinIds.Add(pinId);
+        }
+    }
     public void OnPointerUp(PointerEventData eventData)
     {
+        if (eventData.button != PointerEventData.InputButton.Left) return;
         linkedMovable?.OnPointerUp(null);
         if (Time.time - downTime <0.15 && !isPined)
         {
