@@ -69,18 +69,19 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
     
     public void StartGenerating()=>StartCoroutine(StartGeneratingCoroutine());
 
-    
-    
+    [SerializeField] private GameObject loadingCanvas;
+    private bool areSuspectGenerated = false;
     private IEnumerator StartGeneratingCoroutine()
     {
+        loadingCanvas.SetActive(true);
         thresholdSpawnableObject = FindObjectsOfType<ThresholdSpawnableObject>(true);
         GeneratedSuspects = new List<Suspect>();
         ScenarioView.OnScenarioViewSkiped+= ()=> scenarioViewSkiped = true;
         //notebookCanvas.SetActive(true);
         StartCoroutine(GenerateScenario());
-        StartCoroutine(GenerateSuspects(numberOfSuspects));
+        StartCoroutine(GenerateSuspects(numberOfSuspects,(_suspects)=>areSuspectGenerated = true));
         yield return new WaitUntil(() => isScenarioGenerated);
-        yield return new WaitUntil(() => GeneratedSuspects.Count>=numberOfSuspects);
+        yield return new WaitUntil(() => generatedSuspect >= numberOfSuspects);
         
         StartCoroutine(GenerateInternetHystory(numberOfSuspects));
         StartCoroutine(GenerateBankAccount(numberOfSuspects));
@@ -92,6 +93,7 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
         
         CorkBoardFlowHandler.Instance.StartCorkBoard(generatedScenario,GeneratedSuspects);
         foreach (var spawnable in thresholdSpawnableObject) spawnable.NotifyThreshold(GetAlivedSuspectCout(),numberOfSuspects,false);
+        loadingCanvas.SetActive(false);
     }
 
     public List<string> innocentInternetHistory = new ();
@@ -142,6 +144,7 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
     
     public List<KeyValuePair<string,float>> innocentBankAccount = new ();
     public List<KeyValuePair<string,float>> guiltyBankAccount = new ();
+    
     private IEnumerator GenerateBankAccount(int _numberOfSuspect)
     {
         int nbGenerated = 0;
@@ -255,17 +258,18 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
         }
         else
         {
-            generatedScenario.scenarioString = "[DEBUG] Scenario not generated";
+            generatedScenario.scenarioString = "[DEBUG] Scenario not generatedSuspect";
         }
         Debug.Log("Scenario Generated");
         this.generatedScenario = generatedScenario;
         _onScenarioGenerated?.Invoke(generatedScenario);
         isScenarioGenerated = true;
     }
+    int generatedSuspect = 0;
     public IEnumerator GenerateSuspects(int numberOfSuspect,Action<List<Suspect>> _onSuspectsGenerated = null)
     {
         GeneratedSuspects = new List<Suspect>();
-        int generated = 0;
+        generatedSuspect = 0;
         for (int i = 0; i < numberOfSuspect; i++)
         {
             Suspect generatedSuspect;
@@ -285,7 +289,7 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
                     var suspect = GeneratedSuspects[i];
                     suspect.portrait = _result.Item2;
                     GeneratedSuspects[i] = suspect;
-                    generated++;
+                    this.generatedSuspect++;
                 }));
             }
             else
@@ -293,9 +297,9 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
                 var suspect = GeneratedSuspects[i];
                 suspect.portrait = debugTexture[i];
                 GeneratedSuspects[i] = suspect;
-                generated++;
+                this.generatedSuspect++;
             }
-            yield return new WaitWhile(() => generated == i);
+            yield return new WaitWhile(() => this.generatedSuspect == i);
             _onSuspectsGenerated?.Invoke(GeneratedSuspects);
         }
     }

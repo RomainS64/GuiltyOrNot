@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Random = UnityEngine.Random;
@@ -16,6 +17,7 @@ public class Notebook : MonoBehaviour
     [SerializeField] private NotebookPage[] pages;
     [SerializeField] private RectTransform notDisplayedPosition;
     [SerializeField] private RectTransform startDisplayedPosition;
+    [SerializeField] private TMP_Text scenario;
     private int pageIndex = 0;
     private ClickableObject clickable;
     private MovableObject movableObject;
@@ -34,6 +36,8 @@ public class Notebook : MonoBehaviour
         transform.position = notDisplayedPosition.position;
         ShowPage(pageIndex);
     }
+
+    public void SetScenario(string _scenario) => scenario.text = _scenario;
     public void OnPointerDown()
     {
         if (!isDisplayed)

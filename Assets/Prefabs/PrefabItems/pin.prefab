@@ -160,6 +160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9192566045495703123}
   - component: {fileID: 1477639226768898678}
+  - component: {fileID: 3304693348920803340}
   m_Layer: 5
   m_Name: pin
   m_TagString: Untagged
@@ -202,6 +203,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4c2428ebc16a0e4bab82aacdae1d569, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &3304693348920803340
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3384646388600366538}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5854284, y: 0.8474055, z: 1}
+  m_Center: {x: -0.020872813, y: -0.07629732, z: 0}
 --- !u!1 &6911374106613573411
 GameObject:
   m_ObjectHideFlags: 0

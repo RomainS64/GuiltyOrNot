@@ -26,6 +26,8 @@ public class CorkBoardFlowHandler : MonoSingleton<CorkBoardFlowHandler>
         AudioManager.instance.audioEvents["Game Music"].Play();
         TextSetter[] allTextSetters = FindObjectsOfType<TextSetter>(true);
         PhotoSetter[] photoSetters = FindObjectsOfType<PhotoSetter>(true);
+        Notebook notebook = FindObjectOfType<Notebook>();
+        notebook.SetScenario(_scenario.scenarioString);
         
         internetHistoryPapers = FindObjectsOfType<InternetHistoryPaper>(true);
         bankAccountPapers = FindObjectsOfType<BankAccountPaper>(true);
