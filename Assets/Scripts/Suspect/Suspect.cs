@@ -11,6 +11,7 @@ public struct Suspect
     public string visualPrompt;
 
     public bool isEliminated;
+    public int aliveCountWhenEliminated;
     
     public string name;
     public string surname;

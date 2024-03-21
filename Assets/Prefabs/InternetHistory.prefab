@@ -1051,9 +1051,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35a5f918770fa764bb52c9084ef1d25b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  documentType: 1
   unknownFactorX: 15
   unknownFactorY: 10
-  zoomMaxMultiplicator: 4
+  zoomMaxMultiplicator: 5
 --- !u!95 &3556740132055612558
 Animator:
   serializedVersion: 5
@@ -1124,6 +1125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnThreshold: 8
+  playerId: 0
 --- !u!1 &6380317882285523675
 GameObject:
   m_ObjectHideFlags: 0

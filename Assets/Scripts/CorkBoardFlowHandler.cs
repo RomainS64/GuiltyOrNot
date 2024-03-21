@@ -13,6 +13,7 @@ public class CorkBoardFlowHandler : MonoSingleton<CorkBoardFlowHandler>
     private BankAccountPaper[] bankAccountPapers;
     private CriminalRecordPaper[] criminalRecordPapers;
     private IDCard[] idCards;
+    private ScriptPaper[] scriptPapers;
     private PhotoSetter[] photoSetters; 
     private TextSetter[] firstnameSetters;
     private TextSetter[] surnameSetters;
@@ -30,6 +31,7 @@ public class CorkBoardFlowHandler : MonoSingleton<CorkBoardFlowHandler>
         bankAccountPapers = FindObjectsOfType<BankAccountPaper>(true);
         criminalRecordPapers = FindObjectsOfType<CriminalRecordPaper>(true);
         idCards = FindObjectsOfType<IDCard>(true);
+        scriptPapers = FindObjectsOfType<ScriptPaper>(true);
         
         dateSetters = allTextSetters.Where(textSetter => textSetter.GeSetterType() == TextType.Date).ToArray();
         sizeSetters = allTextSetters.Where(textSetter => textSetter.GeSetterType() == TextType.Size).ToArray();
@@ -60,6 +62,11 @@ public class CorkBoardFlowHandler : MonoSingleton<CorkBoardFlowHandler>
             {
                 documents.Add(criminalRecord.transform);
                 criminalRecord.SetCriminalRecords(suspect.criminalRecord.records);
+                break;
+            }
+            foreach (ScriptPaper script in scriptPapers.Where(script => script.GetPlayerId() == i))
+            {
+                documents.Add(script.transform);
                 break;
             }
             DocumentPlacement.Instance.PlaceDocument(i,documents);

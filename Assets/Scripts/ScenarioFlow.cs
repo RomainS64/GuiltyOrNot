@@ -12,6 +12,7 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
     [SerializeField] private Texture[] debugTexture;
     [SerializeField] private Suspect[] debugSuspects;
     [SerializeField] private string[] debugText;
+    [SerializeField] private bool generateAtStart = true;
     [SerializeField] private bool generateTexts;
     [SerializeField] private bool generateImages;
     [SerializeField] private bool generateSuspect;
@@ -41,23 +42,26 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
     private bool isBankAccountGenerated = false;
     //CRIMINAL RECORD
     private bool isCriminalRecordGenerated = false;
-    
-    private ThresholdSpawnableObject[] thresholdSpawnableObject;
+
+    private ThresholdSpawnableObject[] thresholdSpawnableObject = { };
 
     public void SetSuspectEliminationStatus(int _suspectId, bool _eliminated)
     {
         var generatedSuspect = GeneratedSuspects[_suspectId];
         generatedSuspect.isEliminated = _eliminated;
+        generatedSuspect.aliveCountWhenEliminated = GetAlivedSuspectCout();
         GeneratedSuspects[_suspectId] = generatedSuspect;
+        
         foreach (var spawnable in thresholdSpawnableObject)
         {
-            spawnable.NotifyThreshold(GetAlivedSuspectCout());
+            spawnable.NotifyThreshold(GetAlivedSuspectCout(),GeneratedSuspects[spawnable.GetPlayerId()].aliveCountWhenEliminated,GeneratedSuspects[spawnable.GetPlayerId()].isEliminated);
+
         }
     }
 
     private void Start()
     {
-        StartGenerating();
+        if(generateAtStart)StartGenerating();
         //if(notebookCanvas != null)notebookCanvas.SetActive(false);
     }
 
@@ -87,7 +91,7 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
         yield return new WaitUntil(() => isCriminalRecordGenerated);
         
         CorkBoardFlowHandler.Instance.StartCorkBoard(generatedScenario,GeneratedSuspects);
-        foreach (var spawnable in thresholdSpawnableObject) spawnable.NotifyThreshold(GetAlivedSuspectCout());
+        foreach (var spawnable in thresholdSpawnableObject) spawnable.NotifyThreshold(GetAlivedSuspectCout(),numberOfSuspects,false);
     }
 
     public List<string> innocentInternetHistory = new ();
@@ -207,8 +211,7 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
                     nbGenerated++;
                 }
 
-                criminalRecords[i]
-                    .GenerateRandomCriminalRecordAsync(generatedScenario, false, 10, OnInnocentCriminalRecord);
+                criminalRecords[i].GenerateRandomCriminalRecordAsync(generatedScenario, false, 10, OnInnocentCriminalRecord);
                 //internetHistoryGenerator[i].GenerateRandomInternetHistoryAsync(generatedScenario,true,5,OnGuiltyHistoryGenerated);
             }
 
@@ -235,7 +238,7 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
         }
         isCriminalRecordGenerated = true;
     }
-    private IEnumerator GenerateScenario()
+    public IEnumerator GenerateScenario(Action<Scenario> _onScenarioGenerated = null)
     {
         isScenarioGenerated = false;
         Scenario generatedScenario = new Scenario();
@@ -256,10 +259,12 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
         }
         Debug.Log("Scenario Generated");
         this.generatedScenario = generatedScenario;
+        _onScenarioGenerated?.Invoke(generatedScenario);
         isScenarioGenerated = true;
     }
-    private IEnumerator GenerateSuspects(int numberOfSuspect)
+    public IEnumerator GenerateSuspects(int numberOfSuspect,Action<List<Suspect>> _onSuspectsGenerated = null)
     {
+        GeneratedSuspects = new List<Suspect>();
         int generated = 0;
         for (int i = 0; i < numberOfSuspect; i++)
         {
@@ -291,6 +296,7 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
                 generated++;
             }
             yield return new WaitWhile(() => generated == i);
+            _onSuspectsGenerated?.Invoke(GeneratedSuspects);
         }
     }
     // Fisher-Yates shuffle algorithm

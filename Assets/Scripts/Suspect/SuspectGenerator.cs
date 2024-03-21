@@ -4,12 +4,12 @@ using Random = UnityEngine.Random;
 
 public class SuspectGenerator : MonoSingleton<SuspectGenerator>
 {
-    [SerializeField] private int minAge;
-    [SerializeField] private int maxAge;
+    [SerializeField] public int minAge;
+    [SerializeField] public int maxAge;
     [SerializeField] private AnimationCurve ageDistribution;
     
-    [SerializeField] private int minSize;
-    [SerializeField] private int maxSize;
+    [SerializeField] public int minSize;
+    [SerializeField] public int maxSize;
     [SerializeField] private AnimationCurve sizeDistribution;
     
     
@@ -26,6 +26,7 @@ public class SuspectGenerator : MonoSingleton<SuspectGenerator>
             date = DateTime.Now - TimeSpan.FromDays(Random.Range(0f, 364))- TimeSpan.FromDays(365*age),
             gender = isAMan ? "Male" : "Female",
             height = (int)weightedRandom(minSize, maxSize, sizeDistribution),
+            aliveCountWhenEliminated = int.MaxValue
         };
         return newSuspect;
     }

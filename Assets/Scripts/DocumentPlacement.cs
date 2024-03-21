@@ -23,7 +23,8 @@ public class DocumentPlacement : MonoSingleton<DocumentPlacement>
     private List<DocumentPositions> documentPositions = new();
     [SerializeField] private Transform[] placementZones;
     [SerializeField] private Transform[] documentPlacementZones;
-
+    [SerializeField] private Transform followPoint;
+    [SerializeField] private Vector3[] documentDecal;
     [SerializeField] private float distance;
     [SerializeField] private float randomNoiseDistance;
     [SerializeField] private float randomNoiseLateral;
@@ -77,6 +78,8 @@ public class DocumentPlacement : MonoSingleton<DocumentPlacement>
             });
             documents[i].position = placementZones[id].position+displacement;
         }
+
+        IsGroupedByDocument = false;
     }
     
     [SerializeField] private float[] spiralDistanceStart;
@@ -89,7 +92,7 @@ public class DocumentPlacement : MonoSingleton<DocumentPlacement>
      
     public Vector3 SpiralPlacement(Transform _placementPoint,int id,int docId)
     {
-        Vector3 basePos = _placementPoint.position; 
+        Vector3 basePos =Vector3.zero;
         _placementPoint.rotation = Quaternion.identity;
         float distanceMultiplicator = spiralDistanceStart[docId];
         for (int i = 0; i < id; i++)
@@ -104,7 +107,6 @@ public class DocumentPlacement : MonoSingleton<DocumentPlacement>
         _placementPoint.position = basePos+new Vector3(Random.Range(-xRdm[docId],xRdm[docId]),Random.Range(-yRdm[docId],yRdm[docId]),0);
         return position;
     }
-
     public void GroupBySuspect()
     {
         int i = 0;
@@ -115,58 +117,30 @@ public class DocumentPlacement : MonoSingleton<DocumentPlacement>
             {
                 StartCoroutine(MoveTo(document.document, document.suspectGroupedPosition, 0.2f,i<4));
             }
-
             ++i;
         }
+        IsGroupedByDocument = false;
     }
+    public bool IsGroupedByDocument { get; private set; }
     public void GroupByDocuments(int documentTypeId = -1)
     {
         int i = 0;
         foreach (var document in documentPositions)
         {
-            
             if (!document.document.gameObject.activeSelf) continue;
             if (documentTypeId != -1 &&
                 document.documentTypeId != documentTypeId) continue;
+            
             if (Vector2.Distance(document.document.position, document.documentGroupedPosition) > 1)
             {
-                StartCoroutine(MoveTo(document.document, document.documentGroupedPosition, 0.2f,i<4));
+                document.document.SetAsLastSibling();
+                StartCoroutine(MoveTo(document.document,followPoint.position+document.documentGroupedPosition+documentDecal[document.documentTypeId], 0.2f,i<4));
             }
 
             ++i;
         }
-    }
 
-    private void Update()
-    {
-        if (Input.GetKey(KeyCode.Alpha1))
-        {
-            GroupBySuspect();
-        }
-        if (Input.GetKey(KeyCode.Alpha2))
-        {
-            GroupByDocuments();
-        }
-        if (Input.GetKey(KeyCode.Alpha3))
-        {
-            GroupByDocuments(0);
-        }
-        if (Input.GetKey(KeyCode.Alpha4))
-        {
-            GroupByDocuments(1);
-        }
-        if (Input.GetKey(KeyCode.Alpha5))
-        {
-            GroupByDocuments(2);
-        }
-        if (Input.GetKey(KeyCode.Alpha6))
-        {
-            GroupByDocuments(3);
-        }
-        if (Input.GetKey(KeyCode.Alpha7))
-        {
-            GroupByDocuments(4);
-        }
+        IsGroupedByDocument = true;
     }
 
     IEnumerator MoveTo(Transform targetTransform, Vector3 destination, float time,bool playSound)
