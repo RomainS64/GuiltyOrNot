@@ -23,7 +23,7 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
     [SerializeField] private BankAccountGenerator[] bankAccountGenerator;
     [SerializeField] private CriminalRecordGenerator[] criminalRecords;
     
-    [SerializeField] private SuspectVisualGenerator suspectGenerator;
+    [SerializeField] private DallESuspectVisualGenerator suspectGenerator;
     private bool scenarioViewSkiped;
 
     //SCENRAIO
@@ -70,7 +70,6 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
     public void StartGenerating()=>StartCoroutine(StartGeneratingCoroutine());
 
     [SerializeField] private GameObject loadingCanvas;
-    private bool areSuspectGenerated = false;
     private IEnumerator StartGeneratingCoroutine()
     {
         loadingCanvas.SetActive(true);
@@ -79,7 +78,7 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
         ScenarioView.OnScenarioViewSkiped+= ()=> scenarioViewSkiped = true;
         //notebookCanvas.SetActive(true);
         StartCoroutine(GenerateScenario());
-        StartCoroutine(GenerateSuspects(numberOfSuspects,(_suspects)=>areSuspectGenerated = true));
+        StartCoroutine(GenerateSuspects(numberOfSuspects,null));
         yield return new WaitUntil(() => isScenarioGenerated);
         yield return new WaitUntil(() => generatedSuspect >= numberOfSuspects);
         
@@ -284,11 +283,12 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
             GeneratedSuspects.Add(generatedSuspect);
             if (generateImages)
             {
+                int suspectId = i;
                 suspectGenerator.GenerateSuspectFaceAsync(generatedSuspect,EmotionType.Concentrated,true,(_result =>
                 {
-                    var suspect = GeneratedSuspects[i];
+                    var suspect = GeneratedSuspects[suspectId];
                     suspect.portrait = _result.Item2;
-                    GeneratedSuspects[i] = suspect;
+                    GeneratedSuspects[suspectId] = suspect;
                     this.generatedSuspect++;
                 }));
             }
@@ -299,9 +299,9 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
                 GeneratedSuspects[i] = suspect;
                 this.generatedSuspect++;
             }
-            yield return new WaitWhile(() => this.generatedSuspect == i);
-            _onSuspectsGenerated?.Invoke(GeneratedSuspects);
         }
+        yield return new WaitWhile(() => this.generatedSuspect == numberOfSuspect);
+        _onSuspectsGenerated?.Invoke(GeneratedSuspects);
     }
     // Fisher-Yates shuffle algorithm
     static public void Shuffle<T>(List<T> list)

@@ -15,8 +15,8 @@ MonoBehaviour:
   attributes:
   - prompt: no head accessory
     weights:
-      manProbabilityWeight: 0
-      womanProbabilityWeight: 0
+      manProbabilityWeight: 2
+      womanProbabilityWeight: 2
   - prompt: nose piercing
     weights:
       manProbabilityWeight: 1
@@ -30,18 +30,6 @@ MonoBehaviour:
       manProbabilityWeight: 1
       womanProbabilityWeight: 1
   - prompt: milia on the face
-    weights:
-      manProbabilityWeight: 1
-      womanProbabilityWeight: 1
-  - prompt: dark skin
-    weights:
-      manProbabilityWeight: 1
-      womanProbabilityWeight: 1
-  - prompt: light skin
-    weights:
-      manProbabilityWeight: 1
-      womanProbabilityWeight: 1
-  - prompt: moderate skin
     weights:
       manProbabilityWeight: 1
       womanProbabilityWeight: 1

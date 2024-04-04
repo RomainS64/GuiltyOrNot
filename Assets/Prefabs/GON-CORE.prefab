@@ -470,7 +470,8 @@ MonoBehaviour:
   - {fileID: 3250411060637283847}
   - {fileID: 2827488244787605901}
   - {fileID: 245582583619480515}
-  suspectGenerator: {fileID: 4238806531858969659}
+  suspectGenerator: {fileID: 0}
+  loadingCanvas: {fileID: 0}
   innocentInternetHistory: []
   guiltyInternetHistory: []
 --- !u!114 &7042417370774709050
@@ -689,8 +690,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4948790742523957952}
-  - component: {fileID: 4238806531858969659}
-  - component: {fileID: 764627486780040420}
+  - component: {fileID: 3128631894226883446}
   - component: {fileID: 5176087316948680144}
   - component: {fileID: 8310935138433332467}
   - component: {fileID: 3547430120443993791}
@@ -720,7 +720,7 @@ RectTransform:
   m_AnchoredPosition: {x: -389, y: 158}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &4238806531858969659
+--- !u!114 &3128631894226883446
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -729,46 +729,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 6080318303171482198}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 922cc0b82b4a0ad4a81a8bec8fa9de06, type: 3}
+  m_Script: {fileID: 11500000, guid: 1151754481e124fdcb4e1e9f16d642ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  generationStyle: in a pixar style, 3D, exagerated style, half length portrait,
+    Pixar Disney
   HairAttribute: {fileID: 11400000, guid: 7f4adc1c1eeae2144b6d4df3dfa83c1e, type: 2}
   HairColorAttribute: {fileID: 11400000, guid: 60a5ae0ee41480440b82461ea69c5eea, type: 2}
   BeardAttributes: {fileID: 11400000, guid: 5e9149d1be4d7d541beb3afee3df4f1c, type: 2}
   ClothAttribute: {fileID: 11400000, guid: ebd2fa12c28f50d4b9c6818d2a6151ad, type: 2}
   ClothColorAttribute: {fileID: 11400000, guid: c7d5099d65da3da4cafe41a5171eb572, type: 2}
   HeadAccessoryAttribute: {fileID: 11400000, guid: 4ce1f07b523093b4d8298b49a76dbae8, type: 2}
-  suspectGenerator: {fileID: 764627486780040420}
-  negatifPrompt: (deformed iris, deformed pupils), text, worst quality, low quality,
-    jpeg artifacts, ugly, duplicate, morbid, mutilated, (extra fingers), (mutated
-    hands), poorly drawn hands, poorly drawn face, mutation, deformed, blurry, dehydrated,
-    bad anatomy, bad proportions, extra limbs, cloned face, disfigured, gross proportions,
-    malformed limbs, missing arms, missing legs, extra arms, extra legs, (fused fingers),
-    (too many fingers), camera
---- !u!114 &764627486780040420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6080318303171482198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0beed6a09923ca540b45e4a3f055325f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  removeBackgroundAfterGeneration: 1
-  guid: ea1526b9-36a5-4abb-b416-a8afae2810c7
-  prompt: 
-  negativePrompt: 
-  selectedSampler: 14
-  width: 512
-  height: 512
-  steps: 10
-  cfgScale: 7
-  seed: -1
-  generatedSeed: -1
-  selectedModel: 0
 --- !u!222 &5176087316948680144
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3688,7 +3659,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1735116322790344338, guid: 4971076042a480e46855d6261f7257fa, type: 3}
       propertyPath: orthographic size
-      value: 22.44144
+      value: 5.538477
       objectReference: {fileID: 0}
     - target: {fileID: 3524432495221230054, guid: 4971076042a480e46855d6261f7257fa, type: 3}
       propertyPath: m_Name

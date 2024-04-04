@@ -351,6 +351,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5740233046234640710, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
   m_PrefabInstance: {fileID: 9179126}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &24007350 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3128631894226883446, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
+  m_PrefabInstance: {fileID: 1446470100}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305654495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1151754481e124fdcb4e1e9f16d642ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &24209257
 GameObject:
   m_ObjectHideFlags: 0
@@ -7081,6 +7092,23 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6193548780906823144, guid: 27d820421a0ad474b885626d28daffc2, type: 3}
   m_PrefabInstance: {fileID: 1280867357}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1305654495 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6080318303171482198, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
+  m_PrefabInstance: {fileID: 1446470100}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1305654500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305654495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acbba120748fe4ee48696040818c5a7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1307809928
 GameObject:
   m_ObjectHideFlags: 0
@@ -7986,7 +8014,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3063484831070229916, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: m_Lens.OrthographicSize
-      value: 5.538477
+      value: 87.08668
+      objectReference: {fileID: 0}
+    - target: {fileID: 3128631894226883446, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
+      propertyPath: generationStyle
+      value: '3D ,portrait , 1person, Pixar Key Visual, 4K, '
       objectReference: {fileID: 0}
     - target: {fileID: 4203841130992839072, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8078,12 +8110,16 @@ PrefabInstance:
       objectReference: {fileID: 1772654216}
     - target: {fileID: 5775240283294973013, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: generateImages
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5775240283294973013, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: notebookCanvas
       value: 
       objectReference: {fileID: 1867693231}
+    - target: {fileID: 5775240283294973013, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
+      propertyPath: suspectGenerator
+      value: 
+      objectReference: {fileID: 24007350}
     - target: {fileID: 5775240283294973013, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: debugText.Array.size
       value: 100
@@ -8594,7 +8630,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7711803702273583671, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: orthographic size
-      value: 5.538477
+      value: 87.08668
       objectReference: {fileID: 0}
     - target: {fileID: 7711803702273583671, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: m_BackGroundColor.b
@@ -8700,7 +8736,10 @@ PrefabInstance:
     - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6080318303171482198, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1305654500}
   m_SourcePrefab: {fileID: 100100000, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
 --- !u!114 &1446470101 stripped
 MonoBehaviour:
