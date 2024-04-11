@@ -1052,8 +1052,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   documentType: 1
-  unknownFactorX: 15
-  unknownFactorY: 10
+  unknownFactorX: 0
+  unknownFactorY: 0
   zoomMaxMultiplicator: 5
 --- !u!95 &3556740132055612558
 Animator:
