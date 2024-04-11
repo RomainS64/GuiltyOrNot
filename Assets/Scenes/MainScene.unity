@@ -8014,7 +8014,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3063484831070229916, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: m_Lens.OrthographicSize
-      value: 87.08668
+      value: 35.14507
       objectReference: {fileID: 0}
     - target: {fileID: 3128631894226883446, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: generationStyle
@@ -8110,7 +8110,7 @@ PrefabInstance:
       objectReference: {fileID: 1772654216}
     - target: {fileID: 5775240283294973013, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: generateImages
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5775240283294973013, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: notebookCanvas
@@ -8630,7 +8630,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7711803702273583671, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: orthographic size
-      value: 87.08668
+      value: 35.14507
       objectReference: {fileID: 0}
     - target: {fileID: 7711803702273583671, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: m_BackGroundColor.b
