@@ -8014,11 +8014,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3063484831070229916, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: m_Lens.OrthographicSize
-      value: 35.14507
+      value: 5.561866
       objectReference: {fileID: 0}
     - target: {fileID: 3128631894226883446, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: generationStyle
-      value: '3D ,portrait , 1person, Pixar Key Visual, 4K, '
+      value: Generate a comical portrait with exaggerated features, depicted only
+        from the front. highly exaggerated expression on his face reminiscent of
+        caricatures by artists such as Davi Sales and Isabelle Douzamy. Emphasize
+        a cartoonish 3D style with extreme distortion of facial proportions, enhancing
+        the cartoonish effect. Depicted alone in the image, with only one portrait
+        visible. The image format is a full-color frontal portrait. The background
+        should be a solid, uniform gray, specifically chosen to keep the focus on
+        the character. Take a passport photo as an example for visual image generation.
+        Make sure there are no distracting elements in the frame. The overall tone
+        of the image should be humorous and exaggerated, aligning perfectly with
+        the comedic and cartoonish style typical of Pixar animations.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187881453360049040, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
+      propertyPath: PromptDirection
+      value: In 1 paragraphs. Imagine and anser directly to the question asked by
+        the prompt, You have the right to invent additional information to support
+        the given information (but they still more inportent). Don't give physicals
+        details of the thief.  Response with 1 paragraph with maximum 70 words.
       objectReference: {fileID: 0}
     - target: {fileID: 4203841130992839072, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8110,7 +8127,7 @@ PrefabInstance:
       objectReference: {fileID: 1772654216}
     - target: {fileID: 5775240283294973013, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: generateImages
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5775240283294973013, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: notebookCanvas
@@ -8630,7 +8647,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7711803702273583671, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: orthographic size
-      value: 35.14507
+      value: 5.561866
       objectReference: {fileID: 0}
     - target: {fileID: 7711803702273583671, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: m_BackGroundColor.b

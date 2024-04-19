@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
 public class suspectDemoGenerator : MonoBehaviour
 {
     [SerializeField] private RawImage image;
@@ -47,3 +48,4 @@ public class suspectDemoGenerator : MonoBehaviour
         yield return new WaitWhile(() => isGenerating);
     }
 }
+*/

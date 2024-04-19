@@ -26,8 +26,12 @@ public class CorkBoardFlowHandler : MonoSingleton<CorkBoardFlowHandler>
         AudioManager.instance.audioEvents["Game Music"].Play();
         TextSetter[] allTextSetters = FindObjectsOfType<TextSetter>(true);
         PhotoSetter[] photoSetters = FindObjectsOfType<PhotoSetter>(true);
+        
         Notebook notebook = FindObjectOfType<Notebook>();
         notebook.SetScenario(_scenario.scenarioString);
+        notebook.SetTestimonial1(_scenario.testimonial1.testimonialString);
+        notebook.SetTestimonial2(_scenario.testimonial2.testimonialString);
+        notebook.SetTestimonial3(_scenario.testimonial3.testimonialString);
         
         internetHistoryPapers = FindObjectsOfType<InternetHistoryPaper>(true);
         bankAccountPapers = FindObjectsOfType<BankAccountPaper>(true);
@@ -40,6 +44,7 @@ public class CorkBoardFlowHandler : MonoSingleton<CorkBoardFlowHandler>
         genderSetters = allTextSetters.Where(textSetter => textSetter.GeSetterType() == TextType.Gender).ToArray();
         surnameSetters = allTextSetters.Where(textSetter => textSetter.GeSetterType() == TextType.Surname).ToArray();
         firstnameSetters = allTextSetters.Where(textSetter => textSetter.GeSetterType() == TextType.Firstname).ToArray();
+        
         foreach (Suspect suspect in _suspects)
         {
             List<Transform> documents = new();

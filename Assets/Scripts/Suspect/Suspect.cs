@@ -7,7 +7,6 @@ using UnityEngine.UI;
 [Serializable]
 public struct Suspect
 {
-    public int visualSeed;
     public string visualPrompt;
 
     public bool isEliminated;
@@ -23,11 +22,15 @@ public struct Suspect
     public int height;
 
     public Texture portrait;
-
+    
     public InternetHistory internetHistory;
     public BankAccountHistory bankAccountHistory;
     public CriminalRecord criminalRecord;
     
+    //0:NO impact 1:Skinny 2:Big
+    public int bodySize;
+    public (bool, TestimonialHairType) hairToGenerate;
+    public bool generateBeard;
 }
 
 public struct InternetHistory

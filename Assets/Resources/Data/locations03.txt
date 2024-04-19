@@ -1,0 +1,47 @@
+Listes :
+
+Gares
+Aéroports
+Stations de métro
+Arrêts de bus
+Centres commerciaux
+Magasins de proximité
+Supermarchés
+Cafés
+Restaurants
+Bars
+Parcs
+Plages
+Festivals
+Salles de jeux
+Salles de sport
+Hôtels
+Auberges de jeunesse
+Trains
+Bus
+Taxis
+Voitures partagées (comme Uber, Lyft)
+Navettes aéroportuaires
+Croisières
+Musées
+Sites touristiques populaires
+Sites historiques
+Spectacles en plein air
+Spectacles de rue
+Foires
+Expositions
+Salons professionnels
+Séminaires
+Événements sportifs
+Salles de concert
+Théâtres
+Cinémas
+Galeries d'art
+Universités
+Écoles
+Bureaux gouvernementaux
+Postes de police
+Casernes de pompiers
+Hôpitaux
+Cliniques médicales
+Marchés aux puces

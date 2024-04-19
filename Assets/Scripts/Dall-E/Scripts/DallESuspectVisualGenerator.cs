@@ -28,12 +28,24 @@ public class DallESuspectVisualGenerator : MonoBehaviour
 {
 	[SerializeField]
 	private string generationStyle = "in caricature exaggerate face comics in stylized realistic digital art";
+	
+	/// HAIRS
+	[SerializeField] 
+	private SuspectVisualAttributes ShortHairAttribute;
+	[SerializeField] 
+	private SuspectVisualAttributes LongHairAttribute;
 	[SerializeField] 
 	private SuspectVisualAttributes HairAttribute;
 	[SerializeField] 
 	private SuspectVisualAttributes HairColorAttribute;
+	
+	/// BEARD
 	[SerializeField] 
 	private SuspectVisualAttributes BeardAttributes;
+	[SerializeField] 
+	private SuspectVisualAttributes MustacheAttributes;
+	
+	/// OTHER
 	[SerializeField] 
 	private SuspectVisualAttributes ClothAttribute;
 	[SerializeField] 
@@ -47,7 +59,7 @@ public class DallESuspectVisualGenerator : MonoBehaviour
 	public void GenerateSuspectFaceAsync(Suspect suspect, EmotionType _emotion, bool generatePrompt,
 		Action<(Suspect, Texture)> OnGenerated)
 	{
-		string prompt  = GeneratePrompt(suspect.gender == "Male");
+		string prompt  = GeneratePrompt(suspect);
 		GenerateImage(prompt, "1024x1024", OnCompletedAction);
 		void OnCompletedAction(List<Texture> textures) => OnGenerated?.Invoke((suspect, textures[0]));
 	}
@@ -124,27 +136,65 @@ public class DallESuspectVisualGenerator : MonoBehaviour
 		File.WriteAllBytes(path, textureBytes);
 		Debug.Log("File Written On Disk! "  + path );
 	}
-	private string GeneratePrompt(bool _isAMan)
+	private string GeneratePrompt(Suspect _suspect)
 	{
 		string style = generationStyle;
-		string additionalInfo = "visible bust";
-		string suspectCaracteristics = GenerateSuspectVisualCaracteristics(_isAMan);
+		string additionalInfo = ", visible bust";
+		string suspectCaracteristics = GenerateSuspectVisualCaracteristics(_suspect);
 		string background = "a grey background behind(grey)";
 		string prompt = $"{style}, {additionalInfo}, {suspectCaracteristics}, {background},";
 		Debug.Log(prompt);
 		return prompt;
 	}
-	private string GenerateSuspectVisualCaracteristics(bool _isAMan)
+	private string GenerateSuspectVisualCaracteristics(Suspect _suspect)
 	{
 		string prompt = "";
-		prompt += _isAMan ? "A man" : "A woman" ;
-		int weightSum = HairAttribute.attributes.Sum(va => _isAMan?va.weights.manProbabilityWeight:va.weights.womanProbabilityWeight);
-		int generatedWeight = Random.Range(1,weightSum);
-		int currentWeight = 0;
-		prompt += $",{GetRandomFromAttribute(HairAttribute, _isAMan)} hairs ({GetRandomFromAttribute(HairColorAttribute,_isAMan)})";
-		if(_isAMan)prompt += $",{GetRandomFromAttribute(BeardAttributes, _isAMan)}";
-		prompt += $",{GetRandomFromAttribute(HeadAccessoryAttribute,_isAMan)}";
-		prompt += $",in a {GetRandomFromAttribute(ClothAttribute, _isAMan)}({GetRandomFromAttribute(ClothColorAttribute, _isAMan)})";
+		
+		//-------------------GENDER
+		prompt += "a " + _suspect.gender;
+		
+		//-------------------AGE
+		string age = $", {_suspect.age}yo";
+		
+		//-------------------HAIRS
+		SuspectVisualAttributes hairAttribute = null;
+		if ((_suspect.hairToGenerate.Item2 == TestimonialHairType.Long && _suspect.hairToGenerate.Item1) ||
+		    (_suspect.hairToGenerate.Item2 == TestimonialHairType.Short && !_suspect.hairToGenerate.Item1))
+			hairAttribute = LongHairAttribute;
+		if ((_suspect.hairToGenerate.Item2 == TestimonialHairType.Short && _suspect.hairToGenerate.Item1) ||
+		    (_suspect.hairToGenerate.Item2 == TestimonialHairType.Long && !_suspect.hairToGenerate.Item1))
+			hairAttribute = ShortHairAttribute;
+		if (_suspect.hairToGenerate.Item2 == TestimonialHairType.Any)hairAttribute = HairAttribute;
+		if (_suspect.hairToGenerate.Item2 != TestimonialHairType.None && _suspect.hairToGenerate.Item1)
+		{
+			prompt += prompt += $",{GetRandomFromAttribute(hairAttribute, true)} hairs ({GetRandomFromAttribute(HairColorAttribute,true)})";
+		}
+		else
+		{
+			prompt += "bold hair";
+		}
+
+		//-------------------BEARD
+		if (_suspect.generateBeard)
+		{
+			prompt += $",{GetRandomFromAttribute(BeardAttributes, true)}";
+		}
+		
+		//------------------BODY SIZE
+		//0:NO impact 1:Skinny 2:Big
+		switch (_suspect.bodySize)
+		{
+			case 1:
+				prompt += ",very light build body";
+				break;
+			case 2:
+				prompt += ",heavy build body";
+				break;
+		}
+		
+		//------------------OTHER
+		prompt += $",{GetRandomFromAttribute(HeadAccessoryAttribute,true)}";
+		prompt += $",in a {GetRandomFromAttribute(ClothAttribute, true)}({GetRandomFromAttribute(ClothColorAttribute, true)})";
 		return prompt;
 	}
 	private string GetRandomFromAttribute(SuspectVisualAttributes _attributes, bool _isAMan)

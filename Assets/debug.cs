@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
 public class debug : MonoBehaviour
 {
     [SerializeField] private DallESuspectVisualGenerator visualGenerator;
     [SerializeField] private Material image;
     public void OnClick()
     {
-        Suspect suspect = SuspectGenerator.Instance.GenerateSuspect(8);
+        //Suspect suspect = SuspectGenerator.Instance.GenerateSuspect(8);
         visualGenerator.GenerateSuspectFaceAsync(suspect,EmotionType.Concentrated,true,OnGenerated);
     }
 
@@ -18,3 +19,4 @@ public class debug : MonoBehaviour
         image.mainTexture = obj.Item2;
     }
 }
+*/

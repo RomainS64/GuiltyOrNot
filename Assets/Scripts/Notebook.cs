@@ -18,6 +18,10 @@ public class Notebook : MonoBehaviour
     [SerializeField] private RectTransform notDisplayedPosition;
     [SerializeField] private RectTransform startDisplayedPosition;
     [SerializeField] private TMP_Text scenario;
+    [SerializeField] private TMP_Text testimonial1;
+    [SerializeField] private TMP_Text testimonial2;
+    [SerializeField] private TMP_Text testimonial3;
+    
     private int pageIndex = 0;
     private ClickableObject clickable;
     private MovableObject movableObject;
@@ -38,6 +42,10 @@ public class Notebook : MonoBehaviour
     }
 
     public void SetScenario(string _scenario) => scenario.text = _scenario;
+    public void SetTestimonial1(string _testimonial) => testimonial1.text = _testimonial;
+    public void SetTestimonial2(string _testimonial) => testimonial2.text = _testimonial;
+    public void SetTestimonial3(string _testimonial) => testimonial3.text = _testimonial;
+    
     public void OnPointerDown()
     {
         if (!isDisplayed)

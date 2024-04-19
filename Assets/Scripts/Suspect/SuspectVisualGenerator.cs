@@ -61,14 +61,11 @@ public class SuspectVisualGenerator : MonoBehaviour
         string suspectPrompt;
         if (generatePrompt)
         {
-            seed = Random.Range(0, 1000000000);
             suspectPrompt = GeneratePrompt(suspect.gender == "Male");
             suspect.visualPrompt = suspectPrompt;
-            suspect.visualSeed = seed;
         }
         else
         {
-            seed = suspect.visualSeed;
             suspectPrompt = suspect.visualPrompt;
         }
         suspectGenerator.negativePrompt = negatifPrompt;

@@ -1,5 +1,59 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1008487844493941063
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6562404836127912803}
+  - component: {fileID: 1351840864129077604}
+  m_Layer: 0
+  m_Name: Testimonial2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6562404836127912803
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008487844493941063}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -687.99994, y: -684, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3630705391847696732}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1351840864129077604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008487844493941063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c90faf5c6665460478a05feb70e024aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PromptDirection: In 1 paragraphs. Imagine and anser directly to the question asked
+    by the prompt, You have the right to invent additional information to support
+    the given information (but they still more inportent). Don't give physicals details
+    of the thief.  Response with 1 paragraph with maximum 60 words
+  TrackConversation: 0
+  MaximumTokens: 600
+  Temperature: 1
+  Top_P: 0
+  Frequency_Penality: 0
+  Presence_Penality: 0
 --- !u!1 &1622162509595391416
 GameObject:
   m_ObjectHideFlags: 0
@@ -43,57 +97,6 @@ Transform:
   - {fileID: 4123170982731849254}
   m_Father: {fileID: 5071569931099388403}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3627062120361650677
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5082152070986901834}
-  - component: {fileID: 5203348194190878895}
-  m_Layer: 0
-  m_Name: ObjectGenerator
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5082152070986901834
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3627062120361650677}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -687.99994, y: -684, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3630705391847696732}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5203348194190878895
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3627062120361650677}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c90faf5c6665460478a05feb70e024aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PromptDirection: Imagine and anser only one world asked by the prompt
-  TrackConversation: 0
-  MaximumTokens: 600
-  Temperature: 1
-  Top_P: 0
-  Frequency_Penality: 0
-  Presence_Penality: 0
 --- !u!1 &4140164061617357558
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,8 +128,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8778609707100680694}
-  - {fileID: 5082152070986901834}
-  - {fileID: 6956837493946058233}
+  - {fileID: 8800916401653159047}
+  - {fileID: 6562404836127912803}
+  - {fileID: 2586202338605146279}
   m_Father: {fileID: 5071569931099388403}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5930246028288180954
@@ -142,8 +146,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scenarioGenerator: {fileID: 4187881453360049040}
-  objectLostGenerator: {fileID: 5203348194190878895}
-  thiefLocationGenerator: {fileID: 5878959964323152462}
+  testimonial1Generator: {fileID: 876697752704581037}
+  testimonial2Generator: {fileID: 1351840864129077604}
+  testimonial3Generator: {fileID: 4028436218809748727}
+  generatedTestimonial: 
 --- !u!1 &4342610033535461908
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,7 +431,7 @@ MonoBehaviour:
   - DEBUG
   - DEBUG
   generateAtStart: 1
-  generateTexts: 1
+  generateTexts: 0
   generateImages: 0
   generateSuspect: 1
   numberOfSuspects: 12
@@ -568,7 +574,7 @@ MonoBehaviour:
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
   m_ForceModuleActive: 0
---- !u!1 &5252177951768278698
+--- !u!1 &5452776330354981890
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -576,22 +582,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6956837493946058233}
-  - component: {fileID: 5878959964323152462}
+  - component: {fileID: 2586202338605146279}
+  - component: {fileID: 4028436218809748727}
   m_Layer: 0
-  m_Name: LocationGenerator
+  m_Name: Testimonial3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6956837493946058233
+--- !u!4 &2586202338605146279
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5252177951768278698}
+  m_GameObject: {fileID: 5452776330354981890}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -687.99994, y: -684, z: 0}
@@ -600,19 +606,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3630705391847696732}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5878959964323152462
+--- !u!114 &4028436218809748727
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5252177951768278698}
+  m_GameObject: {fileID: 5452776330354981890}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c90faf5c6665460478a05feb70e024aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PromptDirection: Imagine and anser only one world asked by the prompt
+  PromptDirection: In 1 paragraphs. Imagine and anser directly to the question asked
+    by the prompt, You have the right to invent additional information to support
+    the given information (but they still more inportent). Don't give physicals details
+    of the thief.  Response with 1 paragraph with maximum 60 words
   TrackConversation: 0
   MaximumTokens: 600
   Temperature: 1
@@ -895,6 +904,60 @@ Transform:
   - {fileID: 4948790742523957952}
   m_Father: {fileID: 5637697761459922400}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7348858932335142648
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8800916401653159047}
+  - component: {fileID: 876697752704581037}
+  m_Layer: 0
+  m_Name: Testimonial1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8800916401653159047
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7348858932335142648}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -687.99994, y: -684, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3630705391847696732}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &876697752704581037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7348858932335142648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c90faf5c6665460478a05feb70e024aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PromptDirection: In 1 paragraphs. Imagine and anser directly to the question asked
+    by the prompt, You have the right to invent additional information to support
+    the given information (but they still more inportent). Don't give physicals details
+    of the thief.  Response with 1 paragraph with maximum 60 words
+  TrackConversation: 0
+  MaximumTokens: 600
+  Temperature: 1
+  Top_P: 0
+  Frequency_Penality: 0
+  Presence_Penality: 0
 --- !u!1 &7658308613085066281
 GameObject:
   m_ObjectHideFlags: 0
@@ -985,7 +1048,7 @@ MonoBehaviour:
   PromptDirection: In 1 paragraphs. Imagine and anser directly to the question asked
     by the prompt, You have the right to invent additional information to support
     the given information (but they still more inportent). Don't give physicals details
-    of the thief.  Response with 1 paragraph with +- 30 words / paragraphs.
+    of the thief.  Response with 1 paragraph with maximum 60 words
   TrackConversation: 0
   MaximumTokens: 600
   Temperature: 1
@@ -3659,7 +3722,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1735116322790344338, guid: 4971076042a480e46855d6261f7257fa, type: 3}
       propertyPath: orthographic size
-      value: 5.538477
+      value: 14.5
       objectReference: {fileID: 0}
     - target: {fileID: 3524432495221230054, guid: 4971076042a480e46855d6261f7257fa, type: 3}
       propertyPath: m_Name

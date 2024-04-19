@@ -78,8 +78,8 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
         ScenarioView.OnScenarioViewSkiped+= ()=> scenarioViewSkiped = true;
         //notebookCanvas.SetActive(true);
         StartCoroutine(GenerateScenario());
-        StartCoroutine(GenerateSuspects(numberOfSuspects,null));
         yield return new WaitUntil(() => isScenarioGenerated);
+        StartCoroutine(GenerateSuspects(numberOfSuspects,null));
         yield return new WaitUntil(() => generatedSuspect >= numberOfSuspects);
         
         StartCoroutine(GenerateInternetHystory(numberOfSuspects));
@@ -274,7 +274,7 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
             Suspect generatedSuspect;
             if(generateSuspect)
             {
-                generatedSuspect = SuspectGenerator.Instance.GenerateSuspect(i);
+                generatedSuspect = SuspectGenerator.Instance.GenerateSuspect(generatedScenario,i);
             }
             else
             { 
