@@ -69,3 +69,27 @@ MonoBehaviour:
     weights:
       manProbabilityWeight: 1
       womanProbabilityWeight: 1
+  - prompt: Floral blouse
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
+  - prompt: Checkered skirt
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
+  - prompt: Leopard print coat
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
+  - prompt: Sequined top
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
+  - prompt: Neon jacket
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
+  - prompt: Pinstripe suit
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1

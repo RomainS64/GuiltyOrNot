@@ -11,7 +11,9 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
 {
     [SerializeField] private Texture[] debugTexture;
     [SerializeField] private Suspect[] debugSuspects;
-    [SerializeField] private string[] debugText;
+    [SerializeField] private string[] debugTextInternet;
+    [SerializeField] private string[] debugTextCriminal;
+    [SerializeField] private string[] debugTextBank;
     [SerializeField] private bool generateAtStart = true;
     [SerializeField] private bool generateTexts;
     [SerializeField] private bool generateImages;
@@ -121,7 +123,7 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
         }
         else
         {
-            foreach (var history in debugText)
+            foreach (var history in debugTextInternet)
             {
                 innocentInternetHistory.Add(history);
                 guiltyInternetHistory.Add(history);
@@ -172,7 +174,7 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
         }
         else
         {
-            foreach (var history in debugText)
+            foreach (var history in debugTextBank)
             {
                 innocentBankAccount.Add(new KeyValuePair<string, float>(history,0));
                 guiltyBankAccount.Add(new KeyValuePair<string, float>(history,0));
@@ -221,7 +223,7 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
         }
         else
         {
-            foreach (var history in debugText)
+            foreach (var history in debugTextInternet)
             {
                 innocentCriminalRecord.Add(new KeyValuePair<string, string>(history,history));
                 guiltyCriminalRecord.Add(new KeyValuePair<string, string>(history,history));

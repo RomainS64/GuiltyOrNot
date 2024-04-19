@@ -10,13 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be503a994ffe72545af18bbbe285fb91, type: 3}
-  m_Name: BeardAttributes
+  m_Name: beardAttributes
   m_EditorClassIdentifier: 
   attributes:
-  - prompt: no beard
-    weights:
-      manProbabilityWeight: 1
-      womanProbabilityWeight: 1
   - prompt: big long beard
     weights:
       manProbabilityWeight: 1
@@ -25,39 +21,11 @@ MonoBehaviour:
     weights:
       manProbabilityWeight: 1
       womanProbabilityWeight: 0
-  - prompt: horseshoe mustache
-    weights:
-      manProbabilityWeight: 1
-      womanProbabilityWeight: 0
-  - prompt: imperial mustache
-    weights:
-      manProbabilityWeight: 1
-      womanProbabilityWeight: 0
   - prompt: pure goatee
     weights:
       manProbabilityWeight: 1
       womanProbabilityWeight: 0
   - prompt: soul patch goatee
-    weights:
-      manProbabilityWeight: 1
-      womanProbabilityWeight: 0
-  - prompt: chevron mustache
-    weights:
-      manProbabilityWeight: 1
-      womanProbabilityWeight: 0
-  - prompt: walrus mustache
-    weights:
-      manProbabilityWeight: 1
-      womanProbabilityWeight: 0
-  - prompt: english mustache
-    weights:
-      manProbabilityWeight: 1
-      womanProbabilityWeight: 0
-  - prompt: dali mustache
-    weights:
-      manProbabilityWeight: 1
-      womanProbabilityWeight: 0
-  - prompt: pyramid mustache
     weights:
       manProbabilityWeight: 1
       womanProbabilityWeight: 0
@@ -82,6 +50,10 @@ MonoBehaviour:
       manProbabilityWeight: 1
       womanProbabilityWeight: 0
   - prompt: ducktail beard
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 0
+  - prompt: Boxed beard
     weights:
       manProbabilityWeight: 1
       womanProbabilityWeight: 0
