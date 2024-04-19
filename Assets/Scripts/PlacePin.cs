@@ -76,7 +76,7 @@ public class PlacePin : MonoSingleton<PlacePin>
 
     public void RemovePinsAndRope(int id)
     {
-        if (allRopeAndPins.Count >= id) return;
+        if (id >= allRopeAndPins.Count ) return;
         RopeAndPins ropesAndPin = allRopeAndPins[id];
         allRopeAndPins.RemoveAt(id);
         Destroy(ropesAndPin.leftPin.gameObject);

@@ -39,6 +39,7 @@ public class CameraHandler : MonoSingleton<CameraHandler>,IPointerDownHandler,IP
     {
         ToggleCameraMovement(toggleOnStart);
         ZoomLevel = Mathf.InverseLerp(minZoom, maxZoom, camera.m_Lens.OrthographicSize);
+        camera.m_Lens.OrthographicSize = (maxZoom - minZoom) / 2;
     }
 
     public void ToggleCameraMovement(bool _toggle)

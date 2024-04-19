@@ -671,9 +671,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<b>Le Vol au Mus\xE9e d'Art Ora</b>\n\nLe Mus\xE9e d'Art Ora a \xE9t\xE9
-    le th\xE9\xE2tre d'un vol audacieux dans la nuit du 26/10/2023 \xE0 03h25 du
-    matin. Plusieurs socles d\u2019\u0153uvres d'art ont \xE9t\xE9 d\xE9rob\xE9es."
+  m_text: "Le Mus\xE9e d'Art Ora a \xE9t\xE9 le th\xE9\xE2tre d'un vol audacieux
+    dans la nuit du 26/10/2023 \xE0 03h25 du matin. Plusieurs socles d\u2019\u0153uvres
+    d'art ont \xE9t\xE9 d\xE9rob\xE9es.\n\nLe Mus\xE9e d'Art Ora a \xE9t\xE9 le th\xE9\xE2tre
+    d'un vol audacieux dans la nui du 26/10/2023 \xE0 03h25 du matin. Plusieurs socles
+    d\u2019\u0153uvres d'art ont \xE9t\xE9 d\xE9rob\xE9es."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 57b70fec2b3b9c347816653613114792, type: 2}
   m_sharedMaterial: {fileID: -4133126074990305205, guid: 57b70fec2b3b9c347816653613114792, type: 2}
@@ -700,8 +702,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.25
-  m_fontSizeBase: 0.25
+  m_fontSize: 0.2
+  m_fontSizeBase: 0.2
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2390,8 +2392,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35a5f918770fa764bb52c9084ef1d25b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  documentType: 0
   unknownFactorX: 15
   unknownFactorY: 10
+  zoomMaxMultiplicator: 0
 --- !u!95 &3253614341865503802
 Animator:
   serializedVersion: 5
@@ -2431,6 +2435,7 @@ MonoBehaviour:
   - pageObject: {fileID: 1149959137764354163}
   notDisplayedPosition: {fileID: 0}
   startDisplayedPosition: {fileID: 0}
+  scenario: {fileID: 1108915556140205967}
 --- !u!114 &231015441238678978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6304,7 +6309,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Carnet d\u2019enqu\xEAteur"
+  m_text: Survey Notebook
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 57b70fec2b3b9c347816653613114792, type: 2}
   m_sharedMaterial: {fileID: -4133126074990305205, guid: 57b70fec2b3b9c347816653613114792, type: 2}

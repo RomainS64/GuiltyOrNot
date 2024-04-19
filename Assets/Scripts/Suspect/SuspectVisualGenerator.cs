@@ -18,6 +18,8 @@ public enum EmotionType
 
 public class SuspectVisualGenerator : MonoBehaviour
 {
+    [SerializeField]
+    private string generationStyle = "in caricature exaggerate face comics in stylized realistic digital art";
     [SerializeField] 
     private SuspectVisualAttributes HairAttribute;
     [SerializeField] 
@@ -79,7 +81,7 @@ public class SuspectVisualGenerator : MonoBehaviour
 
     private string GeneratePrompt(bool _isAMan)
     {
-        string style = "in caricature exaggerate face comics in stylized realistic digital art";
+        string style = generationStyle;
         string additionalInfo = "visible bust";
         string suspectCaracteristics = GenerateSuspectVisualCaracteristics(_isAMan);
         string background = "a grey background behind(grey)";
