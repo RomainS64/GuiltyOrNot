@@ -15,53 +15,81 @@ MonoBehaviour:
   attributes:
   - prompt: no head accessory
     weights:
-      manProbabilityWeight: 0
-      womanProbabilityWeight: 0
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
   - prompt: sunglasses
     weights:
-      manProbabilityWeight: 0
-      womanProbabilityWeight: 0
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
   - prompt: glasses
     weights:
-      manProbabilityWeight: 0
-      womanProbabilityWeight: 0
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
   - prompt: nose piercing
     weights:
-      manProbabilityWeight: 0
-      womanProbabilityWeight: 0
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
   - prompt: eyeglasses
     weights:
-      manProbabilityWeight: 0
-      womanProbabilityWeight: 0
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
   - prompt: reading glasses
     weights:
-      manProbabilityWeight: 1000
-      womanProbabilityWeight: 1000
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
   - prompt: contact lenses
     weights:
-      manProbabilityWeight: 0
-      womanProbabilityWeight: 0
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
   - prompt: eyeliner
     weights:
-      manProbabilityWeight: 0
-      womanProbabilityWeight: 0
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
   - prompt: mascara
     weights:
-      manProbabilityWeight: 0
-      womanProbabilityWeight: 0
-  - prompt: earings
-    weights:
-      manProbabilityWeight: 0
-      womanProbabilityWeight: 0
-  - prompt: lip rings
-    weights:
-      manProbabilityWeight: 0
-      womanProbabilityWeight: 0
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
   - prompt: scarves
     weights:
-      manProbabilityWeight: 0
-      womanProbabilityWeight: 0
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
+  - prompt: Wide-eyed
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
   - prompt: makeup
     weights:
-      manProbabilityWeight: 0
-      womanProbabilityWeight: 0
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
+  - prompt: Droopy eyelids
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
+  - prompt: Sleepy eyes
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
+  - prompt: Unibrow
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
+  - prompt: Eye bags
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
+  - prompt: Darting eyes
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
+  - prompt: Twitching eyelid
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
+  - prompt: Dark circles under eyes
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
+  - prompt: Dilated pupils
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1

@@ -10,54 +10,38 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be503a994ffe72545af18bbbe285fb91, type: 3}
-  m_Name: HairAttributes
+  m_Name: mustachesAttributes
   m_EditorClassIdentifier: 
   attributes:
-  - prompt: bald
+  - prompt: horseshoe mustache
     weights:
       manProbabilityWeight: 1
       womanProbabilityWeight: 0
-  - prompt: long straight
-    weights:
-      manProbabilityWeight: 1
-      womanProbabilityWeight: 1
-  - prompt: short straight
-    weights:
-      manProbabilityWeight: 1
-      womanProbabilityWeight: 1
-  - prompt: short curly
-    weights:
-      manProbabilityWeight: 1
-      womanProbabilityWeight: 1
-  - prompt: long curly
-    weights:
-      manProbabilityWeight: 1
-      womanProbabilityWeight: 1
-  - prompt: crew cut
+  - prompt: imperial mustache
     weights:
       manProbabilityWeight: 1
       womanProbabilityWeight: 0
-  - prompt: bob cut
-    weights:
-      manProbabilityWeight: 0
-      womanProbabilityWeight: 1
-  - prompt: layered cut
-    weights:
-      manProbabilityWeight: 0
-      womanProbabilityWeight: 1
-  - prompt: mullet
+  - prompt: chevron mustache
     weights:
       manProbabilityWeight: 1
       womanProbabilityWeight: 0
-  - prompt: mohawk
+  - prompt: walrus mustache
     weights:
       manProbabilityWeight: 1
       womanProbabilityWeight: 0
-  - prompt: dreadlocks
+  - prompt: english mustache
     weights:
       manProbabilityWeight: 1
-      womanProbabilityWeight: 1
-  - prompt: braids
+      womanProbabilityWeight: 0
+  - prompt: dali mustache
     weights:
-      manProbabilityWeight: 0
-      womanProbabilityWeight: 1
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 0
+  - prompt: pyramid mustache
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 0
+  - prompt: Fu Manchu mustache
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 0

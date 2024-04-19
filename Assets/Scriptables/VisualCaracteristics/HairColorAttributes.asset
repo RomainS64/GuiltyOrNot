@@ -61,3 +61,35 @@ MonoBehaviour:
     weights:
       manProbabilityWeight: 0
       womanProbabilityWeight: 1
+  - prompt: ash blond
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
+  - prompt: classic brown
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
+  - prompt: steel gray
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
+  - prompt: honey blonde
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
+  - prompt: coffee browns
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
+  - prompt: flaming redheads
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
+  - prompt: straw blondes
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
+  - prompt: coppery reds
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1

@@ -10,86 +10,58 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be503a994ffe72545af18bbbe285fb91, type: 3}
-  m_Name: HeadCharacteristicAttributes
+  m_Name: ShortHairAttributes
   m_EditorClassIdentifier: 
   attributes:
-  - prompt: no head accessory
-    weights:
-      manProbabilityWeight: 0
-      womanProbabilityWeight: 0
-  - prompt: nose piercing
-    weights:
-      manProbabilityWeight: 1
-      womanProbabilityWeight: 1
-  - prompt: moles on the nose
-    weights:
-      manProbabilityWeight: 1
-      womanProbabilityWeight: 1
-  - prompt: freckles
-    weights:
-      manProbabilityWeight: 1
-      womanProbabilityWeight: 1
-  - prompt: milia on the face
-    weights:
-      manProbabilityWeight: 1
-      womanProbabilityWeight: 1
-  - prompt: dark skin
-    weights:
-      manProbabilityWeight: 1
-      womanProbabilityWeight: 1
-  - prompt: light skin
-    weights:
-      manProbabilityWeight: 1
-      womanProbabilityWeight: 1
-  - prompt: moderate skin
-    weights:
-      manProbabilityWeight: 1
-      womanProbabilityWeight: 1
-  - prompt: scars
-    weights:
-      manProbabilityWeight: 1
-      womanProbabilityWeight: 1
-  - prompt: earring
-    weights:
-      manProbabilityWeight: 0
-      womanProbabilityWeight: 1
-  - prompt: Piercing look
-    weights:
-      manProbabilityWeight: 1
-      womanProbabilityWeight: 1
-  - prompt: Gentle look
-    weights:
-      manProbabilityWeight: 1
-      womanProbabilityWeight: 1
-  - prompt: Broad forehead
-    weights:
-      manProbabilityWeight: 1
-      womanProbabilityWeight: 1
-  - prompt: Narrow forehead
-    weights:
-      manProbabilityWeight: 1
-      womanProbabilityWeight: 1
-  - prompt: High cheekbones
-    weights:
-      manProbabilityWeight: 1
-      womanProbabilityWeight: 1
-  - prompt: Flat cheekbones
-    weights:
-      manProbabilityWeight: 1
-      womanProbabilityWeight: 1
-  - prompt: Square jaw
+  - prompt: bald
     weights:
       manProbabilityWeight: 1
       womanProbabilityWeight: 0
-  - prompt: Angular jaw
+  - prompt: short straight
     weights:
       manProbabilityWeight: 1
       womanProbabilityWeight: 1
-  - prompt: full lips
+  - prompt: short curly
     weights:
       manProbabilityWeight: 1
       womanProbabilityWeight: 1
-  - prompt: thin lips
+  - prompt: crew cut
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 0
+  - prompt: bob cut
+    weights:
+      manProbabilityWeight: 0
+      womanProbabilityWeight: 1
+  - prompt: mullet
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 0
+  - prompt: mohawk
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 0
+  - prompt: asymmetrical cut
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
+  - prompt: bowl cut
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
+  - prompt: fringe cut
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
+  - prompt: afro cut
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
+  - prompt: shaved cut
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
+  - prompt: cornrows cut
     weights:
       manProbabilityWeight: 1
       womanProbabilityWeight: 1

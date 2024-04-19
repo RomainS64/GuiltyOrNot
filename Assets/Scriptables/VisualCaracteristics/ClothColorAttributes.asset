@@ -77,3 +77,19 @@ MonoBehaviour:
     weights:
       manProbabilityWeight: 1
       womanProbabilityWeight: 1
+  - prompt: rainbow
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
+  - prompt: Cherry red
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
+  - prompt: Blueberry blue
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
+  - prompt: Lime green
+    weights:
+      manProbabilityWeight: 1
+      womanProbabilityWeight: 1
