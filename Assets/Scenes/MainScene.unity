@@ -7461,6 +7461,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acbba120748fe4ee48696040818c5a7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1305654505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305654495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 922cc0b82b4a0ad4a81a8bec8fa9de06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  generationStyle: in caricature exaggerate face comics in stylized realistic digital
+    art
+  HairAttribute: {fileID: 0}
+  HairColorAttribute: {fileID: 0}
+  BeardAttributes: {fileID: 0}
+  ClothAttribute: {fileID: 0}
+  ClothColorAttribute: {fileID: 0}
+  HeadAccessoryAttribute: {fileID: 0}
+  suspectGenerator: {fileID: 0}
+  negatifPrompt: 
 --- !u!1 &1307809928
 GameObject:
   m_ObjectHideFlags: 0
@@ -8402,8 +8424,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3063484831070229916, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: m_Lens.OrthographicSize
-      value: 5.561866
+      value: 40.2737
       objectReference: {fileID: 0}
+    - target: {fileID: 3128631894226883446, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
+      propertyPath: HairAttribute
+      value: 
+      objectReference: {fileID: 11400000, guid: a489555bba7313b4082fff9df74a9afc, type: 2}
     - target: {fileID: 3128631894226883446, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: generationStyle
       value: Generate a comical portrait with exaggerated features, depicted only
@@ -8417,6 +8443,50 @@ PrefabInstance:
         Make sure there are no distracting elements in the frame. The overall tone
         of the image should be humorous and exaggerated, aligning perfectly with
         the comedic and cartoonish style typical of Pixar animations.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3128631894226883446, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
+      propertyPath: LongHairAttribute
+      value: 
+      objectReference: {fileID: 11400000, guid: 4cf75de663b01ae4392e53e69dfb5ef6, type: 2}
+    - target: {fileID: 3128631894226883446, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
+      propertyPath: MustacheAttributes
+      value: 
+      objectReference: {fileID: 11400000, guid: 97165f2ceed37274c8e2843749f80db4, type: 2}
+    - target: {fileID: 3128631894226883446, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
+      propertyPath: ShortHairAttribute
+      value: 
+      objectReference: {fileID: 11400000, guid: 7f4adc1c1eeae2144b6d4df3dfa83c1e, type: 2}
+    - target: {fileID: 3128631894226883446, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
+      propertyPath: notGeneratedTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ee3c9397e7bd7c544a4c7f1ffbce76f0, type: 3}
+    - target: {fileID: 3547430120443993791, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
+      propertyPath: maxAge
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3547430120443993791, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
+      propertyPath: minAge
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 3547430120443993791, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
+      propertyPath: minSize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3547430120443993791, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
+      propertyPath: minAgeOld
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 3547430120443993791, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
+      propertyPath: maxAgeYoung
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 3547430120443993791, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
+      propertyPath: maxSizeTiny
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 3547430120443993791, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
+      propertyPath: minSizeTall
+      value: 185
       objectReference: {fileID: 0}
     - target: {fileID: 4187881453360049040, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: PromptDirection
@@ -8507,7 +8577,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5775240283294973013, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: generateTexts
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5775240283294973013, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: loadingCanvas
@@ -8523,7 +8593,7 @@ PrefabInstance:
       objectReference: {fileID: 1867693231}
     - target: {fileID: 5775240283294973013, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: generateSuspect
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5775240283294973013, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: suspectGenerator
@@ -9159,7 +9229,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7711803702273583671, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: orthographic size
-      value: 5.561866
+      value: 40.2737
       objectReference: {fileID: 0}
     - target: {fileID: 7711803702273583671, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: m_BackGroundColor.b
@@ -9269,6 +9339,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6080318303171482198, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1305654500}
+    - targetCorrespondingSourceObject: {fileID: 6080318303171482198, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1305654505}
   m_SourcePrefab: {fileID: 100100000, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
 --- !u!114 &1446470101 stripped
 MonoBehaviour:

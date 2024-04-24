@@ -61,7 +61,7 @@ public class SuspectVisualGenerator : MonoBehaviour
         string suspectPrompt;
         if (generatePrompt)
         {
-            suspectPrompt = GeneratePrompt(suspect.gender == "Male");
+            suspectPrompt = GeneratePrompt(suspect.gender == "Man");
             suspect.visualPrompt = suspectPrompt;
         }
         else

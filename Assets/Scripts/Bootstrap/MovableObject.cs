@@ -60,7 +60,8 @@ public class MovableObject : MonoBehaviour, IPointerDownHandler,IPointerUpHandle
         float zoomMultiplicator = Mathf.Lerp(1, zoomMaxMultiplicator, CameraHandler.Instance.ZoomLevel);
         Vector2 currentPos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
         Vector2 delta = firstMousePos - currentPos;
-        Vector2 newPos = new Vector2(firstObjectPos.x -(delta.x * unknownFactorX * zoomMultiplicator),firstObjectPos.y - (delta.y * unknownFactorY * zoomMultiplicator));
+        Vector2 newPos = 
+            new Vector2(firstObjectPos.x -(delta.x * unknownFactorX * zoomMultiplicator),firstObjectPos.y - (delta.y * unknownFactorY * zoomMultiplicator));
 
         objectTransform.anchoredPosition = newPos;
         

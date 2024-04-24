@@ -158,10 +158,10 @@ public class ScenarioGenerator : MonoBehaviour
     
     private Testimonial GenerateTestimonial()
     {
-        int rdmChoice = Random.Range(0, 5);
+        int rdmChoice = Random.Range(0, 4);
         while (generatedTestimonial.Contains(rdmChoice))
         {
-            rdmChoice = Random.Range(0, 5);
+            rdmChoice = Random.Range(0, 4);
         }
         generatedTestimonial.Add(rdmChoice);
         Testimonial testimonial;
@@ -173,13 +173,13 @@ public class ScenarioGenerator : MonoBehaviour
             case 1:
                 Debug.Log("Beard selected");
                 return GenerateBeardTestimonial();
-            case 2:
+            case 4:
                 Debug.Log("Body selected");
                 return GenerateBodyTestimonial();
-            case 3:
+            case 2:
                 Debug.Log("Hair selected");
                 return GenerateHairTestimonial();
-            case 4:
+            case 3:
                 Debug.Log("Size selected");
                 return GenerateSizeTestimonial();
         }

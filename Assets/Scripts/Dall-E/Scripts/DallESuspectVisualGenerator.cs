@@ -28,7 +28,8 @@ public class DallESuspectVisualGenerator : MonoBehaviour
 {
 	[SerializeField]
 	private string generationStyle = "in caricature exaggerate face comics in stylized realistic digital art";
-	
+
+	[SerializeField] private Texture notGeneratedTexture;
 	/// HAIRS
 	[SerializeField] 
 	private SuspectVisualAttributes ShortHairAttribute;
@@ -88,8 +89,7 @@ public class DallESuspectVisualGenerator : MonoBehaviour
 				GenerateImage(description, resolution, completationAction);
 				break;
 			case "content_policy_violation":
-				Debug.Log("Regenerate image");
-				GenerateImage(description, resolution, completationAction);
+				completationAction(new List<Texture>() { notGeneratedTexture });
 				break;
 			default:
 				Debug.Log("image not generated");
@@ -154,7 +154,7 @@ public class DallESuspectVisualGenerator : MonoBehaviour
 		prompt += "a " + _suspect.gender;
 		
 		//-------------------AGE
-		string age = $", {_suspect.age}yo";
+		prompt = $", {_suspect.age} years old";
 		
 		//-------------------HAIRS
 		SuspectVisualAttributes hairAttribute = null;
@@ -171,7 +171,7 @@ public class DallESuspectVisualGenerator : MonoBehaviour
 		}
 		else
 		{
-			prompt += "bold hair";
+			prompt += ",bold hair";
 		}
 
 		//-------------------BEARD
@@ -179,18 +179,20 @@ public class DallESuspectVisualGenerator : MonoBehaviour
 		{
 			prompt += $",{GetRandomFromAttribute(BeardAttributes, true)}";
 		}
-		
+		/*
 		//------------------BODY SIZE
+	
 		//0:NO impact 1:Skinny 2:Big
 		switch (_suspect.bodySize)
 		{
 			case 1:
-				prompt += ",very light build body";
+				prompt += ",very light build";
 				break;
 			case 2:
-				prompt += ",heavy build body";
+				prompt += ",heavy build";
 				break;
 		}
+		*/
 		
 		//------------------OTHER
 		prompt += $",{GetRandomFromAttribute(HeadAccessoryAttribute,true)}";

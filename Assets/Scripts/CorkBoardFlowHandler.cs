@@ -114,7 +114,7 @@ public class CorkBoardFlowHandler : MonoSingleton<CorkBoardFlowHandler>
             foreach (TextSetter setter in genderSetters)
             {
                 if (setter.GetPlayerId() != i) continue;
-                setter.SetText(suspect.gender == "Male"?"M":"F");
+                setter.SetText(suspect.gender == "Man"?"M":"F");
             }
             i++;
         }
