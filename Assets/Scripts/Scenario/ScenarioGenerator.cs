@@ -70,6 +70,8 @@ public class ScenarioGenerator : MonoBehaviour
 
     public List<int> generatedTestimonial = new();
     
+    private bool testimonialNeedAMan = false;
+    
     private static string GetRandomExamplesFrom(string _path)
     {
         TextAsset locations = Resources.Load<TextAsset>(DataFolder + _path);
@@ -114,16 +116,19 @@ public class ScenarioGenerator : MonoBehaviour
         while (objectLost == string.Empty || thiefLocation == string.Empty) await Task.Delay(50);
 
         generatedTestimonial = new();
+        testimonialNeedAMan = false;
         Scenario generatedScenario = new Scenario()
         {
             TheftType = generatedthiefType,
             thiefDate = DateTime.Now - TimeSpan.FromHours(Random.Range(0f, 24)) - TimeSpan.FromDays(Random.Range(0f, 30)),
             objectLost = objectLost,
             thiefLocation = thiefLocation,
-            testimonial1 = GenerateTestimonial(),
-            testimonial2 = GenerateTestimonial(),
-            testimonial3 = GenerateTestimonial()
+            testimonial1 = GenerateTestimonial(true),
+            testimonial2 = GenerateTestimonial(false),
+            testimonial3 = GenerateTestimonial(false)
         };
+        generatedScenario.forceAMan = testimonialNeedAMan;
+        
         string scenario = string.Empty;
         testimonial1Generator.OnGPTResponseReceived +=
             (response) => generatedScenario.testimonial1.testimonialString = response;
@@ -156,32 +161,33 @@ public class ScenarioGenerator : MonoBehaviour
 
     private TheftType GenereateThiefType()=>(TheftType)Random.Range(0, 4);
     
-    private Testimonial GenerateTestimonial()
+    private Testimonial GenerateTestimonial(bool _firstTestimonial)
     {
-        int rdmChoice = Random.Range(0, 4);
+        int rdmChoice = Random.Range(0, _firstTestimonial?2:4);
         while (generatedTestimonial.Contains(rdmChoice))
         {
-            rdmChoice = Random.Range(0, 4);
+            rdmChoice = Random.Range(0, _firstTestimonial?2:4);
         }
         generatedTestimonial.Add(rdmChoice);
         Testimonial testimonial;
         switch (rdmChoice)
         {
             case 0:
-                Debug.Log("Age selected");
-                return GenerateAgeTestimonial();
-            case 1:
                 Debug.Log("Beard selected");
+                testimonialNeedAMan = true;
                 return GenerateBeardTestimonial();
-            case 4:
-                Debug.Log("Body selected");
-                return GenerateBodyTestimonial();
-            case 2:
+            case 1:
                 Debug.Log("Hair selected");
                 return GenerateHairTestimonial();
+            case 2:
+                Debug.Log("Age selected");
+                return GenerateAgeTestimonial();
             case 3:
                 Debug.Log("Size selected");
                 return GenerateSizeTestimonial();
+            case 4:
+                Debug.Log("Body selected");
+                return GenerateBodyTestimonial();
         }
         throw new Exception("PAS ICII");
     }
@@ -235,6 +241,7 @@ public class ScenarioGenerator : MonoBehaviour
 }
 public struct Scenario
 {
+    public bool forceAMan;
     public DateTime thiefDate;
     public TheftType TheftType;
     

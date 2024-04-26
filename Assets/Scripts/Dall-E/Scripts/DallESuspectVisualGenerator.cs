@@ -154,7 +154,10 @@ public class DallESuspectVisualGenerator : MonoBehaviour
 		prompt += "a " + _suspect.gender;
 		
 		//-------------------AGE
-		prompt = $", {_suspect.age} years old";
+		string ageDecorator = "";
+		if (_suspect.age < 35) ageDecorator = "young";
+		if (_suspect.age > 65) ageDecorator = "very old";
+		prompt += $",{ageDecorator} {_suspect.age} years old";
 		
 		//-------------------HAIRS
 		SuspectVisualAttributes hairAttribute = null;

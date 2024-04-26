@@ -104,6 +104,8 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
         int nbGenerated = 0;
         if (generateTexts)
         {
+            innocentInternetHistory = new ();
+            guiltyInternetHistory = new ();
             for (int i = 0; i < _numberOfSuspect; i++)
             {
                 void OnInnocentHistoryGenerated(List<string> _generated)
@@ -117,9 +119,9 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
                     nbGenerated++;
                 }
                 internetHistoryGenerator[i].GenerateRandomInternetHistoryAsync(generatedScenario,false,10,OnInnocentHistoryGenerated);
-                //internetHistoryGenerator[i].GenerateRandomInternetHistoryAsync(generatedScenario,true,5,OnGuiltyHistoryGenerated);
+                internetHistoryGenerator[i].GenerateRandomInternetHistoryAsync(generatedScenario,true,5,OnGuiltyHistoryGenerated);
             }
-            yield return new WaitWhile(() => nbGenerated < _numberOfSuspect);
+            yield return new WaitWhile(() => nbGenerated < _numberOfSuspect*2);
         }
         else
         {
@@ -132,13 +134,26 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
         
         for(int i=0;i<GeneratedSuspects.Count;++i)
         {
+            
             Shuffle(innocentInternetHistory);
             Shuffle(guiltyInternetHistory);
             var suspect = GeneratedSuspects[i];
-            suspect.internetHistory.stringList = innocentInternetHistory.GetRange(0, 7);
-            //Ajouter les coupables
-            Shuffle(suspect.internetHistory.stringList);
-            GeneratedSuspects[i] = suspect;
+            if (i <= 5)
+            {
+                suspect.internetHistory.stringList = innocentInternetHistory.GetRange(0, 7);
+                //Ajouter les coupables
+                Shuffle(suspect.internetHistory.stringList);
+                GeneratedSuspects[i] = suspect;
+            }
+            else
+            {
+                suspect.internetHistory.stringList = innocentInternetHistory.GetRange(0, 5);
+                suspect.internetHistory.stringList.AddRange(guiltyInternetHistory.GetRange(0,2));
+                //Ajouter les coupables
+                Shuffle(suspect.internetHistory.stringList);
+                GeneratedSuspects[i] = suspect;
+            }
+            
         }
         isInternetHistoryGenerated = true;
     }
@@ -165,12 +180,11 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
                     nbGenerated++;
                 }
 
-                bankAccountGenerator[i]
-                    .GenerateRandomBankAccountAsync(generatedScenario, false, 10, OnInnocentBankAccountGenerated);
-                //internetHistoryGenerator[i].GenerateRandomInternetHistoryAsync(generatedScenario,true,5,OnGuiltyHistoryGenerated);
+                bankAccountGenerator[i].GenerateRandomBankAccountAsync(generatedScenario, false, 10, OnInnocentBankAccountGenerated);
+                bankAccountGenerator[i].GenerateRandomBankAccountAsync(generatedScenario,true,5,OnGuiltyBankAccountGenerated);
             }
 
-            yield return new WaitWhile(() => nbGenerated < _numberOfSuspect);
+            yield return new WaitWhile(() => nbGenerated < _numberOfSuspect*2);
         }
         else
         {
@@ -186,11 +200,25 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
         {
             Shuffle(innocentBankAccount);
             Shuffle(guiltyBankAccount);
-            var suspect = GeneratedSuspects[i];
-            suspect.bankAccountHistory.current = Random.Range(-1000000f, 1000000f);
-            suspect.bankAccountHistory.saving = Random.Range(0, 1000000);
-            suspect.bankAccountHistory.transactions = innocentBankAccount.GetRange(0, 5);
-            GeneratedSuspects[i] = suspect;
+            
+            if (i <= 7)
+            {
+                var suspect = GeneratedSuspects[i];
+                suspect.bankAccountHistory.current = Random.Range(-1000000f, 1000000f);
+                suspect.bankAccountHistory.saving = Random.Range(0, 1000000);
+                suspect.bankAccountHistory.transactions = innocentBankAccount.GetRange(0, 5);
+                GeneratedSuspects[i] = suspect;
+            }
+            else
+            {
+                var suspect = GeneratedSuspects[i];
+                suspect.bankAccountHistory.current = Random.Range(-1000000f, 1000000f);
+                suspect.bankAccountHistory.saving = Random.Range(0, 1000000);
+                suspect.bankAccountHistory.transactions = innocentBankAccount.GetRange(0, 3);
+                suspect.bankAccountHistory.transactions.AddRange(innocentBankAccount.GetRange(0,2));
+                Shuffle(suspect.bankAccountHistory.transactions);
+                GeneratedSuspects[i] = suspect;
+            }
         }
         isBankAccountGenerated = true;
     }
@@ -216,10 +244,10 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
                 }
 
                 criminalRecords[i].GenerateRandomCriminalRecordAsync(generatedScenario, false, 10, OnInnocentCriminalRecord);
-                //internetHistoryGenerator[i].GenerateRandomInternetHistoryAsync(generatedScenario,true,5,OnGuiltyHistoryGenerated);
+                criminalRecords[i].GenerateRandomCriminalRecordAsync(generatedScenario,true,5,OnGuiltyCriminalRecord);
             }
 
-            yield return new WaitWhile(() => nbGenerated < _numberOfSuspect);
+            yield return new WaitWhile(() => nbGenerated < _numberOfSuspect*2);
         }
         else
         {
@@ -235,10 +263,24 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
         {
             Shuffle(innocentCriminalRecord);
             Shuffle(guiltyCriminalRecord);
-            var suspect = GeneratedSuspects[i];
-            suspect.criminalRecord.records = innocentCriminalRecord.GetRange(0, 5);
-            Shuffle(suspect.criminalRecord.records);
-            GeneratedSuspects[i] = suspect;
+            
+            
+            if (i <= 9)
+            {
+                var suspect = GeneratedSuspects[i];
+                suspect.criminalRecord.records = innocentCriminalRecord.GetRange(0, 5);
+                Shuffle(suspect.criminalRecord.records);
+                GeneratedSuspects[i] = suspect;
+            }
+            else
+            {
+                var suspect = GeneratedSuspects[i];
+                suspect.criminalRecord.records = innocentCriminalRecord.GetRange(0, 3);
+                suspect.criminalRecord.records.AddRange(guiltyCriminalRecord.GetRange(0, 2));
+                Shuffle(suspect.criminalRecord.records);
+                GeneratedSuspects[i] = suspect;
+            }
+            
         }
         isCriminalRecordGenerated = true;
     }

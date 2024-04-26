@@ -37,7 +37,7 @@ public class SuspectGenerator : MonoSingleton<SuspectGenerator>
         SizeTestimonial sizeTestimonial2 = _scenario.testimonial2 as SizeTestimonial;
         
         
-        bool isAMan = Random.Range(0,2) == 0;
+        bool isAMan = _scenario.forceAMan || Random.Range(0,2) == 0;
         
         int generatedAge = GenerateAge(ageTestimonial1,ageTestimonial2,_suspectToInnocentThresold);
 
@@ -63,17 +63,17 @@ public class SuspectGenerator : MonoSingleton<SuspectGenerator>
         {
             if (_suspectToInnocentThresold <= 1)
             {
-                return (int)weightedRandom(ageTestimonial1.isOld ? minAgeOld : minAge, !ageTestimonial1.isOld ? maxAge : maxAgeYoung, ageDistribution);
+                return (int)weightedRandom(ageTestimonial1.isOld ? minAge : minAgeOld, !ageTestimonial1.isOld ? maxAgeYoung : maxAge , ageDistribution);
             }
-            return (int)weightedRandom(ageTestimonial1.isOld ? minAge : minAgeOld, !ageTestimonial1.isOld ? maxAgeYoung : maxAge , ageDistribution);
+            return (int)weightedRandom(ageTestimonial1.isOld ? minAgeOld : minAge, !ageTestimonial1.isOld ? maxAge : maxAgeYoung, ageDistribution);
         }
         if (ageTestimonial2 != null)
         {
             if (_suspectToInnocentThresold is <= 3 and >1 )
             {
-                return (int)weightedRandom(ageTestimonial2.isOld ? minAgeOld : minAge, !ageTestimonial2.isOld ? maxAge : maxAgeYoung, ageDistribution);
+                return (int)weightedRandom(ageTestimonial2.isOld ? minAge : minAgeOld, !ageTestimonial2.isOld ? maxAgeYoung : maxAge , ageDistribution);
             }
-            return (int)weightedRandom(ageTestimonial2.isOld ? minAge : minAgeOld, !ageTestimonial2.isOld ? maxAgeYoung : maxAge , ageDistribution);
+            return (int)weightedRandom(ageTestimonial2.isOld ? minAgeOld : minAge, !ageTestimonial2.isOld ? maxAge : maxAgeYoung, ageDistribution);
         }
         return (int)weightedRandom(minAge, maxAge, ageDistribution);
     }
@@ -83,17 +83,20 @@ public class SuspectGenerator : MonoSingleton<SuspectGenerator>
         {
             if (_suspectToInnocentThresold <= 1)
             {
-                return (int)weightedRandom(sizeTestimonial1.isTall?minSizeTall:minSize,sizeTestimonial1.isTall?maxSize:maxSizeTiny, sizeDistribution); 
+                return (int)weightedRandom(sizeTestimonial1.isTall ? minSize : minSizeTall,
+                    sizeTestimonial1.isTall ? maxSizeTiny : maxSize, sizeDistribution);
+
             }
-            return (int)weightedRandom(sizeTestimonial1.isTall?minSize:minSizeTall,sizeTestimonial1.isTall?maxSizeTiny:maxSize, sizeDistribution);
-        }
+            return (int)weightedRandom(sizeTestimonial1.isTall?minSizeTall:minSize,sizeTestimonial1.isTall?maxSize:maxSizeTiny, sizeDistribution); 
+
+             }
         if (sizeTestimonial2 != null)
         {
             if (_suspectToInnocentThresold is <= 3  and >1)
             {
-                return (int)weightedRandom(sizeTestimonial2.isTall?minSizeTall:minSize,sizeTestimonial2.isTall?maxSize:maxSizeTiny, sizeDistribution); 
+                return (int)weightedRandom(sizeTestimonial2.isTall?minSize:minSizeTall,sizeTestimonial2.isTall?maxSizeTiny:maxSize, sizeDistribution);
             }
-            return (int)weightedRandom(sizeTestimonial2.isTall?minSize:minSizeTall,sizeTestimonial2.isTall?maxSizeTiny:maxSize, sizeDistribution);
+            return (int)weightedRandom(sizeTestimonial2.isTall?minSizeTall:minSize,sizeTestimonial2.isTall?maxSize:maxSizeTiny, sizeDistribution);
         }
         return (int)weightedRandom(minAge, maxAge, sizeDistribution); 
     }
@@ -101,13 +104,15 @@ public class SuspectGenerator : MonoSingleton<SuspectGenerator>
     {
         if (beardTestimonial1 != null)
         {
-            if (_suspectToInnocentThresold <= 1) return beardTestimonial1.haveBeard;
-            return !beardTestimonial1.haveBeard;
+            if (_suspectToInnocentThresold <= 1) return !beardTestimonial1.haveBeard;
+            return beardTestimonial1.haveBeard;
+            
         }
         if (beardTestimonial2 != null)
         {
-            if (_suspectToInnocentThresold is <= 3  and >1) return beardTestimonial2.haveBeard;
-            return !beardTestimonial2.haveBeard;
+            if (_suspectToInnocentThresold is <= 3  and >1) return !beardTestimonial2.haveBeard;
+            return beardTestimonial2.haveBeard;
+            
         }
         return Random.Range(0, 2) == 0;
     }
@@ -130,13 +135,15 @@ public class SuspectGenerator : MonoSingleton<SuspectGenerator>
     {
         if (hairTestimonial1 != null)
         {
-            if (_suspectToInnocentThresold <= 1) return (true, hairTestimonial1.hairType);
-            return (false, hairTestimonial1.hairType);
+            if (_suspectToInnocentThresold <= 1) return (false, hairTestimonial1.hairType);
+            return (true, hairTestimonial1.hairType);
+            
         }
         if (hairTestimonial2 != null)
         {
-            if (_suspectToInnocentThresold is <= 3  and >1 ) return (true, hairTestimonial2.hairType);
-            return (false, hairTestimonial2.hairType);
+            if (_suspectToInnocentThresold is <= 3  and >1 ) return (false, hairTestimonial2.hairType);
+            return (true, hairTestimonial2.hairType);
+            
         }
         return (true,TestimonialHairType.Any);
     }

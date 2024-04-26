@@ -1,47 +1,45 @@
-Listes :
-
-Gares
-Aéroports
-Stations de métro
-Arrêts de bus
-Centres commerciaux
-Magasins de proximité
-Supermarchés
+Railway stations
+Airports
+Subway stations
+Bus stops
+Shopping malls
+Convenience stores
+Supermarkets
 Cafés
 Restaurants
 Bars
-Parcs
-Plages
-Festivals
-Salles de jeux
-Salles de sport
-Hôtels
-Auberges de jeunesse
+Parks
+Beaches
+Festivalsa
+Games rooms
+Sports halls
+Hotels
+Youth hostels
 Trains
 Bus
-Taxis
-Voitures partagées (comme Uber, Lyft)
-Navettes aéroportuaires
-Croisières
-Musées
-Sites touristiques populaires
-Sites historiques
-Spectacles en plein air
-Spectacles de rue
-Foires
-Expositions
-Salons professionnels
-Séminaires
-Événements sportifs
-Salles de concert
-Théâtres
-Cinémas
-Galeries d'art
-Universités
-Écoles
-Bureaux gouvernementaux
-Postes de police
-Casernes de pompiers
-Hôpitaux
-Cliniques médicales
-Marchés aux puces
+Cabs
+Shared cars (like Uber, Lyft)
+Airport shuttles
+Cruises
+Museums
+Popular tourist sites
+Historical sites
+Open-air shows
+Street shows
+Fairs
+Exhibitions
+Trade shows
+Seminars
+Sports events
+Concert halls
+Theaters
+Cinemas
+Art galleries
+Universities
+Schools
+Government offices
+Police stations
+Fire stations
+Hospitals
+Medical clinics
+Flea markets

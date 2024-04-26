@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8424,7 +8424,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3063484831070229916, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: m_Lens.OrthographicSize
-      value: 40.2737
+      value: 4.371791
       objectReference: {fileID: 0}
     - target: {fileID: 3128631894226883446, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: HairAttribute
@@ -8432,17 +8432,16 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: a489555bba7313b4082fff9df74a9afc, type: 2}
     - target: {fileID: 3128631894226883446, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: generationStyle
-      value: Generate a comical portrait with exaggerated features, depicted only
-        from the front. highly exaggerated expression on his face reminiscent of
-        caricatures by artists such as Davi Sales and Isabelle Douzamy. Emphasize
-        a cartoonish 3D style with extreme distortion of facial proportions, enhancing
-        the cartoonish effect. Depicted alone in the image, with only one portrait
-        visible. The image format is a full-color frontal portrait. The background
-        should be a solid, uniform gray, specifically chosen to keep the focus on
-        the character. Take a passport photo as an example for visual image generation.
-        Make sure there are no distracting elements in the frame. The overall tone
-        of the image should be humorous and exaggerated, aligning perfectly with
-        the comedic and cartoonish style typical of Pixar animations.
+      value: Generate a portrait of a person with exaggerated features, seen only
+        from the front. The person's face should reflect a caricature style similar
+        to that of David Levine, with a cartoonish digital style and extreme distortion
+        of facial proportions. Make sure the image format is an unique frontal portrait
+        with the person facing forward.  The person is represented alone in the image,
+        without the presence of other characters or duplicates of themselves. There
+        is just one person in the generated portrait.  The person must generated
+        in color, contrasting strongly with a solid, uniform gray background containing
+        no details. The person is generated with colors and the background is neutral.
+        The overall tone should be humorous and exaggerated.
       objectReference: {fileID: 0}
     - target: {fileID: 3128631894226883446, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: LongHairAttribute
@@ -8459,7 +8458,7 @@ PrefabInstance:
     - target: {fileID: 3128631894226883446, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: notGeneratedTexture
       value: 
-      objectReference: {fileID: 2800000, guid: ee3c9397e7bd7c544a4c7f1ffbce76f0, type: 3}
+      objectReference: {fileID: 2800000, guid: 94962e1b55b2ccc4cb1bf70ce13def62, type: 3}
     - target: {fileID: 3547430120443993791, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: maxAge
       value: 90
@@ -9229,7 +9228,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7711803702273583671, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: orthographic size
-      value: 40.2737
+      value: 14.60576
       objectReference: {fileID: 0}
     - target: {fileID: 7711803702273583671, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: m_BackGroundColor.b

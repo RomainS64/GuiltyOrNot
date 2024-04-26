@@ -19,7 +19,7 @@ public class CriminalRecordGenerator : MonoBehaviour
     public void GenerateRandomCriminalRecordAsync(Scenario _scenario,bool guilty,int nb,Action<List<KeyValuePair<string,string>>> _onGenerated)
     {
         if (guilty) GenerateGuilty(_scenario.scenarioString, nb, list => _onGenerated.Invoke(list));
-        GenerateInnocent(_scenario.scenarioString, nb, list => _onGenerated.Invoke(list));
+        else GenerateInnocent(_scenario.scenarioString, nb, list => _onGenerated.Invoke(list));
     }
 
     private async void GenerateGuilty(string _scenario,int nb,Action< List<KeyValuePair<string,string>> > _onGenerated)

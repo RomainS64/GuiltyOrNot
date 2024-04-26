@@ -21,27 +21,7 @@ MonoBehaviour:
     weights:
       manProbabilityWeight: 1
       womanProbabilityWeight: 1
-  - prompt: layered cut
-    weights:
-      manProbabilityWeight: 0
-      womanProbabilityWeight: 1
-  - prompt: dreadlocks
-    weights:
-      manProbabilityWeight: 1
-      womanProbabilityWeight: 1
-  - prompt: braids
-    weights:
-      manProbabilityWeight: 0
-      womanProbabilityWeight: 1
-  - prompt: asymmetrical cut
-    weights:
-      manProbabilityWeight: 1
-      womanProbabilityWeight: 1
-  - prompt: ponytail cut
-    weights:
-      manProbabilityWeight: 1
-      womanProbabilityWeight: 1
-  - prompt: wavy cut
+  - prompt: long dreadlocks
     weights:
       manProbabilityWeight: 1
       womanProbabilityWeight: 1

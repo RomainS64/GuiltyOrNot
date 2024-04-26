@@ -45,12 +45,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PromptDirection: 'You must create lists of internet history. Do not create introductory
-    sentences.  Example of allowed formulation: Purchase of a vintage red jacket
-    (500 euros).  Allowed: Normal shopping, cultural, or educational websites.  Not
-    allowed: Sites present on the Dark Web. Sites containing information on lethal,
-    chemical, or dangerous weapons. Sites for information on encryption or overly
-    complex computer science. Sites that are too strange and unrelated to the investigation. 
-    Your responses should have NO connection to the investigation.'
+    sentences.Allowed: Normal shopping, cultural, or educational websites.  Not allowed:
+    Sites present on the Dark Web. Sites containing information on lethal, chemical,
+    or dangerous weapons. Sites for information on encryption or overly complex computer
+    science. Sites that are too strange and unrelated to the investigation.  Your
+    responses should have NO connection to the investigation.'
   TrackConversation: 0
   MaximumTokens: 600
   Temperature: 1
@@ -150,15 +149,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PromptDirection: 'You must create lists of internet history. Do not create introductory
-    sentences.  Example of allowed formulation: Purchase of a vintage red jacket
-    (500 euros).  Allowed: Normal shopping, cultural, or educational websites.  Not
-    allowed: Sites present on the Dark Web. Sites containing information on lethal,
-    chemical, or dangerous weapons. Sites for information on encryption or overly
-    complex computer science. Sites that are too strange and unrelated to the investigation. 
-    Your responses should have connection to the investigation.  You should be funny.'
+    sentences.Allowed: Normal shopping, cultural, or educational websites. Not allowed:
+    Sites present on the Dark Web. Sites containing information on lethal, chemical,
+    or dangerous weapons. Sites for information on encryption or overly complex computer
+    science. Sites that are too strange and unrelated to the investigation. Your
+    responses should be directly connected to the investigation.You should be funny.'
   TrackConversation: 0
   MaximumTokens: 600
-  Temperature: 2
+  Temperature: 1
   Top_P: 1
   Frequency_Penality: 0
   Presence_Penality: 0

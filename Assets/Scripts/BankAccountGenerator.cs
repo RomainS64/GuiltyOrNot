@@ -22,7 +22,11 @@ public class BankAccountGenerator : MonoBehaviour
         {
             GenerateGuilty(_scenario.scenarioString, nb, list => _onGenerated.Invoke(list));
         }
-        GenerateInnocent(_scenario.scenarioString, nb, list => _onGenerated.Invoke(list));
+        else
+        {
+            GenerateInnocent(_scenario.scenarioString, nb, list => _onGenerated.Invoke(list));
+        }
+        
     }
 
     private async void GenerateGuilty(string _scenario,int nb,Action< List<KeyValuePair<string,float>> > _onGenerated)
