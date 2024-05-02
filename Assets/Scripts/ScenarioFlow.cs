@@ -204,18 +204,18 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
             if (i <= 7)
             {
                 var suspect = GeneratedSuspects[i];
-                suspect.bankAccountHistory.current = Random.Range(-1000000f, 1000000f);
-                suspect.bankAccountHistory.saving = Random.Range(0, 1000000);
+                suspect.bankAccountHistory.current = Random.Range(0, 10_000f);
+                suspect.bankAccountHistory.saving = Random.Range(0, 100_000);
                 suspect.bankAccountHistory.transactions = innocentBankAccount.GetRange(0, 5);
                 GeneratedSuspects[i] = suspect;
             }
             else
             {
                 var suspect = GeneratedSuspects[i];
-                suspect.bankAccountHistory.current = Random.Range(-1000000f, 1000000f);
-                suspect.bankAccountHistory.saving = Random.Range(0, 1000000);
+                suspect.bankAccountHistory.current = Random.Range(-10_000, 10_000f);
+                suspect.bankAccountHistory.saving = Random.Range(-10_000, 100_000);
                 suspect.bankAccountHistory.transactions = innocentBankAccount.GetRange(0, 3);
-                suspect.bankAccountHistory.transactions.AddRange(innocentBankAccount.GetRange(0,2));
+                suspect.bankAccountHistory.transactions.AddRange(guiltyBankAccount.GetRange(0,2));
                 Shuffle(suspect.bankAccountHistory.transactions);
                 GeneratedSuspects[i] = suspect;
             }

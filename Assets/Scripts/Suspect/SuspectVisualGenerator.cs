@@ -49,7 +49,7 @@ public class SuspectVisualGenerator : MonoBehaviour
 
     private void Awake()
     {
-        suspectGenerator.OnGenerationDone += OnSuspectGenerationDone;
+        //suspectGenerator.OnGenerationDone += OnSuspectGenerationDone;
     }
     
     private int currentGenerationDone = 0;

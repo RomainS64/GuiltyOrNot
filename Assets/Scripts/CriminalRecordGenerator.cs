@@ -10,8 +10,8 @@ using Random = UnityEngine.Random;
 
 public class CriminalRecordGenerator : MonoBehaviour
 {
-    private string guiltyPrompt = "Directly provide a list of [NUMBER] crimes RELATED to the investigation.Here is the investigation:";
-    private string innocentPrompt = "Directly provide a list of [NUMBER] crimes NOT related to the investigation.Here is the investigation:";
+    private string guiltyPrompt = "generate for me a list of [NUMBER] realistic, funny and humorous criminal records of a suspect that closely resembles this investigation. (sentence of 8 words maximum), (list format), (the antecedents must not resemble each other in form or content), (indicate the year for each antecedent in square brackets):";
+    private string innocentPrompt = "generate a list of [NUMBER] realistic and humorous judicial precedents that have nothing to do with 'theft'. Sentence starters should never start the same way. (sentence of 8 words maximum), (list format), (the antecedents must not resemble each other in form or content), (indicate the year for each antecedent in square brackets).";
     private string numberTag = "[NUMBER]";
     [SerializeField] private GptGeneration guiltyGeneration;
     [SerializeField] private GptGeneration innocentGeneration;
@@ -31,19 +31,19 @@ public class CriminalRecordGenerator : MonoBehaviour
         guiltyGeneration.OnGPTResponseReceived += (response) => guiltyGenerated = response;
         guiltyGeneration.SendMessage(guiltyPrompt.Replace(numberTag,nb.ToString())+_scenario);
         while (guiltyGenerated == string.Empty) await Task.Delay(50);
-        _onGenerated?.Invoke(GenerateValues(guiltyGenerated));
+        _onGenerated?.Invoke(GenerateValues(guiltyGenerated,"[G]"));
     }
     private async void GenerateInnocent(string _scenario,int nb,Action< List<KeyValuePair<string,string>> > _onGenerated)
     {
         string innocentGenerated = string.Empty;
         innocentGeneration.SetUpConversation();
         innocentGeneration.OnGPTResponseReceived += (response) => innocentGenerated = response;
-        innocentGeneration.SendMessage(innocentPrompt.Replace(numberTag,nb.ToString())+_scenario);
+        innocentGeneration.SendMessage(innocentPrompt.Replace(numberTag,nb.ToString()));
         while (innocentGenerated == string.Empty) await Task.Delay(50);
         _onGenerated?.Invoke(GenerateValues(innocentGenerated));
     }
 
-    private List<KeyValuePair<string,string>> GenerateValues(string _string)
+    private List<KeyValuePair<string,string>> GenerateValues(string _string,string _debug = "")
     {
         string valuePattern = @"\[([^\]]*)\]";
         string startPattern = @"^\d+[.\-]? ";
@@ -54,7 +54,7 @@ public class CriminalRecordGenerator : MonoBehaviour
             MatchCollection matches = Regex.Matches(values[i], valuePattern);
             if (matches.Count == 0) continue;
             string date = matches[0].Value.Replace("[",String.Empty).Replace("]",String.Empty);
-            string text  = Regex.Replace( values[i].Replace(matches[0].Value,String.Empty), startPattern, String.Empty);
+            string text  = _debug+Regex.Replace( values[i].Replace(matches[0].Value,String.Empty), startPattern, String.Empty);
            
             transactions.Add(new KeyValuePair<string, string>(text,date));
         }
