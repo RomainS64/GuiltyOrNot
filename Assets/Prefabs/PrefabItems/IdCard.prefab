@@ -736,8 +736,8 @@ RectTransform:
   m_GameObject: {fileID: 4284910026290783698}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3681793145489786397}
   - {fileID: 1861562827837206629}
@@ -768,6 +768,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35a5f918770fa764bb52c9084ef1d25b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  documentType: 0
   unknownFactorX: 15
   unknownFactorY: 10
   zoomMaxMultiplicator: 5
@@ -824,6 +825,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnThreshold: 10
+  playerId: 0
 --- !u!114 &2708860899974694533
 MonoBehaviour:
   m_ObjectHideFlags: 0

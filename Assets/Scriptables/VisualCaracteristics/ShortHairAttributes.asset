@@ -16,12 +16,12 @@ MonoBehaviour:
   - prompt: bald
     weights:
       manProbabilityWeight: 1
-      womanProbabilityWeight: 0
-  - prompt: short straight
+      womanProbabilityWeight: 1
+  - prompt: very short straight
     weights:
       manProbabilityWeight: 1
       womanProbabilityWeight: 1
-  - prompt: short curly
+  - prompt: very short curly
     weights:
       manProbabilityWeight: 1
       womanProbabilityWeight: 1

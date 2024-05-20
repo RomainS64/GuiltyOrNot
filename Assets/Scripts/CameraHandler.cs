@@ -3,6 +3,7 @@ using System.Collections;
 using Cinemachine;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 
 [Serializable]
 public struct Limits
@@ -21,7 +22,7 @@ public class CameraHandler : MonoSingleton<CameraHandler>,IPointerDownHandler,IP
     [SerializeField] private bool toggleOnStart;
     [SerializeField] private Transform cameraTarget;
     [SerializeField] private float mouvMultiplicator = 1f;
-    [SerializeField] float scrollMultiplicator = 1f;    
+    [FormerlySerializedAs("scrollMultiplicator")] [SerializeField] float scrollForce = 1f;    
     [SerializeField] private CinemachineVirtualCamera camera;
     [SerializeField] private float minZoom = 1f;
     [SerializeField] private float maxZoom = 10f;
@@ -37,9 +38,9 @@ public class CameraHandler : MonoSingleton<CameraHandler>,IPointerDownHandler,IP
 
     private void Start()
     {
-        ToggleCameraMovement(toggleOnStart);
         ZoomLevel = Mathf.InverseLerp(minZoom, maxZoom, camera.m_Lens.OrthographicSize);
         camera.m_Lens.OrthographicSize = (maxZoom - minZoom) / 2;
+        ScenarioFlow.OnGameStart += () => ToggleCameraMovement(true);
     }
 
     public void ToggleCameraMovement(bool _toggle)
@@ -112,21 +113,37 @@ public class CameraHandler : MonoSingleton<CameraHandler>,IPointerDownHandler,IP
     }
     private IEnumerator ScrollingBehaviour()
     {
+        Vector2 lastMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         while (true)
         {
             if (Input.mouseScrollDelta.y < 0 && camera.m_Lens.OrthographicSize < maxZoom)
             {
-                camera.m_Lens.OrthographicSize += -Input.mouseScrollDelta.y * Time.deltaTime * scrollMultiplicator;
-                RecalibrateZoom();
+                camera.m_Lens.OrthographicSize += -Input.mouseScrollDelta.y * Time.deltaTime * scrollForce;
+                //StartCoroutine(zoomCoroutine);
+                
+                //RecalibrateZoom();
                 RecalibrateBounds();
             }
             else if (Input.mouseScrollDelta.y > 0 && camera.m_Lens.OrthographicSize > minZoom)
             {
-                camera.m_Lens.OrthographicSize += -Input.mouseScrollDelta.y * Time.deltaTime * scrollMultiplicator;
+                camera.m_Lens.OrthographicSize += -Input.mouseScrollDelta.y * Time.deltaTime * scrollForce;
+                //StartCoroutine(zoomCoroutine);
+                
                 RecalibrateZoom();
                 RecalibrateBounds();
             }
 
+            yield return null;
+        }
+    }
+
+    private IEnumerator zoomCoroutine = null;
+    private IEnumerator ZoomTo(float _move)
+    {
+        float objectif = camera.m_Lens.OrthographicSize + _move;
+        while (Math.Abs(objectif - camera.m_Lens.OrthographicSize) > 0.1f)
+        {
+            Mathf.Lerp(camera.m_Lens.OrthographicSize,objectif, 0.5f);
             yield return null;
         }
     }

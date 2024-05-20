@@ -39,6 +39,7 @@ public class Notebook : MonoBehaviour
         clickable.OnAssetClicked += OnPointerDown;
         transform.position = notDisplayedPosition.position;
         ShowPage(pageIndex);
+        ScenarioFlow.OnGameStart += () => { ShowNotebook(); };
     }
 
     public void SetScenario(string _scenario) => scenario.text = _scenario;

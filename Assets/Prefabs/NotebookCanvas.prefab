@@ -194,7 +194,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00000045821, y: -3.06}
+  m_AnchoredPosition: {x: 0.00000045821, y: -0.91}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1439130389976509978
@@ -291,7 +291,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1149959137764354163, guid: a04efbaf7e90cbe4bb611e3f1fcc0041, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2103293645948274880, guid: a04efbaf7e90cbe4bb611e3f1fcc0041, type: 3}
       propertyPath: m_Name
@@ -323,6 +323,10 @@ PrefabInstance:
       propertyPath: testimonial3
       value: 
       objectReference: {fileID: 4102440326287577580}
+    - target: {fileID: 6280746330212267712, guid: a04efbaf7e90cbe4bb611e3f1fcc0041, type: 3}
+      propertyPath: pages.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6280746330212267712, guid: a04efbaf7e90cbe4bb611e3f1fcc0041, type: 3}
       propertyPath: notDisplayedPosition
       value: 

@@ -9,6 +9,8 @@ using Random = UnityEngine.Random;
 
 public class ScenarioFlow : MonoSingleton<ScenarioFlow>
 {
+    public static bool IsInGame { get; private set; }
+    public static Action OnGameStart;
     [SerializeField] private Texture[] debugTexture;
     [SerializeField] private Suspect[] debugSuspects;
     [SerializeField] private string[] debugTextInternet;
@@ -63,6 +65,7 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
 
     private void Start()
     {
+        IsInGame = false;
         if(generateAtStart)StartGenerating();
         //if(notebookCanvas != null)notebookCanvas.SetActive(false);
     }
@@ -95,6 +98,8 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
         CorkBoardFlowHandler.Instance.StartCorkBoard(generatedScenario,GeneratedSuspects);
         foreach (var spawnable in thresholdSpawnableObject) spawnable.NotifyThreshold(GetAlivedSuspectCout(),numberOfSuspects,false);
         loadingCanvas.SetActive(false);
+        OnGameStart?.Invoke();
+        IsInGame = true;
     }
 
     public List<string> innocentInternetHistory = new ();

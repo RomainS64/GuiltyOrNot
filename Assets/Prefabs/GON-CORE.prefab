@@ -209,18 +209,18 @@ MonoBehaviour:
   - {fileID: 2800000, guid: bb492e9d2ea82d54cb925bda25179f07, type: 3}
   - {fileID: 2800000, guid: 6dcfb93006fa34049bac2899dc1f3546, type: 3}
   debugSuspects:
-  - visualSeed: 0
-    visualPrompt: 
+  - visualPrompt: 
     isEliminated: 0
     aliveCountWhenEliminated: 0
-    name: Jean
-    surname: Dupont
+    name: jean
+    surname: dupied
     age: 30
-    gender: 
+    gender: M
     height: 189
     portrait: {fileID: 0}
-  - visualSeed: 0
-    visualPrompt: 
+    bodySize: 0
+    generateBeard: 0
+  - visualPrompt: 
     isEliminated: 0
     aliveCountWhenEliminated: 0
     name: Zakari
@@ -229,8 +229,9 @@ MonoBehaviour:
     gender: 
     height: 187
     portrait: {fileID: 0}
-  - visualSeed: 0
-    visualPrompt: 
+    bodySize: 0
+    generateBeard: 0
+  - visualPrompt: 
     isEliminated: 0
     aliveCountWhenEliminated: 0
     name: Lea
@@ -239,200 +240,149 @@ MonoBehaviour:
     gender: 
     height: 181
     portrait: {fileID: 0}
-  - visualSeed: 0
-    visualPrompt: 
+    bodySize: 0
+    generateBeard: 0
+  - visualPrompt: 
     isEliminated: 0
     aliveCountWhenEliminated: 0
     name: Alice
-    surname: Dupont
+    surname: Moreau
     age: 31
     gender: 
-    height: 189
+    height: 184
     portrait: {fileID: 0}
-  - visualSeed: 0
-    visualPrompt: 
+    bodySize: 0
+    generateBeard: 0
+  - visualPrompt: 
     isEliminated: 0
     aliveCountWhenEliminated: 0
     name: Lucas
     surname: Martin
     age: 41
     gender: 
-    height: 165
+    height: 186
     portrait: {fileID: 0}
-  - visualSeed: 0
-    visualPrompt: 
+    bodySize: 0
+    generateBeard: 0
+  - visualPrompt: 
+    isEliminated: 0
+    aliveCountWhenEliminated: 0
+    name: Hugo
+    surname: "Rivi\xE8re"
+    age: 71
+    gender: 
+    height: 190
+    portrait: {fileID: 0}
+    bodySize: 0
+    generateBeard: 0
+  - visualPrompt: 
+    isEliminated: 0
+    aliveCountWhenEliminated: 0
+    name: Amir
+    surname: Rahim
+    age: 34
+    gender: 
+    height: 182
+    portrait: {fileID: 0}
+    bodySize: 0
+    generateBeard: 0
+  - visualPrompt: 
+    isEliminated: 0
+    aliveCountWhenEliminated: 0
+    name: Melvin
+    surname: Teran
+    age: 25
+    gender: 
+    height: 189
+    portrait: {fileID: 0}
+    bodySize: 0
+    generateBeard: 0
+  - visualPrompt: 
     isEliminated: 0
     aliveCountWhenEliminated: 0
     name: Antoine
     surname: Leroux
-    age: 71
+    age: 26
     gender: 
     height: 165
     portrait: {fileID: 0}
-  - visualSeed: 0
-    visualPrompt: 
+    bodySize: 0
+    generateBeard: 0
+  - visualPrompt: 
     isEliminated: 0
     aliveCountWhenEliminated: 0
-    name: Hugo
-    surname: Riviere
-    age: 34
-    gender: 
-    height: 181
-    portrait: {fileID: 0}
-  - visualSeed: 0
-    visualPrompt: 
-    isEliminated: 0
-    aliveCountWhenEliminated: 0
-    name: Carla
-    surname: Deschamps
+    name: Isana
+    surname: Arjun
     age: 25
     gender: 
-    height: 168
+    height: 179
     portrait: {fileID: 0}
-  - visualSeed: 0
-    visualPrompt: 
-    isEliminated: 0
-    aliveCountWhenEliminated: 0
-    name: Martin
-    surname: Leon
-    age: 26
-    gender: 
-    height: 185
-    portrait: {fileID: 0}
-  - visualSeed: 0
-    visualPrompt: 
+    bodySize: 0
+    generateBeard: 0
+  - visualPrompt: 
     isEliminated: 0
     aliveCountWhenEliminated: 0
     name: Emma
     surname: Blanchard
-    age: 25
-    gender: 
-    height: 177
-    portrait: {fileID: 0}
-  - visualSeed: 0
-    visualPrompt: 
-    isEliminated: 0
-    aliveCountWhenEliminated: 0
-    name: "J\xE9r\xF4me"
-    surname: Dubois
     age: 29
     gender: 
     height: 182
     portrait: {fileID: 0}
-  - visualSeed: 0
-    visualPrompt: 
+    bodySize: 0
+    generateBeard: 0
+  - visualPrompt: 
     isEliminated: 0
     aliveCountWhenEliminated: 0
-    name: Francois
-    surname: Leclerc
+    name: Jerome
+    surname: Dupont
     age: 77
     gender: 
-    height: 182
+    height: 179
     portrait: {fileID: 0}
-  debugText:
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
-  - DEBUG
+    bodySize: 0
+    generateBeard: 0
+  debugTextInternet:
+  - "vid\xE9os de chats essayant de danser la salsa"
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  debugTextCriminal:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  debugTextBank:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   generateAtStart: 1
-  generateTexts: 0
-  generateImages: 0
+  generateTexts: 1
+  generateImages: 1
   generateSuspect: 1
   numberOfSuspects: 12
   notebookCanvas: {fileID: 0}
@@ -476,7 +426,7 @@ MonoBehaviour:
   - {fileID: 3250411060637283847}
   - {fileID: 2827488244787605901}
   - {fileID: 245582583619480515}
-  suspectGenerator: {fileID: 0}
+  suspectGenerator: {fileID: 3128631894226883446}
   loadingCanvas: {fileID: 0}
   innocentInternetHistory: []
   guiltyInternetHistory: []
@@ -703,6 +653,8 @@ GameObject:
   - component: {fileID: 5176087316948680144}
   - component: {fileID: 8310935138433332467}
   - component: {fileID: 3547430120443993791}
+  - component: {fileID: 4273371423697823677}
+  - component: {fileID: 1141530085852311503}
   m_Layer: 0
   m_Name: SuspectGeneration
   m_TagString: Untagged
@@ -741,11 +693,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1151754481e124fdcb4e1e9f16d642ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  generationStyle: in a pixar style, 3D, exagerated style, half length portrait,
-    Pixar Disney
-  HairAttribute: {fileID: 11400000, guid: 7f4adc1c1eeae2144b6d4df3dfa83c1e, type: 2}
+  generationStyle: Generate a portrait of a person with exaggerated features, seen
+    only from the front. The person's face should reflect a caricature style similar
+    to that of David Levine, with a cartoonish digital style and extreme distortion
+    of facial proportions. Make sure the image format is an unique frontal portrait
+    with the person facing forward.  The person is represented alone in the image,
+    without the presence of other characters or duplicates of themselves. There is
+    just one person in the generated portrait.  The person must generated in color,
+    contrasting strongly with a solid, uniform gray background containing no details.
+    The person is generated with colors and the background is neutral. The overall
+    tone should be humorous and exaggerated.
+  notGeneratedTexture: {fileID: 2800000, guid: 94962e1b55b2ccc4cb1bf70ce13def62, type: 3}
+  ShortHairAttribute: {fileID: 11400000, guid: 7f4adc1c1eeae2144b6d4df3dfa83c1e, type: 2}
+  LongHairAttribute: {fileID: 11400000, guid: 4cf75de663b01ae4392e53e69dfb5ef6, type: 2}
+  HairAttribute: {fileID: 11400000, guid: a489555bba7313b4082fff9df74a9afc, type: 2}
   HairColorAttribute: {fileID: 11400000, guid: 60a5ae0ee41480440b82461ea69c5eea, type: 2}
   BeardAttributes: {fileID: 11400000, guid: 5e9149d1be4d7d541beb3afee3df4f1c, type: 2}
+  MustacheAttributes: {fileID: 11400000, guid: 97165f2ceed37274c8e2843749f80db4, type: 2}
   ClothAttribute: {fileID: 11400000, guid: ebd2fa12c28f50d4b9c6818d2a6151ad, type: 2}
   ClothColorAttribute: {fileID: 11400000, guid: c7d5099d65da3da4cafe41a5171eb572, type: 2}
   HeadAccessoryAttribute: {fileID: 11400000, guid: 4ce1f07b523093b4d8298b49a76dbae8, type: 2}
@@ -796,8 +760,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 988e6ca824677044c8f10ff8c56e5d6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minAge: 15
-  maxAge: 80
+  minAge: 21
+  maxAgeYoung: 27
+  minAgeOld: 70
+  maxAge: 90
   ageDistribution:
     serializedVersion: 2
     m_Curve:
@@ -831,7 +797,9 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  minSize: 150
+  minSize: 100
+  maxSizeTiny: 150
+  minSizeTall: 185
   maxSize: 250
   sizeDistribution:
     serializedVersion: 2
@@ -866,6 +834,40 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4273371423697823677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6080318303171482198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acbba120748fe4ee48696040818c5a7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1141530085852311503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6080318303171482198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 922cc0b82b4a0ad4a81a8bec8fa9de06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  generationStyle: in caricature exaggerate face comics in stylized realistic digital
+    art
+  HairAttribute: {fileID: 0}
+  HairColorAttribute: {fileID: 0}
+  BeardAttributes: {fileID: 0}
+  ClothAttribute: {fileID: 0}
+  ClothColorAttribute: {fileID: 0}
+  HeadAccessoryAttribute: {fileID: 0}
+  suspectGenerator: {fileID: 0}
+  negatifPrompt: 
 --- !u!1 &7192806553275645217
 GameObject:
   m_ObjectHideFlags: 0
@@ -1048,7 +1050,7 @@ MonoBehaviour:
   PromptDirection: In 1 paragraphs. Imagine and anser directly to the question asked
     by the prompt, You have the right to invent additional information to support
     the given information (but they still more inportent). Don't give physicals details
-    of the thief.  Response with 1 paragraph with maximum 60 words
+    of the thief.  Response with 1 paragraph with maximum 70 words.
   TrackConversation: 0
   MaximumTokens: 600
   Temperature: 1
@@ -3720,10 +3722,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5637697761459922400}
     m_Modifications:
-    - target: {fileID: 1735116322790344338, guid: 4971076042a480e46855d6261f7257fa, type: 3}
-      propertyPath: orthographic size
-      value: 14.5
-      objectReference: {fileID: 0}
     - target: {fileID: 3524432495221230054, guid: 4971076042a480e46855d6261f7257fa, type: 3}
       propertyPath: m_Name
       value: CameraManager
@@ -3768,8 +3766,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3780680324378117975, guid: 4971076042a480e46855d6261f7257fa, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

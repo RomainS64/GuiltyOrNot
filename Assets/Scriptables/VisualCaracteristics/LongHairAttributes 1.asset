@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: LongHairAttributes 1
   m_EditorClassIdentifier: 
   attributes:
-  - prompt: long straight
+  - prompt: very long straight
     weights:
       manProbabilityWeight: 1
       womanProbabilityWeight: 1
-  - prompt: long curly
+  - prompt: very long curly
     weights:
       manProbabilityWeight: 1
       womanProbabilityWeight: 1
-  - prompt: long dreadlocks
+  - prompt: very long dreadlocks
     weights:
       manProbabilityWeight: 1
       womanProbabilityWeight: 1
