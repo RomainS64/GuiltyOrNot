@@ -17,10 +17,6 @@ MonoBehaviour:
     weights:
       manProbabilityWeight: 1
       womanProbabilityWeight: 1
-  - prompt: very long curly
-    weights:
-      manProbabilityWeight: 1
-      womanProbabilityWeight: 1
   - prompt: very long dreadlocks
     weights:
       manProbabilityWeight: 1

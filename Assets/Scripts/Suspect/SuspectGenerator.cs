@@ -61,7 +61,7 @@ public class SuspectGenerator : MonoSingleton<SuspectGenerator>
     {
         if (ageTestimonial1 != null)
         {
-            if (_suspectToInnocentThresold <= 1)
+            if (_suspectToInnocentThresold <= 2)
             {
                 return (int)weightedRandom(ageTestimonial1.isOld ? minAge : minAgeOld, !ageTestimonial1.isOld ? maxAgeYoung : maxAge , ageDistribution);
             }
@@ -69,7 +69,7 @@ public class SuspectGenerator : MonoSingleton<SuspectGenerator>
         }
         if (ageTestimonial2 != null)
         {
-            if (_suspectToInnocentThresold is <= 3 and >1 )
+            if (_suspectToInnocentThresold is <= 4 and >2 )
             {
                 return (int)weightedRandom(ageTestimonial2.isOld ? minAge : minAgeOld, !ageTestimonial2.isOld ? maxAgeYoung : maxAge , ageDistribution);
             }
@@ -81,7 +81,7 @@ public class SuspectGenerator : MonoSingleton<SuspectGenerator>
     {
         if (sizeTestimonial1 != null)
         {
-            if (_suspectToInnocentThresold <= 1)
+            if (_suspectToInnocentThresold <= 2)
             {
                 return (int)weightedRandom(sizeTestimonial1.isTall ? minSize : minSizeTall,
                     sizeTestimonial1.isTall ? maxSizeTiny : maxSize, sizeDistribution);
@@ -92,25 +92,25 @@ public class SuspectGenerator : MonoSingleton<SuspectGenerator>
              }
         if (sizeTestimonial2 != null)
         {
-            if (_suspectToInnocentThresold is <= 3  and >1)
+            if (_suspectToInnocentThresold is <= 4  and >2)
             {
                 return (int)weightedRandom(sizeTestimonial2.isTall?minSize:minSizeTall,sizeTestimonial2.isTall?maxSizeTiny:maxSize, sizeDistribution);
             }
             return (int)weightedRandom(sizeTestimonial2.isTall?minSizeTall:minSize,sizeTestimonial2.isTall?maxSize:maxSizeTiny, sizeDistribution);
         }
-        return (int)weightedRandom(minAge, maxAge, sizeDistribution); 
+        return (int)weightedRandom(minSize, maxSize, sizeDistribution); 
     }
     bool HaveToGenerateBeard(BeardTestimonial beardTestimonial1, BeardTestimonial beardTestimonial2, int _suspectToInnocentThresold)
     {
         if (beardTestimonial1 != null)
         {
-            if (_suspectToInnocentThresold <= 1) return !beardTestimonial1.haveBeard;
+            if (_suspectToInnocentThresold <= 2) return !beardTestimonial1.haveBeard;
             return beardTestimonial1.haveBeard;
             
         }
         if (beardTestimonial2 != null)
         {
-            if (_suspectToInnocentThresold is <= 3  and >1) return !beardTestimonial2.haveBeard;
+            if (_suspectToInnocentThresold is <= 4  and >2) return !beardTestimonial2.haveBeard;
             return beardTestimonial2.haveBeard;
             
         }
@@ -121,12 +121,12 @@ public class SuspectGenerator : MonoSingleton<SuspectGenerator>
     {
         if (bodyTestimonial1 != null)
         {
-            if (_suspectToInnocentThresold <= 1) return bodyTestimonial1.isBig?2:1;
+            if (_suspectToInnocentThresold <= 2) return bodyTestimonial1.isBig?2:1;
             return bodyTestimonial1.isBig?1:2;
         }
         if (bodyTestimonial2 != null)
         {
-            if (_suspectToInnocentThresold is <= 3  and >1) return bodyTestimonial1.isBig?1:2;
+            if (_suspectToInnocentThresold is <= 4  and >2) return bodyTestimonial1.isBig?1:2;
             return bodyTestimonial2.isBig?1:2;
         }
         return 0;
@@ -135,13 +135,13 @@ public class SuspectGenerator : MonoSingleton<SuspectGenerator>
     {
         if (hairTestimonial1 != null)
         {
-            if (_suspectToInnocentThresold <= 1) return (false, hairTestimonial1.hairType);
+            if (_suspectToInnocentThresold <= 2) return (false, hairTestimonial1.hairType);
             return (true, hairTestimonial1.hairType);
             
         }
         if (hairTestimonial2 != null)
         {
-            if (_suspectToInnocentThresold is <= 3  and >1 ) return (false, hairTestimonial2.hairType);
+            if (_suspectToInnocentThresold is <= 4  and >2 ) return (false, hairTestimonial2.hairType);
             return (true, hairTestimonial2.hairType);
             
         }

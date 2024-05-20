@@ -10,12 +10,22 @@ public class TopbarBehaviour : MonoBehaviour
     
     [SerializeField]
     private float zoomThreshold;
+
+    [SerializeField] private GameObject[] photos;
+    [SerializeField] private GameObject groupPart;
+    private int groupPartIndex = 6;
     private bool isDisplayed;
     
 
     void Start()
     {
         animator = GetComponent<Animator>();
+        for (int i = 0; i < 50; i++)
+        {
+            int rdm = Random.Range(0, photos.Length);
+            photos[rdm].transform.SetAsLastSibling();
+        }
+        groupPart.transform.SetSiblingIndex(groupPartIndex);
     }
     void Update()
     {

@@ -26,7 +26,10 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
     [SerializeField] private InternetHistoryGenerator[] internetHistoryGenerator;
     [SerializeField] private BankAccountGenerator[] bankAccountGenerator;
     [SerializeField] private CriminalRecordGenerator[] criminalRecords;
-    
+    [SerializeField] private int internetHistoryThreshold = 6;
+    [SerializeField] private int bankAccountThreshold = 8;
+    [SerializeField] private int criminalRecordThreshold = 10;
+
     [SerializeField] private DallESuspectVisualGenerator suspectGenerator;
     private bool scenarioViewSkiped;
 
@@ -143,7 +146,7 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
             Shuffle(innocentInternetHistory);
             Shuffle(guiltyInternetHistory);
             var suspect = GeneratedSuspects[i];
-            if (i <= 5)
+            if (i <= internetHistoryThreshold)
             {
                 suspect.internetHistory.stringList = innocentInternetHistory.GetRange(0, 7);
                 //Ajouter les coupables
@@ -206,7 +209,7 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
             Shuffle(innocentBankAccount);
             Shuffle(guiltyBankAccount);
             
-            if (i <= 7)
+            if (i <= bankAccountThreshold)
             {
                 var suspect = GeneratedSuspects[i];
                 suspect.bankAccountHistory.current = Random.Range(0, 10_000f);
@@ -270,7 +273,7 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
             Shuffle(guiltyCriminalRecord);
             
             
-            if (i <= 9)
+            if (i <= criminalRecordThreshold)
             {
                 var suspect = GeneratedSuspects[i];
                 suspect.criminalRecord.records = innocentCriminalRecord.GetRange(0, 5);

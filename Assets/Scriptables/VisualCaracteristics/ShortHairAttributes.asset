@@ -17,11 +17,7 @@ MonoBehaviour:
     weights:
       manProbabilityWeight: 1
       womanProbabilityWeight: 1
-  - prompt: very short straight
-    weights:
-      manProbabilityWeight: 1
-      womanProbabilityWeight: 1
-  - prompt: very short curly
+  - prompt: really short straight
     weights:
       manProbabilityWeight: 1
       womanProbabilityWeight: 1
