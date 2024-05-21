@@ -63,7 +63,14 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
         var generatedSuspect = GeneratedSuspects[_suspectId];
         generatedSuspect.isEliminated = _eliminated;
         int aliveSuspectCount =  GetAlivedSuspectCout();
-        generatedSuspect.aliveCountWhenEliminated = aliveSuspectCount;
+        if (!_eliminated)
+        {
+            aliveSuspectCount++;
+        }
+        else
+        {
+            generatedSuspect.aliveCountWhenEliminated = aliveSuspectCount;
+        }
         GeneratedSuspects[_suspectId] = generatedSuspect;
         
         foreach (var spawnable in thresholdSpawnableObject)

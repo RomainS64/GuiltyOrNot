@@ -31,7 +31,7 @@ public class CriminalRecordGenerator : MonoBehaviour
         guiltyGeneration.OnGPTResponseReceived += (response) => guiltyGenerated = response;
         guiltyGeneration.SendMessage(guiltyPrompt.Replace(numberTag,nb.ToString())+_scenario);
         while (guiltyGenerated == string.Empty) await Task.Delay(50);
-        _onGenerated?.Invoke(GenerateValues(guiltyGenerated,"[G]"));
+        _onGenerated?.Invoke(GenerateValues(guiltyGenerated,""));
     }
     private async void GenerateInnocent(string _scenario,int nb,Action< List<KeyValuePair<string,string>> > _onGenerated)
     {
@@ -55,7 +55,7 @@ public class CriminalRecordGenerator : MonoBehaviour
             if (matches.Count == 0) continue;
             string date = matches[0].Value.Replace("[",String.Empty).Replace("]",String.Empty);
             string text  = _debug+Regex.Replace( values[i].Replace(matches[0].Value,String.Empty), startPattern, String.Empty);
-           
+            text = text.Replace("\"", "").Replace("-", "");
             transactions.Add(new KeyValuePair<string, string>(text,date));
         }
         return transactions;

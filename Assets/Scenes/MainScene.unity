@@ -760,6 +760,10 @@ PrefabInstance:
       propertyPath: playerId
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 5322700593129750796, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: spawnThreshold
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3837,6 +3841,10 @@ PrefabInstance:
       propertyPath: playerId
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5322700593129750796, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: spawnThreshold
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5133,6 +5141,10 @@ PrefabInstance:
       propertyPath: playerId
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5322700593129750796, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: spawnThreshold
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5440,6 +5452,10 @@ PrefabInstance:
     - target: {fileID: 5322700593129750796, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
       propertyPath: playerId
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5322700593129750796, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: spawnThreshold
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6067,6 +6083,10 @@ PrefabInstance:
     - target: {fileID: 5322700593129750796, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
       propertyPath: playerId
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5322700593129750796, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: spawnThreshold
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6726,6 +6746,10 @@ PrefabInstance:
     - target: {fileID: 5322700593129750796, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
       propertyPath: playerId
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5322700593129750796, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: spawnThreshold
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8480,7 +8504,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3063484831070229916, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: m_Lens.OrthographicSize
-      value: 5.565463
+      value: 11.94435
       objectReference: {fileID: 0}
     - target: {fileID: 5637697761459922400, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8539,12 +8563,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1897040770}
     - target: {fileID: 5775240283294973013, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
+      propertyPath: generateTexts
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5775240283294973013, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: loadingCanvas
       value: 
       objectReference: {fileID: 1772654216}
     - target: {fileID: 5775240283294973013, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: generateImages
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5775240283294973013, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: notebookCanvas
@@ -8552,7 +8580,11 @@ PrefabInstance:
       objectReference: {fileID: 1867693231}
     - target: {fileID: 7711803702273583671, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: orthographic size
-      value: 5.565463
+      value: 11.94435
+      objectReference: {fileID: 0}
+    - target: {fileID: 7762214271244931253, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
+      propertyPath: maxZoom
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 7762214271244931253, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: scrollForce
@@ -9374,6 +9406,10 @@ PrefabInstance:
       propertyPath: playerId
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 5322700593129750796, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: spawnThreshold
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9891,6 +9927,10 @@ PrefabInstance:
       propertyPath: playerId
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5322700593129750796, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: spawnThreshold
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10004,6 +10044,10 @@ PrefabInstance:
     - target: {fileID: 5322700593129750796, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
       propertyPath: playerId
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5322700593129750796, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: spawnThreshold
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11465,6 +11509,10 @@ PrefabInstance:
       propertyPath: playerId
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5322700593129750796, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: spawnThreshold
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11619,7 +11667,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1931040158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12368,6 +12416,10 @@ PrefabInstance:
     - target: {fileID: 5322700593129750796, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
       propertyPath: playerId
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5322700593129750796, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: spawnThreshold
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13304,6 +13356,10 @@ PrefabInstance:
     - target: {fileID: 4849705326746923557, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5322700593129750796, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: spawnThreshold
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

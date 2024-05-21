@@ -168,14 +168,7 @@ public class DallESuspectVisualGenerator : MonoBehaviour
 		    (_suspect.hairToGenerate.Item2 == TestimonialHairType.Long && !_suspect.hairToGenerate.Item1))
 			hairAttribute = ShortHairAttribute;
 		if (_suspect.hairToGenerate.Item2 == TestimonialHairType.Any)hairAttribute = HairAttribute;
-		if (_suspect.hairToGenerate.Item2 != TestimonialHairType.None && _suspect.hairToGenerate.Item1)
-		{
-			prompt += prompt += $",{GetRandomFromAttribute(hairAttribute, true)} hairs ({GetRandomFromAttribute(HairColorAttribute,true)})";
-		}
-		else
-		{
-			prompt += ",bold hair";
-		}
+		prompt += prompt += $",{GetRandomFromAttribute(hairAttribute, true)} hairs ({GetRandomFromAttribute(HairColorAttribute,true)})";
 
 		//-------------------BEARD
 		if (_suspect.generateBeard)

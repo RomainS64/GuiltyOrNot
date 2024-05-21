@@ -21,6 +21,7 @@ public class GptGeneration : MonoBehaviour
     [Range(-2f, 2f)]
     public float Presence_Penality = 0f;
     ChatGPTConversation Conversation;
+    private string lastSendMessage;
     
     public void SetUpConversation()
     {
@@ -33,8 +34,18 @@ public class GptGeneration : MonoBehaviour
         Conversation.Frequency_Penalty = Frequency_Penality;
         Conversation.Presence_Penalty = Presence_Penality;
     }
-    public void SendMessage(string _message)=>Conversation.Say(_message);
+
+    public void SendMessage(string _message)
+    {
+        Conversation.Say(_message);
+        lastSendMessage = _message;
+    }
     private void OnConversationResponse(string _text)=>OnGPTResponseReceived?.Invoke(_text);
-    private void OnConversationError(string _text)=>Debug.LogError("CONVERSATION DONT WORK");
+
+    private void OnConversationError(string _text)
+    {
+        SendMessage(lastSendMessage);
+        Debug.LogError("Conversation Error: "+_text);
+    }
 
 }

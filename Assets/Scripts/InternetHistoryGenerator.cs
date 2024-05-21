@@ -56,6 +56,7 @@ public class InternetHistoryGenerator : MonoBehaviour
         for (int i = 0; i < values.Count; i++)
         {
             values[i] =  Regex.Replace(values[i],startPattern, string.Empty);
+            values[i] = values[i].Replace("\"", "").Replace("-", "");
             values[i] = _debugMarker+values[i];
         }
         

@@ -15,7 +15,7 @@ public enum TheftType{
 
 public enum TestimonialHairType
 {
-    None,Short,Long,Any
+    Short,Long,Any
 }
 public abstract class Testimonial
 {
@@ -24,7 +24,7 @@ public abstract class Testimonial
 }
 public class HairTestimonial : Testimonial
 {
-    public override string Prompt => "without being too obvious, invent a testimony indicating that the criminal has" + (hairType == TestimonialHairType.Long? "long hair" : hairType == TestimonialHairType.Short?"short hair":"no hair");
+    public override string Prompt => "without being too obvious, invent a testimony indicating that the criminal has" + (hairType == TestimonialHairType.Long? "long hair" : "no hair");
     public TestimonialHairType hairType;
 }
 public class BeardTestimonial : Testimonial
@@ -213,7 +213,7 @@ public class ScenarioGenerator : MonoBehaviour
     private HairTestimonial GenerateHairTestimonial()
     {
         var testimonal = new HairTestimonial();
-        testimonal.hairType = (TestimonialHairType)Random.Range(0, 3);
+        testimonal.hairType = (TestimonialHairType)Random.Range(0, 2);
         return testimonal;
     }
     private SizeTestimonial GenerateSizeTestimonial()

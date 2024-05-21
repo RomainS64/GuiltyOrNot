@@ -38,7 +38,7 @@ public class BankAccountGenerator : MonoBehaviour
         guiltyGeneration.OnGPTResponseReceived += (response) => guiltyGenerated = response;
         guiltyGeneration.SendMessage(guiltyPrompt.Replace(numberTag,nb.ToString())+_scenario);
         while (guiltyGenerated == string.Empty) await Task.Delay(50);
-        _onGenerated?.Invoke(GenerateValues(guiltyGenerated,"[G]"));
+        _onGenerated?.Invoke(GenerateValues(guiltyGenerated,""));
     }
     private async void GenerateInnocent(string _scenario,int nb,Action< List<KeyValuePair<string,float>> > _onGenerated)
     {
@@ -65,6 +65,7 @@ public class BankAccountGenerator : MonoBehaviour
             if (float.TryParse(money,NumberStyles.Any,CultureInfo.InvariantCulture,out float result))
             {
                 string text  = _debug+Regex.Replace( values[i].Replace(matches[0].Value,String.Empty), startPattern, String.Empty);
+                text = text.Replace("\"", "").Replace("-", "");
                 Debug.Log("value parsed:"+result.ToString("F")+"$");
                 transactions.Add(new KeyValuePair<string, float>(text,result));
             }

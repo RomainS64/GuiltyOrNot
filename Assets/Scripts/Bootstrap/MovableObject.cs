@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 
 public class MovableObject : MonoBehaviour, IPointerDownHandler,IPointerUpHandler
 {
@@ -8,6 +9,10 @@ public class MovableObject : MonoBehaviour, IPointerDownHandler,IPointerUpHandle
     [SerializeField] private float unknownFactorX;
     [SerializeField] private float unknownFactorY;
     [SerializeField] private float zoomMaxMultiplicator;
+    [SerializeField] private float maxXPos = 33;
+    [SerializeField] private float minXPos = -28;
+    [SerializeField] private float maxYPos = 21;
+    [SerializeField] private float minYPos = -13;
     private bool isMoving;
     private Vector2 firstMousePos;
     private Vector2 firstObjectPos;
@@ -63,6 +68,10 @@ public class MovableObject : MonoBehaviour, IPointerDownHandler,IPointerUpHandle
         Vector2 newPos = 
             new Vector2(firstObjectPos.x -(delta.x * unknownFactorX * zoomMultiplicator),firstObjectPos.y - (delta.y * unknownFactorY * zoomMultiplicator));
 
+        if (newPos.x > maxXPos) newPos.x = maxXPos;
+        if (newPos.y > maxYPos) newPos.y = maxYPos;
+        if (newPos.x < minXPos) newPos.x = minXPos;
+        if (newPos.y < minYPos) newPos.y = minYPos;
         objectTransform.anchoredPosition = newPos;
         
     }

@@ -719,7 +719,6 @@ GameObject:
   - component: {fileID: 4987664775263998553}
   - component: {fileID: 6286542048638169617}
   - component: {fileID: 8567463087537516832}
-  - component: {fileID: 2708860899974694533}
   m_Layer: 5
   m_Name: IdCard
   m_TagString: Untagged
@@ -826,21 +825,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnThreshold: 10
   playerId: 0
---- !u!114 &2708860899974694533
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4284910026290783698}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0a063b218393654c838ef5748d8d588, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  infinitPin: 1
-  linkedMovable: {fileID: 463624216027866188}
-  forcedPinPosition: {fileID: 0}
 --- !u!1 &4358021679851216190
 GameObject:
   m_ObjectHideFlags: 0
