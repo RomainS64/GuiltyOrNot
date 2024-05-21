@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TopbarBehaviour : MonoBehaviour
 {
+    [SerializeField] private bool shuffle;
     private Animator animator;
     private const string showParameter = "Show";
     private static readonly int Show = Animator.StringToHash(showParameter);
@@ -20,12 +21,16 @@ public class TopbarBehaviour : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        for (int i = 0; i < 50; i++)
+        if (shuffle)
         {
-            int rdm = Random.Range(0, photos.Length);
-            photos[rdm].transform.SetAsLastSibling();
+            for (int i = 0; i < 50; i++)
+            {
+                int rdm = Random.Range(0, photos.Length);
+                photos[rdm].transform.SetAsLastSibling();
+            }
+            groupPart.transform.SetSiblingIndex(groupPartIndex);
         }
-        groupPart.transform.SetSiblingIndex(groupPartIndex);
+        
     }
     void Update()
     {

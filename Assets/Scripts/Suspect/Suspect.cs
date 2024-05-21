@@ -31,6 +31,8 @@ public struct Suspect
     public int bodySize;
     public (bool, TestimonialHairType) hairToGenerate;
     public bool generateBeard;
+
+    public int threshold;
 }
 
 public struct InternetHistory

@@ -52,22 +52,42 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
 
     private ThresholdSpawnableObject[] thresholdSpawnableObject = { };
 
+    [SerializeField] private GameObject endCanvas;
+    [SerializeField] private GameObject winEndPart;
+    [SerializeField] private GameObject looseEndPart;
+    
+
     public void SetSuspectEliminationStatus(int _suspectId, bool _eliminated)
     {
+        
         var generatedSuspect = GeneratedSuspects[_suspectId];
         generatedSuspect.isEliminated = _eliminated;
-        generatedSuspect.aliveCountWhenEliminated = GetAlivedSuspectCout();
+        int aliveSuspectCount =  GetAlivedSuspectCout();
+        generatedSuspect.aliveCountWhenEliminated = aliveSuspectCount;
         GeneratedSuspects[_suspectId] = generatedSuspect;
         
         foreach (var spawnable in thresholdSpawnableObject)
         {
-            spawnable.NotifyThreshold(GetAlivedSuspectCout(),GeneratedSuspects[spawnable.GetPlayerId()].aliveCountWhenEliminated,GeneratedSuspects[spawnable.GetPlayerId()].isEliminated);
-
+            spawnable.NotifyThreshold(aliveSuspectCount,GeneratedSuspects[spawnable.GetPlayerId()].aliveCountWhenEliminated,GeneratedSuspects[spawnable.GetPlayerId()].isEliminated);
         }
+
+        if (aliveSuspectCount == 2 && _eliminated)
+        {
+            Suspect lastSuspect = GeneratedSuspects.Where(suspect => suspect.isEliminated == false).ToArray()[0];
+            FinishGame(lastSuspect.threshold == GeneratedSuspects.Count-1);
+        }
+    }
+
+    public void FinishGame(bool _win)
+    {
+        winEndPart.SetActive(_win);
+        looseEndPart.SetActive(!_win);
+        endCanvas.SetActive(true);
     }
 
     private void Start()
     {
+        endCanvas.SetActive(false);
         IsInGame = false;
         if(generateAtStart)StartGenerating();
         //if(notebookCanvas != null)notebookCanvas.SetActive(false);

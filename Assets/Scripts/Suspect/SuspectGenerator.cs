@@ -52,7 +52,8 @@ public class SuspectGenerator : MonoSingleton<SuspectGenerator>
             aliveCountWhenEliminated = int.MaxValue,
             bodySize = HaveToGenerateBodySize(bodyTestimonial1,bodyTestimonial2,_suspectToInnocentThresold),
             hairToGenerate = GenerateHair(hairTestimonial1,hairTestimonial2,_suspectToInnocentThresold),
-            generateBeard = HaveToGenerateBeard(beardTestimonial1,beardTestimonial2,_suspectToInnocentThresold)
+            generateBeard = HaveToGenerateBeard(beardTestimonial1,beardTestimonial2,_suspectToInnocentThresold),
+            threshold = _suspectToInnocentThresold
         };
         return newSuspect;
     }
