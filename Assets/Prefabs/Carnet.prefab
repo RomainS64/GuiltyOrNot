@@ -2436,6 +2436,9 @@ MonoBehaviour:
   notDisplayedPosition: {fileID: 0}
   startDisplayedPosition: {fileID: 0}
   scenario: {fileID: 1108915556140205967}
+  testimonial1: {fileID: 0}
+  testimonial2: {fileID: 0}
+  testimonial3: {fileID: 0}
 --- !u!114 &231015441238678978
 MonoBehaviour:
   m_ObjectHideFlags: 0
