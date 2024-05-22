@@ -6,15 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/CorkPanel.unity
-    guid: 7954d44cc6ac3f940bdbb75b5a8f219f
-  - enabled: 1
-    path: Assets/Scenes/Test/SuspectGeneratorTest.unity
-    guid: 5f1e6c40eaf05974caf195fafa245662
-  - enabled: 1
-    path: Assets/Scenes/Test/ScenarioGenerationTest.unity
-    guid: 6e33f4bc4a1536a439e87b62a6dbb6cf
-  - enabled: 1
-    path: Assets/Scenes/Test/ThresholdGenerator.unity
-    guid: e4eed7d3c84f8b74ab1249f5b7783a96
+    path: Assets/Scenes/MainScene.unity
+    guid: e9f6d976cae0b93439d42a125040daf9
   m_configObjects: {}

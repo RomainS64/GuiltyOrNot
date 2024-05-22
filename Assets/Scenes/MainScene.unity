@@ -8504,7 +8504,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3063484831070229916, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: m_Lens.OrthographicSize
-      value: 11.94435
+      value: 5.967948
       objectReference: {fileID: 0}
     - target: {fileID: 5637697761459922400, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8563,10 +8563,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1897040770}
     - target: {fileID: 5775240283294973013, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
-      propertyPath: generateTexts
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5775240283294973013, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: loadingCanvas
       value: 
       objectReference: {fileID: 1772654216}
@@ -8580,15 +8576,7 @@ PrefabInstance:
       objectReference: {fileID: 1867693231}
     - target: {fileID: 7711803702273583671, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: orthographic size
-      value: 11.94435
-      objectReference: {fileID: 0}
-    - target: {fileID: 7762214271244931253, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
-      propertyPath: maxZoom
-      value: 34
-      objectReference: {fileID: 0}
-    - target: {fileID: 7762214271244931253, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
-      propertyPath: scrollForce
-      value: 100
+      value: 5.967948
       objectReference: {fileID: 0}
     - target: {fileID: 9128310859333116320, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: scenes.Array.data[0].worldCanvas

@@ -220,6 +220,7 @@ MonoBehaviour:
     portrait: {fileID: 0}
     bodySize: 0
     generateBeard: 0
+    threshold: 0
   - visualPrompt: 
     isEliminated: 0
     aliveCountWhenEliminated: 0
@@ -231,6 +232,7 @@ MonoBehaviour:
     portrait: {fileID: 0}
     bodySize: 0
     generateBeard: 0
+    threshold: 0
   - visualPrompt: 
     isEliminated: 0
     aliveCountWhenEliminated: 0
@@ -242,6 +244,7 @@ MonoBehaviour:
     portrait: {fileID: 0}
     bodySize: 0
     generateBeard: 0
+    threshold: 0
   - visualPrompt: 
     isEliminated: 0
     aliveCountWhenEliminated: 0
@@ -253,6 +256,7 @@ MonoBehaviour:
     portrait: {fileID: 0}
     bodySize: 0
     generateBeard: 0
+    threshold: 0
   - visualPrompt: 
     isEliminated: 0
     aliveCountWhenEliminated: 0
@@ -264,6 +268,7 @@ MonoBehaviour:
     portrait: {fileID: 0}
     bodySize: 0
     generateBeard: 0
+    threshold: 0
   - visualPrompt: 
     isEliminated: 0
     aliveCountWhenEliminated: 0
@@ -275,6 +280,7 @@ MonoBehaviour:
     portrait: {fileID: 0}
     bodySize: 0
     generateBeard: 0
+    threshold: 0
   - visualPrompt: 
     isEliminated: 0
     aliveCountWhenEliminated: 0
@@ -286,6 +292,7 @@ MonoBehaviour:
     portrait: {fileID: 0}
     bodySize: 0
     generateBeard: 0
+    threshold: 0
   - visualPrompt: 
     isEliminated: 0
     aliveCountWhenEliminated: 0
@@ -297,6 +304,7 @@ MonoBehaviour:
     portrait: {fileID: 0}
     bodySize: 0
     generateBeard: 0
+    threshold: 0
   - visualPrompt: 
     isEliminated: 0
     aliveCountWhenEliminated: 0
@@ -308,6 +316,7 @@ MonoBehaviour:
     portrait: {fileID: 0}
     bodySize: 0
     generateBeard: 0
+    threshold: 0
   - visualPrompt: 
     isEliminated: 0
     aliveCountWhenEliminated: 0
@@ -319,6 +328,7 @@ MonoBehaviour:
     portrait: {fileID: 0}
     bodySize: 0
     generateBeard: 0
+    threshold: 0
   - visualPrompt: 
     isEliminated: 0
     aliveCountWhenEliminated: 0
@@ -330,6 +340,7 @@ MonoBehaviour:
     portrait: {fileID: 0}
     bodySize: 0
     generateBeard: 0
+    threshold: 0
   - visualPrompt: 
     isEliminated: 0
     aliveCountWhenEliminated: 0
@@ -341,6 +352,7 @@ MonoBehaviour:
     portrait: {fileID: 0}
     bodySize: 0
     generateBeard: 0
+    threshold: 0
   debugTextInternet:
   - "vid\xE9os de chats essayant de danser la salsa"
   - 
@@ -426,7 +438,13 @@ MonoBehaviour:
   - {fileID: 3250411060637283847}
   - {fileID: 2827488244787605901}
   - {fileID: 245582583619480515}
+  internetHistoryThreshold: 6
+  bankAccountThreshold: 8
+  criminalRecordThreshold: 10
   suspectGenerator: {fileID: 3128631894226883446}
+  endCanvas: {fileID: 0}
+  winEndPart: {fileID: 0}
+  looseEndPart: {fileID: 0}
   loadingCanvas: {fileID: 0}
   innocentInternetHistory: []
   guiltyInternetHistory: []
@@ -761,75 +779,57 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minAge: 21
-  maxAgeYoung: 27
+  maxAgeYoung: 25
   minAgeOld: 70
   maxAge: 90
   ageDistribution:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: -0.04166794
-      value: 0.21300125
-      inSlope: 1.4756191
-      outSlope: 1.4756191
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.33333334
+      outWeight: 0
     - serializedVersion: 3
-      time: 0.49166667
+      time: 1
       value: 1
-      inSlope: 0.010109186
-      outSlope: 0.010109186
+      inSlope: 0
+      outSlope: 0
       tangentMode: 34
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1.0291686
-      value: 0.21771932
-      inSlope: -1.4554007
-      outSlope: -1.4554007
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   minSize: 100
-  maxSizeTiny: 150
+  maxSizeTiny: 160
   minSizeTall: 185
   maxSize: 250
   sizeDistribution:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: -0.04166794
-      value: 0.21300125
-      inSlope: 1.4756191
-      outSlope: 1.4756191
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.33333334
+      outWeight: 0
     - serializedVersion: 3
-      time: 0.49166667
+      time: 1
       value: 1
-      inSlope: 0.010109186
-      outSlope: 0.010109186
+      inSlope: 0
+      outSlope: 0
       tangentMode: 34
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1.0291686
-      value: 0.21771932
-      inSlope: -1.4554007
-      outSlope: -1.4554007
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -3722,9 +3722,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5637697761459922400}
     m_Modifications:
+    - target: {fileID: 1735116322790344338, guid: 4971076042a480e46855d6261f7257fa, type: 3}
+      propertyPath: orthographic size
+      value: 5.683189
+      objectReference: {fileID: 0}
     - target: {fileID: 3524432495221230054, guid: 4971076042a480e46855d6261f7257fa, type: 3}
       propertyPath: m_Name
       value: CameraManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6454261591064230201, guid: 4971076042a480e46855d6261f7257fa, type: 3}
+      propertyPath: m_Lens.OrthographicSize
+      value: 5.683189
       objectReference: {fileID: 0}
     - target: {fileID: 8467482881337043688, guid: 4971076042a480e46855d6261f7257fa, type: 3}
       propertyPath: m_LocalPosition.x

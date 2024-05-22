@@ -175,21 +175,7 @@ public class DallESuspectVisualGenerator : MonoBehaviour
 		{
 			prompt += $",{GetRandomFromAttribute(BeardAttributes, true)}";
 		}
-		/*
-		//------------------BODY SIZE
-	
-		//0:NO impact 1:Skinny 2:Big
-		switch (_suspect.bodySize)
-		{
-			case 1:
-				prompt += ",very light build";
-				break;
-			case 2:
-				prompt += ",heavy build";
-				break;
-		}
-		*/
-		
+
 		//------------------OTHER
 		prompt += $",{GetRandomFromAttribute(HeadAccessoryAttribute,true)}";
 		prompt += $",in a {GetRandomFromAttribute(ClothAttribute, true)}({GetRandomFromAttribute(ClothColorAttribute, true)})";

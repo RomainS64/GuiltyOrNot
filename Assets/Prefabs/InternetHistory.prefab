@@ -1001,7 +1001,6 @@ GameObject:
   - component: {fileID: 8442179006783847789}
   - component: {fileID: 3556740132055612558}
   - component: {fileID: 8159618253511308750}
-  - component: {fileID: 6464405934654848737}
   - component: {fileID: 1763132855117958526}
   m_Layer: 5
   m_Name: InternetHistory
@@ -1055,6 +1054,10 @@ MonoBehaviour:
   unknownFactorX: 0
   unknownFactorY: 0
   zoomMaxMultiplicator: 5
+  maxXPos: 33
+  minXPos: -28
+  maxYPos: 21
+  minYPos: -13
 --- !u!95 &3556740132055612558
 Animator:
   serializedVersion: 5
@@ -1097,21 +1100,6 @@ MonoBehaviour:
   - {fileID: 8807867761141742976}
   - {fileID: 1535690942272354666}
   - {fileID: 850755913807424657}
---- !u!114 &6464405934654848737
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6273289496350519969}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0a063b218393654c838ef5748d8d588, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  infinitPin: 1
-  linkedMovable: {fileID: 0}
-  forcedPinPosition: {fileID: 0}
 --- !u!114 &1763132855117958526
 MonoBehaviour:
   m_ObjectHideFlags: 0

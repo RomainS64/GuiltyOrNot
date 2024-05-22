@@ -64,19 +64,19 @@ public class SuspectGenerator : MonoSingleton<SuspectGenerator>
         {
             if (_suspectToInnocentThresold <= 2)
             {
-                return (int)weightedRandom(ageTestimonial1.isOld ? minAge : minAgeOld, !ageTestimonial1.isOld ? maxAgeYoung : maxAge , ageDistribution);
+                return (int)UnityEngine.Random.Range(ageTestimonial1.isOld ? minAge : minAgeOld, ageTestimonial1.isOld ? maxAgeYoung : maxAge );
             }
-            return (int)weightedRandom(ageTestimonial1.isOld ? minAgeOld : minAge, !ageTestimonial1.isOld ? maxAge : maxAgeYoung, ageDistribution);
+            return (int)UnityEngine.Random.Range(ageTestimonial1.isOld ? minAgeOld : minAge, ageTestimonial1.isOld ? maxAge : maxAgeYoung);
         }
         if (ageTestimonial2 != null)
         {
             if (_suspectToInnocentThresold is <= 4 and >2 )
             {
-                return (int)weightedRandom(ageTestimonial2.isOld ? minAge : minAgeOld, !ageTestimonial2.isOld ? maxAgeYoung : maxAge , ageDistribution);
+                return (int)UnityEngine.Random.Range(ageTestimonial2.isOld ? minAge : minAgeOld, ageTestimonial2.isOld ? maxAgeYoung : maxAge );
             }
-            return (int)weightedRandom(ageTestimonial2.isOld ? minAgeOld : minAge, !ageTestimonial2.isOld ? maxAge : maxAgeYoung, ageDistribution);
+            return (int)UnityEngine.Random.Range(ageTestimonial2.isOld ? minAgeOld : minAge, ageTestimonial2.isOld ? maxAge : maxAgeYoung);
         }
-        return (int)weightedRandom(minAge, maxAge, ageDistribution);
+        return (int)UnityEngine.Random.Range(minAge, maxAge);
     }
     int GenerateSize(SizeTestimonial sizeTestimonial1, SizeTestimonial sizeTestimonial2, int _suspectToInnocentThresold)
     {
@@ -84,22 +84,22 @@ public class SuspectGenerator : MonoSingleton<SuspectGenerator>
         {
             if (_suspectToInnocentThresold <= 2)
             {
-                return (int)weightedRandom(sizeTestimonial1.isTall ? minSize : minSizeTall,
-                    sizeTestimonial1.isTall ? maxSizeTiny : maxSize, sizeDistribution);
+                return (int)UnityEngine.Random.Range(sizeTestimonial1.isTall ? minSize : minSizeTall,
+                    sizeTestimonial1.isTall ? maxSizeTiny : maxSize);
 
             }
-            return (int)weightedRandom(sizeTestimonial1.isTall?minSizeTall:minSize,sizeTestimonial1.isTall?maxSize:maxSizeTiny, sizeDistribution); 
+            return (int)UnityEngine.Random.Range(sizeTestimonial1.isTall?minSizeTall:minSize,sizeTestimonial1.isTall?maxSize:maxSizeTiny); 
 
              }
         if (sizeTestimonial2 != null)
         {
             if (_suspectToInnocentThresold is <= 4  and >2)
             {
-                return (int)weightedRandom(sizeTestimonial2.isTall?minSize:minSizeTall,sizeTestimonial2.isTall?maxSizeTiny:maxSize, sizeDistribution);
+                return (int)UnityEngine.Random.Range(sizeTestimonial2.isTall?minSize:minSizeTall,sizeTestimonial2.isTall?maxSizeTiny:maxSize);
             }
-            return (int)weightedRandom(sizeTestimonial2.isTall?minSizeTall:minSize,sizeTestimonial2.isTall?maxSize:maxSizeTiny, sizeDistribution);
+            return (int)UnityEngine.Random.Range(sizeTestimonial2.isTall?minSizeTall:minSize,sizeTestimonial2.isTall?maxSize:maxSizeTiny);
         }
-        return (int)weightedRandom(minSize, maxSize, sizeDistribution); 
+        return (int)UnityEngine.Random.Range(minSize, maxSize); 
     }
     bool HaveToGenerateBeard(BeardTestimonial beardTestimonial1, BeardTestimonial beardTestimonial2, int _suspectToInnocentThresold)
     {

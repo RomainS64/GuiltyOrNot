@@ -24,27 +24,42 @@ public abstract class Testimonial
 }
 public class HairTestimonial : Testimonial
 {
-    public override string Prompt => "without being too obvious, invent a testimony indicating that the criminal has" + (hairType == TestimonialHairType.Long? "long hair" : "no hair");
+    public override string Prompt => 
+        "without being too obvious,"+
+        " invent a testimony indicating that the criminal has" +
+        (hairType == TestimonialHairType.Long? "long hair" : "no hair");
     public TestimonialHairType hairType;
 }
 public class BeardTestimonial : Testimonial
 {
-    public override string Prompt => "without being too obvious, invent a testimony indicating that the criminal" + (haveBeard ? "has a beard" : "has no beard");
+    public override string Prompt => 
+        "without being too obvious," +
+        " invent a testimony indicating that the criminal" +
+        (haveBeard ? "has a beard" : "has no beard");
     public bool haveBeard;
 }
 public class BodyTestimonial : Testimonial
 {
-    public override string Prompt => "without being too obvious,invent a testimony indicating that the criminal is " + (isBig ? "heavy build" : "very light build");
+    public override string Prompt => 
+        "without being too obvious," +
+        "invent a testimony indicating that the criminal is " +
+        (isBig ? "heavy build" : "very light build");
     public bool isBig;
 }
 public class AgeTestimonial : Testimonial
 {
-    public override string Prompt => "without being too obvious,invent a testimony indicating that the criminal is " + (isOld ? "really old": "young");
+    public override string Prompt => 
+        "without being too obvious,"+
+        "invent a testimony indicating that the criminal is " +
+        (isOld ? "really old": "young");
     public bool isOld;
 }
 public class SizeTestimonial : Testimonial
 {
-    public override string Prompt => "without being too obvious,invent a testimony indicating that the criminal is " + (isTall ? "really tall" : "really short");
+    public override string Prompt => 
+        "without being too obvious,"+
+        "invent a testimony indicating that the criminal is " 
+        + (isTall ? "really tall" : "really short");
     public bool isTall;
 }
 public class ScenarioGenerator : MonoBehaviour
@@ -159,7 +174,7 @@ public class ScenarioGenerator : MonoBehaviour
         _onGenerated?.Invoke(generatedScenario);
     }
 
-    private TheftType GenereateThiefType()=>(TheftType)Random.Range(0, 4);
+    private TheftType GenereateThiefType()=>(TheftType)Random.Range(0, 3);
     
     private Testimonial GenerateTestimonial(bool _firstTestimonial)
     {

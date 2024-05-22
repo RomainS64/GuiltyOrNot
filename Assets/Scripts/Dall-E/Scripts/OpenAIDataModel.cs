@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Codice.Client.ChangeTrackerService;
 using REST_API_HANDLER;
 using UnityEngine;
 
@@ -16,16 +17,18 @@ public class GenerateImageRequestModel
     public string prompt;
     public int n;
     public string size;
+    public string quality;
 
     string API_KEY = Utility.API_KEY;//"sk-xxxxxx";
     string ORGANISATION_KEY = Utility.ORGANIZATION_KEY;//"org-xxxxxx";
 
-    public GenerateImageRequestModel(string _model,string _prompt, int _n, string _size)
+    public GenerateImageRequestModel(string _model,string _prompt, int _n, string _size,string _quality = "hd")
     {
         model = _model;
         prompt = _prompt;
         n = _n;
         size = _size;
+        quality = _quality;
     }
 
     public string ToBody()

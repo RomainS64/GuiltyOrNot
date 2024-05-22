@@ -12,6 +12,7 @@ namespace BitSplash.AI.GPT
         GPT_3_5_TURBO,
         GPT_4,
         GPT_3_5_TURBO_16K,
-        GPT_4_32K
+        GPT_4_32K,
+        GPT_40
     }
 }
