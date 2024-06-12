@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -151,3 +152,4 @@ namespace BitSplash.AI.GPT
         }
     }
 }
+#endif

@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using Codice.Client.ChangeTrackerService;
-using REST_API_HANDLER;
 using UnityEngine;
 
 public class OpenAIDataModel 

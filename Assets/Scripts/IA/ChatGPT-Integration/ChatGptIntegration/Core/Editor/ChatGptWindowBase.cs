@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 // Importing necessary namespaces
 using BitSplash.AI.GPT;
 using System;
@@ -58,3 +59,4 @@ namespace BitSplash.AI.GPT
         }
     }
 }
+#endif

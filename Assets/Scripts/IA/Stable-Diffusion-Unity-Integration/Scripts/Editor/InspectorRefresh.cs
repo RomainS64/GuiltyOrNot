@@ -1,5 +1,6 @@
-using UnityEditor;
+#if UNITY_EDITOR
 using System;
+using UnityEditor;
 using UnityEditor.SceneManagement;
 
 /// <summary>
@@ -30,4 +31,4 @@ public static class InspectorRefresh
         EditorUtility.RequestScriptReload();
     }
 }
-
+#endif

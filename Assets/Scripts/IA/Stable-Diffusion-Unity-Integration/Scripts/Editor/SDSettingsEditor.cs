@@ -1,4 +1,4 @@
-
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEngine;
 
@@ -18,3 +18,4 @@ public class SDSettingsEditor : Editor
         Selection.activeObject = asset;
     }
 }
+#endif

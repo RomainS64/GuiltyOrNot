@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEngine;
 
@@ -27,3 +28,4 @@ public class StableDiffusionText2ImageEditor : Editor
             myComponent.Generate();
     }
 }
+#endif

@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEngine;
 
@@ -18,3 +19,4 @@ public class StableDiffusionConfigurationEditor : Editor
             myComponent.ListModels();
     }
 }
+#endif
