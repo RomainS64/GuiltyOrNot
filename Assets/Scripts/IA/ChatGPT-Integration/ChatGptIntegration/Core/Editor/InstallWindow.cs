@@ -61,6 +61,7 @@ namespace BitSplash.AI.GPT
                 AssetDatabase.CreateAsset(Authentication, $"{dir}/GPTAuth.asset");
                 AssetDatabase.SaveAssets();
             }
+            
             return Authentication;
         }
         void Load()

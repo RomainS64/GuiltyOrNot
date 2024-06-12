@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField] private MenuSettings menuSettings; 
     [SerializeField] private Button startButton;
     [SerializeField] private Button settingsButton;
     [SerializeField] private Button quitButton;
@@ -23,12 +24,18 @@ public class MainMenu : MonoBehaviour
     private IEnumerator transitionCoroutine = null;
     void Start()
     {
+        menuSettings.OnApiAccessChanged += ChangeStartState;
         startButton.onClick.AddListener(StartClickListener);
         settingsButton.onClick.AddListener(SettingsClickListener);
         quitButton.onClick.AddListener(QuitClickListener);
         creditsButton.onClick.AddListener(CreditsClickListener);
         mainMenuButton1.onClick.AddListener(MainMenuClickListener);
         mainMenuButton2.onClick.AddListener(MainMenuClickListener);
+    }
+
+    private void ChangeStartState(bool _active)
+    {
+        startButton.interactable = _active;
     }
 
     private void CreditsClickListener()

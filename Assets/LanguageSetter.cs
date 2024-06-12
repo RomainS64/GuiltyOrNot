@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class LanguageSetter : MonoBehaviour
 {
-    void Start()
+    void Awake()
     {
         GptGeneration[] generations = FindObjectsOfType<GptGeneration>(true);
         string language = PlayerPrefs.GetString("Language", "English");

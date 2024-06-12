@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Codice.Client.Common.WebApi;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -50,6 +51,9 @@ namespace BitSplash.AI.GPT
                 Authentication = Resources.Load<ApiAuthenticationSettings>("ChatGPTForGames/GPTAuth");
             if (Authentication == null)
                 throw new Exception("Please set up authentication by editing the object GPTAuth. see the docs for more info");
+            
+            Authentication.Organization = PlayerPrefs.GetString("Organization",string.Empty);
+            Authentication.PrivateApiKey = PlayerPrefs.GetString("PrivateAPIKey",string.Empty);
         }
         /// <summary>
         /// starts a new converstation for this monobehaviour
