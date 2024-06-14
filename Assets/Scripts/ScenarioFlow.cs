@@ -63,6 +63,7 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
         var generatedSuspect = GeneratedSuspects[_suspectId];
         generatedSuspect.isEliminated = _eliminated;
         int aliveSuspectCount =  GetAlivedSuspectCout();
+        NewDocUI.Instance.NotifyThreshold(aliveSuspectCount,_eliminated);
         if (!_eliminated)
         {
             aliveSuspectCount++;
@@ -76,8 +77,9 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
         foreach (var spawnable in thresholdSpawnableObject)
         {
             spawnable.NotifyThreshold(aliveSuspectCount,GeneratedSuspects[spawnable.GetPlayerId()].aliveCountWhenEliminated,GeneratedSuspects[spawnable.GetPlayerId()].isEliminated);
+            
         }
-
+        
         if (aliveSuspectCount == 2 && _eliminated)
         {
             Suspect lastSuspect = GeneratedSuspects.Where(suspect => suspect.isEliminated == false).ToArray()[0];
@@ -100,7 +102,7 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
         //if(notebookCanvas != null)notebookCanvas.SetActive(false);
     }
 
-    private int GetAlivedSuspectCout()=>GeneratedSuspects.Count(suspect => !suspect.isEliminated);
+    public int GetAlivedSuspectCout()=>GeneratedSuspects.Count(suspect => !suspect.isEliminated);
     
     public void StartGenerating()=>StartCoroutine(StartGeneratingCoroutine());
 
@@ -175,14 +177,14 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
             var suspect = GeneratedSuspects[i];
             if (i <= internetHistoryThreshold)
             {
-                suspect.internetHistory.stringList = innocentInternetHistory.GetRange(0, 7);
+                suspect.internetHistory.stringList = innocentInternetHistory.GetRange(0, 8);
                 //Ajouter les coupables
                 Shuffle(suspect.internetHistory.stringList);
                 GeneratedSuspects[i] = suspect;
             }
             else
             {
-                suspect.internetHistory.stringList = innocentInternetHistory.GetRange(0, 5);
+                suspect.internetHistory.stringList = innocentInternetHistory.GetRange(0, 6);
                 suspect.internetHistory.stringList.AddRange(guiltyInternetHistory.GetRange(0,2));
                 //Ajouter les coupables
                 Shuffle(suspect.internetHistory.stringList);

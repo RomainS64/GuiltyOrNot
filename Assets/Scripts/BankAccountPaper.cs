@@ -8,9 +8,8 @@ using UnityEngine;
 public struct AccountTransaction
 {
     public TMP_Text text;
-    public TMP_Text price;
-    public GameObject positiveArrow;
-    public GameObject negativeArrow;
+    public TMP_Text negativePrice;
+    public TMP_Text positivePrice;
 }
 public class BankAccountPaper : MonoBehaviour
 {
@@ -32,10 +31,15 @@ public class BankAccountPaper : MonoBehaviour
         foreach (var transaction in _transactions)
         {
             bool isPositive = transaction.Value > 0;
-            transactions[i].negativeArrow.SetActive(!isPositive);
-            transactions[i].positiveArrow.SetActive(isPositive);
-            transactions[i].price.color = isPositive ? positiveColor : negativeColor;
-            transactions[i].price.text = Mathf.Abs(transaction.Value).ToString("F");
+            if (isPositive)
+            {
+                transactions[i].positivePrice.text = Mathf.Abs(transaction.Value).ToString("F") +"$";
+            }
+            else
+            {
+                transactions[i].negativePrice.text = Mathf.Abs(transaction.Value).ToString("F")+"$";
+            }
+            
             transactions[i].text.text = transaction.Key;
             ++i;
         }
