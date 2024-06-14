@@ -31,7 +31,15 @@ public class PlacePin : MonoSingleton<PlacePin>
         SetPlacePinMode(placePinAtStart);
     }
     public void SetPlacePinMode(bool _active) => isInPinMode = _active;
-    public void PinablePined(Transform _pined,Transform _forcedPosition = null)
+
+    public int PlaceLink(Transform _parentLeft,Transform _parentRight, Transform _left ,Transform _right)
+    {
+        PinablePined(_parentLeft, _left,_right);
+        PinablePined(_parentRight, _right);
+        return allRopeAndPins.Count - 1;
+    }
+
+    public void PinablePined(Transform _pined,Transform _forcedPosition = null,Transform _ropeTmpPosition = null)
     {
         AudioManager.instance.audioEvents["Pin"].Play();
         if (!isInPinMode) return;
@@ -51,7 +59,7 @@ public class PlacePin : MonoSingleton<PlacePin>
         {
             newPinBehaviour.Init(allRopeAndPins.Count,true);
             //Increment + add to list newRope and newPin
-            GameObject newRope = Instantiate(ropePrefab, mouseFollow.position+ropeOffset, Quaternion.identity);
+            GameObject newRope = Instantiate(ropePrefab, _ropeTmpPosition==null?mouseFollow.position+ropeOffset:_ropeTmpPosition.position, Quaternion.identity);
             RopeAndPins ropeAndPins = new RopeAndPins()
             {
                 leftPin = newPin.GetComponent<PinBehaviour>(),
@@ -71,7 +79,7 @@ public class PlacePin : MonoSingleton<PlacePin>
             allRopeAndPins[^1] = ropeAndPins;
             currentRope.SetRightPoin(newPin.transform, ropeOffset);
         }
-        _pined.GetComponent<PinableObject>().AddPin(allRopeAndPins.Count-1);
+        _pined.GetComponent<PinableObject>()?.AddPin(allRopeAndPins.Count-1);
     }
 
     public void RemovePinsAndRope(int id)
@@ -90,8 +98,15 @@ public class PlacePin : MonoSingleton<PlacePin>
             allRopeAndPins[i].rightPin.Init(i,false);
         }
     }
-    
-    
+
+    public void ShowPinsAndRope(int id, bool _show)
+    {
+        RopeAndPins ropesAndPin = allRopeAndPins[id];
+        ropesAndPin.rightPin.gameObject.SetActive(_show);
+        ropesAndPin.leftPin.gameObject.SetActive(_show);
+        ropesAndPin.rope.gameObject.SetActive(_show);
+    }
+
     private void Update()
     {
         mouseFollow.position = camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 2));

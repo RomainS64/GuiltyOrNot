@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class IDCard : MonoBehaviour
 {
+    [SerializeField] public Transform PinPosition;
     [SerializeField] private int suspectId;
     public int GetPlayerId() => suspectId;
     
