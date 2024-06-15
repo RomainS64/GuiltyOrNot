@@ -63,6 +63,11 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
         var generatedSuspect = GeneratedSuspects[_suspectId];
         generatedSuspect.isEliminated = _eliminated;
         int aliveSuspectCount =  GetAlivedSuspectCout();
+        int audioLevel = GeneratedSuspects.Count - aliveSuspectCount;
+        audioLevel = (audioLevel * 8 / GeneratedSuspects.Count)+1;
+        Debug.LogError(audioLevel);
+        AudioManager.instance.SetParameter("music_state", audioLevel);
+        
         NewDocUI.Instance.NotifyThreshold(aliveSuspectCount,_eliminated);
         if (!_eliminated)
         {
@@ -92,6 +97,7 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
         winEndPart.SetActive(_win);
         looseEndPart.SetActive(!_win);
         endCanvas.SetActive(true);
+        AudioManager.instance.audioEvents["Game Music"].Stop();
     }
 
     private void Start()

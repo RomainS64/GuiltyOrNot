@@ -12,6 +12,6 @@ public class PinBehaviour : MonoBehaviour, IPointerClickHandler
         pinId = _pinId;
         isLeftPin = _idLeft;
     }
-    public void OnPointerClick(PointerEventData eventData)=>PlacePin.Instance.RemovePinsAndRope(pinId);
+    public void OnPointerClick(PointerEventData eventData)=>Debug.Log("Pined");//PlacePin.Instance.RemovePinsAndRope(pinId);
     
 }

@@ -24,6 +24,7 @@ public class CorkBoardFlowHandler : MonoSingleton<CorkBoardFlowHandler>
     {
         int i = 0;
         AudioManager.instance.audioEvents["Game Music"].Play();
+        AudioManager.instance.SetParameter("music_state", 0);
         TextSetter[] allTextSetters = FindObjectsOfType<TextSetter>(true);
         PhotoSetter[] photoSetters = FindObjectsOfType<PhotoSetter>(true);
         
@@ -31,7 +32,7 @@ public class CorkBoardFlowHandler : MonoSingleton<CorkBoardFlowHandler>
         notebook.SetScenario(_scenario.scenarioString);
         notebook.SetTestimonial1(_scenario.testimonial1.testimonialString);
         notebook.SetTestimonial2(_scenario.testimonial2.testimonialString);
-        notebook.SetTestimonial3(_scenario.testimonial3.testimonialString);
+        //notebook.SetTestimonial3(_scenario.testimonial3.testimonialString);
         
         internetHistoryPapers = FindObjectsOfType<InternetHistoryPaper>(true);
         bankAccountPapers = FindObjectsOfType<BankAccountPaper>(true);

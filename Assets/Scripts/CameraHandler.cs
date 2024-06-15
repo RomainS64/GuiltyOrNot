@@ -24,6 +24,7 @@ public class CameraHandler : MonoSingleton<CameraHandler>,IPointerDownHandler,IP
     [SerializeField] private float mouvMultiplicator = 1f;
     [FormerlySerializedAs("scrollMultiplicator")] [SerializeField] float scrollForce = 1f;    
     [SerializeField] private CinemachineVirtualCamera camera;
+    [SerializeField] private float defaultZoom = 33f;
     [SerializeField] private float minZoom = 1f;
     [SerializeField] private float maxZoom = 10f;
     [SerializeField] private float zoomLerp = 0.5f;
@@ -39,7 +40,7 @@ public class CameraHandler : MonoSingleton<CameraHandler>,IPointerDownHandler,IP
     private void Start()
     {
         ZoomLevel = Mathf.InverseLerp(minZoom, maxZoom, camera.m_Lens.OrthographicSize);
-        camera.m_Lens.OrthographicSize = (maxZoom - minZoom) / 2;
+        camera.m_Lens.OrthographicSize = defaultZoom;
         ScenarioFlow.OnGameStart += () => ToggleCameraMovement(true);
     }
 

@@ -5,6 +5,7 @@ using UnityEngine.Serialization;
 
 public class MovableObject : MonoBehaviour, IPointerDownHandler,IPointerUpHandler
 {
+    public Action OnOblectReleased;
     [SerializeField] private DocumentType documentType;
     [SerializeField] private float unknownFactorX;
     [SerializeField] private float unknownFactorY;
@@ -56,6 +57,7 @@ public class MovableObject : MonoBehaviour, IPointerDownHandler,IPointerUpHandle
         if (isLock) return;
         animator.SetBool(holdParameter,false);
         AudioManager.instance.audioEvents["Object Release"].Play();
+        
         isMoving = false;
     }
 
