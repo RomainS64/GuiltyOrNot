@@ -122,7 +122,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &6611834999769206619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,10 +320,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6181264847279068718}
     - target: {fileID: 6280746330212267712, guid: a04efbaf7e90cbe4bb611e3f1fcc0041, type: 3}
-      propertyPath: testimonial3
-      value: 
-      objectReference: {fileID: 4102440326287577580}
-    - target: {fileID: 6280746330212267712, guid: a04efbaf7e90cbe4bb611e3f1fcc0041, type: 3}
       propertyPath: pages.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -360,17 +356,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 321900200694286609, guid: a04efbaf7e90cbe4bb611e3f1fcc0041, type: 3}
   m_PrefabInstance: {fileID: 1439130389976509978}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4102440326287577580 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3104698451101695990, guid: a04efbaf7e90cbe4bb611e3f1fcc0041, type: 3}
-  m_PrefabInstance: {fileID: 1439130389976509978}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6181264847279068718 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5057703837891655732, guid: a04efbaf7e90cbe4bb611e3f1fcc0041, type: 3}
