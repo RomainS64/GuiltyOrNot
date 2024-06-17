@@ -228,5 +228,5 @@ MonoBehaviour:
   pinCanvas: {fileID: 7618791553996442629}
   ropePrefab: {fileID: 2704824120275040905, guid: 19941e46572630640bcad89012bec10d, type: 3}
   offset: {x: -0.05, y: 0.35, z: 2}
-  ropeOffset: {x: 0, y: 0, z: 3}
+  ropeOffset: {x: 0, y: 0, z: -3}
   mouseFollow: {fileID: 8795047796911317566}

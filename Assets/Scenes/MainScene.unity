@@ -8897,7 +8897,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3063484831070229916, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: m_Lens.OrthographicSize
-      value: 13.90286
+      value: 21.54087
       objectReference: {fileID: 0}
     - target: {fileID: 4203841130992839072, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8979,9 +8979,13 @@ PrefabInstance:
       propertyPath: m_PresetInfoIsWorld
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6410746767475591784, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
+      propertyPath: ropeOffset.z
+      value: -3
+      objectReference: {fileID: 0}
     - target: {fileID: 7711803702273583671, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: orthographic size
-      value: 13.90286
+      value: 21.54087
       objectReference: {fileID: 0}
     - target: {fileID: 7762214271244931253, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: minZoom

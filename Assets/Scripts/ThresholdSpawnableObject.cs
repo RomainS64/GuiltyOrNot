@@ -18,6 +18,10 @@ public class ThresholdSpawnableObject : MonoBehaviour
     private void Start()
     {
         linkedIDCard = FindObjectsOfType<IDCard>(true).First(paper => paper.GetPlayerId() == playerId);
+        if (TryGetComponent(out MovableObject movableObject))
+        {
+            movableObject.linkedIdCard = linkedIDCard.gameObject;
+        }
     }
 
     public void NotifyThreshold(int _amount,int _forceThreshold,bool _isEliminated)
@@ -49,11 +53,16 @@ public class ThresholdSpawnableObject : MonoBehaviour
                 else
                 {
                     ropeId =PlacePin.Instance.PlaceLink(transform,linkedIDCard.transform,pinPosition,linkedIDCard.PinPosition);   
+                    if (TryGetComponent(out MovableObject movableObject))
+                    {
+                        movableObject.ropeId = ropeId;
+                    }
                 }
             }
             
         }
         gameObject.SetActive(keepFile);
         linkedIDCard.transform.SetAsLastSibling();
+        MovableObject.OnSiblingChanged?.Invoke();
     }
 }

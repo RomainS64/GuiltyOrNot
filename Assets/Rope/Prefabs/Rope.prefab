@@ -49,8 +49,7 @@ MonoBehaviour:
   intervalFragmentPrefab: {fileID: 100000, guid: abe2e3c060e0d3642969ac70c82257a1, type: 3}
   intervalCount: 1
   fragmentCount: 5
-  interval: {x: 0, y: 0}
-  forcedZPos: -2
+  interval: {x: 0, y: 0, z: 0}
 --- !u!120 &2704824120275040906
 LineRenderer:
   serializedVersion: 2
@@ -92,7 +91,7 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_Positions:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}

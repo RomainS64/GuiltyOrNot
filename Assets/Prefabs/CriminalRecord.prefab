@@ -2219,6 +2219,7 @@ GameObject:
   - component: {fileID: 5136159254307805198}
   - component: {fileID: 5541177981528593406}
   - component: {fileID: 2156606756290525913}
+  - component: {fileID: 6623880712646426419}
   m_Layer: 5
   m_Name: CriminalRecord
   m_TagString: Untagged
@@ -2259,6 +2260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35a5f918770fa764bb52c9084ef1d25b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  linkedIdCard: {fileID: 0}
   documentType: 3
   unknownFactorX: 15
   unknownFactorY: 10
@@ -2327,6 +2329,51 @@ MonoBehaviour:
   pinPosition: {fileID: 8524262541608887407}
   spawnThreshold: 4
   playerId: 0
+--- !u!61 &6623880712646426419
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7330011123410464331}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.017077923, y: -0.06830919}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 8.445633, y: 5.440056}
+  m_EdgeRadius: 0
 --- !u!1 &7485226572221748393
 GameObject:
   m_ObjectHideFlags: 0

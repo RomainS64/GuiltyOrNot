@@ -26,7 +26,6 @@ public class CrossPhoto : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (eventData.button != PointerEventData.InputButton.Right) return;
         IsCrossed = !IsCrossed;
         AudioManager.instance.audioEvents[IsCrossed?"Suspect Off":"Suspect On"].Play();
         ScenarioFlow.Instance.SetSuspectEliminationStatus(photoSetter.GetPlayerId(), IsCrossed);

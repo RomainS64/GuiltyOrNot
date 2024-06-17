@@ -20,6 +20,9 @@ public struct DocumentPositions
 }
 public class DocumentPlacement : MonoSingleton<DocumentPlacement>
 {
+    
+    public Action OnIdsSetToTop;
+    public Action OnDocumentReplaced;
     private List<DocumentPositions> documentPositions = new();
     [SerializeField] private Transform[] placementZones;
     [SerializeField] private Transform[] documentPlacementZones;
@@ -115,13 +118,25 @@ public class DocumentPlacement : MonoSingleton<DocumentPlacement>
             if (!document.document.gameObject.activeSelf) continue;
             if (Vector2.Distance(document.document.position, document.suspectGroupedPosition) > 1)
             {
-                StartCoroutine(MoveTo(document.document, document.suspectGroupedPosition, 0.2f,i<4));
+                StartCoroutine(MoveTo(document.document, document.suspectGroupedPosition, 0.2f,i<4,i==0));
             }
             ++i;
         }
+
+        SetIdsToLastSiblingIndex();
         IsGroupedByDocument = false;
     }
     public bool IsGroupedByDocument { get; private set; }
+
+    public void SetIdsToLastSiblingIndex()
+    {
+        foreach (var document in documentPositions)
+        {
+            if(document.documentTypeId == 0)document.document.SetAsLastSibling();
+        }
+        OnIdsSetToTop?.Invoke();
+        MovableObject.OnSiblingChanged?.Invoke();
+    }
     public void GroupByDocuments(int documentTypeId = -1)
     {
         int i = 0;
@@ -134,7 +149,7 @@ public class DocumentPlacement : MonoSingleton<DocumentPlacement>
             if (Vector2.Distance(document.document.position, document.documentGroupedPosition) > 1)
             {
                 document.document.SetAsLastSibling();
-                StartCoroutine(MoveTo(document.document,followPoint.position+document.documentGroupedPosition+documentDecal[document.documentTypeId], 0.2f,i<4));
+                StartCoroutine(MoveTo(document.document,followPoint.position+document.documentGroupedPosition+documentDecal[document.documentTypeId], 0.2f,i<4,i==0));
             }
 
             ++i;
@@ -143,7 +158,7 @@ public class DocumentPlacement : MonoSingleton<DocumentPlacement>
         IsGroupedByDocument = true;
     }
 
-    IEnumerator MoveTo(Transform targetTransform, Vector3 destination, float time,bool playSound)
+    IEnumerator MoveTo(Transform targetTransform, Vector3 destination, float time,bool playSound,bool notifyReplace = false)
     {
         if(playSound)AudioManager.instance.audioEvents[Random.Range(0,2)==0?"Object Grab":"Object Release"].Play();
         Vector3 startPos = targetTransform.position;
@@ -157,5 +172,6 @@ public class DocumentPlacement : MonoSingleton<DocumentPlacement>
             yield return null;
         }
         targetTransform.position = destination;
+        if(notifyReplace)OnDocumentReplaced?.Invoke();
     }
 }

@@ -2383,6 +2383,7 @@ GameObject:
   - component: {fileID: 1024259800166441164}
   - component: {fileID: 3909586210842491341}
   - component: {fileID: 1221407962982787902}
+  - component: {fileID: 396445073829656903}
   m_Layer: 5
   m_Name: BankAccount
   m_TagString: Untagged
@@ -2423,6 +2424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35a5f918770fa764bb52c9084ef1d25b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  linkedIdCard: {fileID: 0}
   documentType: 2
   unknownFactorX: 0
   unknownFactorY: 0
@@ -2500,6 +2502,51 @@ MonoBehaviour:
   pinPosition: {fileID: 6060549971280806061}
   spawnThreshold: 6
   playerId: 0
+--- !u!61 &396445073829656903
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5449131632037438279}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.008859158, y: 0.008859873}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 7.8574533, y: 5.164088}
+  m_EdgeRadius: 0
 --- !u!1 &6207923956039411507
 GameObject:
   m_ObjectHideFlags: 0

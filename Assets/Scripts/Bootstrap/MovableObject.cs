@@ -1,11 +1,15 @@
 using System;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
 
 public class MovableObject : MonoBehaviour, IPointerDownHandler,IPointerUpHandler
 {
-    public Action OnOblectReleased;
+    public static Action OnSiblingChanged;
+    [HideInInspector][CanBeNull] public GameObject linkedIdCard;
+    [HideInInspector]public int ropeId = -1;
+    
     [SerializeField] private DocumentType documentType;
     [SerializeField] private float unknownFactorX;
     [SerializeField] private float unknownFactorY;
@@ -39,12 +43,15 @@ public class MovableObject : MonoBehaviour, IPointerDownHandler,IPointerUpHandle
         }
         animator = GetComponent<Animator>();
     }
+    
+
     public void OnPointerDown(PointerEventData _eventData)
     {
         if (isLock) return;
         LastTouchedDocument.Instance.NotifyTouchedDocument(documentType);
         
         transform.SetAsLastSibling();
+        OnSiblingChanged?.Invoke();
         animator.SetBool(holdParameter,true);
         AudioManager.instance.audioEvents["Object Grab"].Play();
         isMoving = true;

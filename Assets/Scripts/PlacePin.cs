@@ -8,6 +8,9 @@ public struct RopeAndPins
     public PinBehaviour leftPin;
     public PinBehaviour rightPin;
     public GameObject rope;
+    public bool leftAskShow;
+    public bool rightAskShow;
+    public bool isTotallyHiden;
 }
 public class PlacePin : MonoSingleton<PlacePin>
 {
@@ -59,17 +62,19 @@ public class PlacePin : MonoSingleton<PlacePin>
         {
             newPinBehaviour.Init(allRopeAndPins.Count,true);
             //Increment + add to list newRope and newPin
-            GameObject newRope = Instantiate(ropePrefab, _ropeTmpPosition==null?mouseFollow.position+ropeOffset:_ropeTmpPosition.position, Quaternion.identity);
+            GameObject newRope = Instantiate(ropePrefab, _ropeTmpPosition==null?mouseFollow.position+ropeOffset:_ropeTmpPosition.position+ropeOffset, Quaternion.identity);
             RopeAndPins ropeAndPins = new RopeAndPins()
             {
                 leftPin = newPin.GetComponent<PinBehaviour>(),
-                rope = newRope
+                rope = newRope,
+                leftAskShow = true,
+                rightAskShow = true
             };
             
             allRopeAndPins.Add(ropeAndPins);
             currentRope = newRope.GetComponent<RopeController>();
             currentRope.SetLeftPoin(newPin.transform,ropeOffset);
-            currentRope.SetRightPoin(mouseFollow,Vector3.zero);
+            currentRope.SetRightPoin(mouseFollow,ropeOffset);
         }
         else
         {
@@ -104,7 +109,21 @@ public class PlacePin : MonoSingleton<PlacePin>
         RopeAndPins ropesAndPin = allRopeAndPins[id];
         ropesAndPin.rightPin.gameObject.SetActive(_show);
         ropesAndPin.leftPin.gameObject.SetActive(_show);
-        ropesAndPin.rope.gameObject.SetActive(_show);
+        ropesAndPin.isTotallyHiden = !_show;
+        allRopeAndPins[id] = ropesAndPin;
+        ropesAndPin.rope.GetComponent<LineRenderer>().enabled = _show;
+    }
+
+    public void ShowRope(int _id,bool _show,bool _isLeftAsking)
+    {
+        
+        RopeAndPins ropesAndPin = allRopeAndPins[_id];
+
+        if (_isLeftAsking) ropesAndPin.leftAskShow = _show;
+        else ropesAndPin.rightAskShow = _show;
+        allRopeAndPins[_id] = ropesAndPin;
+        
+        ropesAndPin.rope.GetComponent<LineRenderer>().enabled = ropesAndPin.leftAskShow && ropesAndPin.rightAskShow && !ropesAndPin.isTotallyHiden;
     }
 
     private void Update()
