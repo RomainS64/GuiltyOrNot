@@ -137,7 +137,9 @@ public class TutoBehaviour : MonoBehaviour
    {
       yield return new WaitUntil(() => !isTextDisplaying);
       yield return new WaitForSeconds(2f);
+      PlayerPrefs.SetInt("PlayTuto", 0);
       ScenarioFlow.Instance.FinishGame(_win);
+     
    }
 
    private IEnumerator TutoFlow()

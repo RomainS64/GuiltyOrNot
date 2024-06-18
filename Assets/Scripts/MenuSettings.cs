@@ -18,6 +18,10 @@ public class MenuSettings : MonoBehaviour
     [SerializeField]private TMP_InputField organization;
     [SerializeField]private TMP_InputField apiKey;
     [SerializeField] private Button validateAPIAccess;
+    
+    [SerializeField] private Button checkboxButton;
+    [SerializeField] private GameObject checkboxCheck;
+    
 
     private void Start()
     {
@@ -26,12 +30,22 @@ public class MenuSettings : MonoBehaviour
         languageDropdown.value = PlayerPrefs.GetInt("LanguageInt",0);
         organization.text = PlayerPrefs.GetString("Organization",string.Empty);
         apiKey.text = PlayerPrefs.GetString("PrivateAPIKey",string.Empty);
+        checkboxCheck.SetActive( PlayerPrefs.GetInt("PlayTuto", 1) ==1);
+        
         organization.onValueChanged.AddListener(OnOrganizationChanged);
         apiKey.onValueChanged.AddListener(OnApiKeyChanged);
         languageDropdown.onValueChanged.AddListener(OnLanguageChanged);
+        checkboxButton.onClick.AddListener(OnTutoChanged);
         validateAPIAccess.onClick.AddListener(TryAPIAccess);
         generation.OnGPTResponseReceived += APIAccessible;
         generation.OnGPTError += APINotAccessible;
+    }
+
+    private void OnTutoChanged()
+    {
+        bool isChecked = PlayerPrefs.GetInt("PlayTuto", 1)==1;
+        checkboxCheck.SetActive(!isChecked);
+        PlayerPrefs.SetInt("PlayTuto",isChecked?0:1);
     }
 
     private void APINotAccessible(string _response)
