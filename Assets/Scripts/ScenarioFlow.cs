@@ -78,6 +78,14 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
             generatedSuspect.aliveCountWhenEliminated = aliveSuspectCount;
         }
         GeneratedSuspects[_suspectId] = generatedSuspect;
+        //TUTO PART
+        int eliminationCount = GetEliminedSuspectCout();
+        
+        if (eliminationCount == 3 ) TutoBehaviour.FirstInnocented?.Invoke(IsFirstStepPerfectlyDone());
+        if (eliminationCount == 5 ) TutoBehaviour.SecondInnocented?.Invoke(IsCriminalAlive());
+        if (eliminationCount == 7 ) TutoBehaviour.ThirdInnocented?.Invoke(IsCriminalAlive());
+        if (eliminationCount == 9 ) TutoBehaviour.FourthInnocented?.Invoke(IsCriminalAlive());
+        if (eliminationCount == 11 ) TutoBehaviour.FiftInnocented?.Invoke(IsCriminalAlive());
         
         foreach (var spawnable in thresholdSpawnableObject)
         {
@@ -85,10 +93,11 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
             
         }
         
+        
         if (aliveSuspectCount == 2 && _eliminated)
         {
-            Suspect lastSuspect = GeneratedSuspects.Where(suspect => suspect.isEliminated == false).ToArray()[0];
-            FinishGame(lastSuspect.threshold == GeneratedSuspects.Count-1);
+            if(PlayerPrefs.GetInt("PlayTuto", 1) == 0)
+            FinishGame(IsCriminalAlive());
         }
     }
 
@@ -108,8 +117,15 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
         //if(notebookCanvas != null)notebookCanvas.SetActive(false);
     }
 
-    public int GetAlivedSuspectCout()=>GeneratedSuspects.Count(suspect => !suspect.isEliminated);
+    public bool IsFirstStepPerfectlyDone()=>GeneratedSuspects[0].isEliminated && GeneratedSuspects[1].isEliminated && GeneratedSuspects[2].isEliminated;
+    public bool IsSecondStepPerfectlyDone() => IsFirstStepPerfectlyDone() && GeneratedSuspects[3].isEliminated && GeneratedSuspects[4].isEliminated;
+    public bool IsThirdStepPerfectlyDone() => IsSecondStepPerfectlyDone() && GeneratedSuspects[5].isEliminated && GeneratedSuspects[6].isEliminated;
+    public bool IsFourthStepPerfectlyDone() => IsThirdStepPerfectlyDone() && GeneratedSuspects[7].isEliminated && GeneratedSuspects[8].isEliminated;
+    public bool IsFifthStepPerfectlyDone() => IsFourthStepPerfectlyDone() && GeneratedSuspects[9].isEliminated && GeneratedSuspects[10].isEliminated;
+    public bool IsCriminalAlive() => !GeneratedSuspects[^1].isEliminated;
     
+    public int GetAlivedSuspectCout()=>GeneratedSuspects.Count(suspect => !suspect.isEliminated);
+    public int GetEliminedSuspectCout()=>GeneratedSuspects.Count(suspect => suspect.isEliminated);
     public void StartGenerating()=>StartCoroutine(StartGeneratingCoroutine());
 
     [SerializeField] private GameObject loadingCanvas;

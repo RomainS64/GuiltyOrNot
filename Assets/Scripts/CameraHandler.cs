@@ -134,6 +134,11 @@ public class CameraHandler : MonoSingleton<CameraHandler>,IPointerDownHandler,IP
                 RecalibrateBounds();
             }
 
+            if (Input.mouseScrollDelta.y != 0)
+            {
+                TutoBehaviour.OnPlayerZoom?.Invoke();
+            }
+
             yield return null;
         }
     }

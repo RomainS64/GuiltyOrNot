@@ -39,7 +39,8 @@ public class Notebook : MonoBehaviour
         clickable.OnAssetClicked += OnPointerDown;
         transform.position = notDisplayedPosition.position;
         ShowPage(pageIndex);
-        ScenarioFlow.OnGameStart += () => { ShowNotebook(); };
+        HideNotebook();
+        //ScenarioFlow.OnGameStart += () => { ShowNotebook(); };
     }
 
     public void SetScenario(string _scenario) => scenario.text = _scenario;
@@ -49,6 +50,7 @@ public class Notebook : MonoBehaviour
     
     public void OnPointerDown()
     {
+        TutoBehaviour.NotebookClicked?.Invoke();
         if (!isDisplayed)
         {
             ShowNotebook();
@@ -75,8 +77,10 @@ public class Notebook : MonoBehaviour
         ShowPage(--pageIndex);
     }
 
+    public int suspectIndex = 2;
     private void ShowPage(int _index)
     {
+        if(_index == suspectIndex)TutoBehaviour.SuspectPageSelected?.Invoke();
         if(AudioManager.instance != null)
         {
             AudioManager.instance.audioEvents[Random.Range(0,2)==0?"Object Grab":"Object Release"].Play();

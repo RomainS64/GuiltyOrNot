@@ -7294,6 +7294,11 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!1 &1223507606 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6273289496350519969, guid: 1160407327bf16144911ea259d0d9e58, type: 3}
+  m_PrefabInstance: {fileID: 1621415314}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1236965896
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8822,7 +8827,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3063484831070229916, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: m_Lens.OrthographicSize
-      value: 29.02077
+      value: 34.36756
       objectReference: {fileID: 0}
     - target: {fileID: 4203841130992839072, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8910,7 +8915,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7711803702273583671, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: orthographic size
-      value: 29.02077
+      value: 34.36756
       objectReference: {fileID: 0}
     - target: {fileID: 7762214271244931253, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: minZoom
@@ -9458,6 +9463,157 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 10
+--- !u!1001 &1621415314
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4675514690296010238}
+    m_Modifications:
+    - target: {fileID: 321765023833446181, guid: 1160407327bf16144911ea259d0d9e58, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.1499939
+      objectReference: {fileID: 0}
+    - target: {fileID: 465541455079507116, guid: 1160407327bf16144911ea259d0d9e58, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.9199829
+      objectReference: {fileID: 0}
+    - target: {fileID: 1104476014276959476, guid: 1160407327bf16144911ea259d0d9e58, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.70410156
+      objectReference: {fileID: 0}
+    - target: {fileID: 1538870885871871653, guid: 1160407327bf16144911ea259d0d9e58, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1538870885871871653, guid: 1160407327bf16144911ea259d0d9e58, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1538870885871871653, guid: 1160407327bf16144911ea259d0d9e58, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1538870885871871653, guid: 1160407327bf16144911ea259d0d9e58, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1538870885871871653, guid: 1160407327bf16144911ea259d0d9e58, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1538870885871871653, guid: 1160407327bf16144911ea259d0d9e58, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1538870885871871653, guid: 1160407327bf16144911ea259d0d9e58, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1538870885871871653, guid: 1160407327bf16144911ea259d0d9e58, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1538870885871871653, guid: 1160407327bf16144911ea259d0d9e58, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 32.089558
+      objectReference: {fileID: 0}
+    - target: {fileID: 1538870885871871653, guid: 1160407327bf16144911ea259d0d9e58, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 32.089558
+      objectReference: {fileID: 0}
+    - target: {fileID: 1538870885871871653, guid: 1160407327bf16144911ea259d0d9e58, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 32.089558
+      objectReference: {fileID: 0}
+    - target: {fileID: 1538870885871871653, guid: 1160407327bf16144911ea259d0d9e58, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1538870885871871653, guid: 1160407327bf16144911ea259d0d9e58, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1538870885871871653, guid: 1160407327bf16144911ea259d0d9e58, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1538870885871871653, guid: 1160407327bf16144911ea259d0d9e58, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1538870885871871653, guid: 1160407327bf16144911ea259d0d9e58, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1538870885871871653, guid: 1160407327bf16144911ea259d0d9e58, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1538870885871871653, guid: 1160407327bf16144911ea259d0d9e58, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1538870885871871653, guid: 1160407327bf16144911ea259d0d9e58, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -70
+      objectReference: {fileID: 0}
+    - target: {fileID: 1538870885871871653, guid: 1160407327bf16144911ea259d0d9e58, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -214
+      objectReference: {fileID: 0}
+    - target: {fileID: 1538870885871871653, guid: 1160407327bf16144911ea259d0d9e58, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1538870885871871653, guid: 1160407327bf16144911ea259d0d9e58, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1538870885871871653, guid: 1160407327bf16144911ea259d0d9e58, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3433512442016367217, guid: 1160407327bf16144911ea259d0d9e58, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.5800171
+      objectReference: {fileID: 0}
+    - target: {fileID: 6273289496350519969, guid: 1160407327bf16144911ea259d0d9e58, type: 3}
+      propertyPath: m_Name
+      value: TutoWelcome
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1160407327bf16144911ea259d0d9e58, type: 3}
+--- !u!224 &1621415315 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1538870885871871653, guid: 1160407327bf16144911ea259d0d9e58, type: 3}
+  m_PrefabInstance: {fileID: 1621415314}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1621415316 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2395046961845552494, guid: 1160407327bf16144911ea259d0d9e58, type: 3}
+  m_PrefabInstance: {fileID: 1621415314}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1621415317 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3912273893455207053, guid: 1160407327bf16144911ea259d0d9e58, type: 3}
+  m_PrefabInstance: {fileID: 1621415314}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1621415318 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2492947774202991825, guid: 1160407327bf16144911ea259d0d9e58, type: 3}
+  m_PrefabInstance: {fileID: 1621415314}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1627647393
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10890,6 +11046,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 825267437506640707, guid: 61ac30b6812e4c043b534436b044d7f0, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3339693177946886763, guid: 61ac30b6812e4c043b534436b044d7f0, type: 3}
       propertyPath: maxZoom
       value: 8
@@ -12804,6 +12964,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2118497940}
   m_CullTransparentMesh: 1
+--- !u!114 &388403732888809744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548470879294429408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!114 &556150911566000678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12834,6 +13011,29 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!223 &685995799544603791
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548470879294429408}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 165
+  m_TargetDisplay: 0
 --- !u!1001 &1011589785741791722
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12943,6 +13143,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9093798876462930012}
   m_CullTransparentMesh: 1
+--- !u!1 &1548470879294429408
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4675514690296010238}
+  - component: {fileID: 7813501124776537851}
+  - component: {fileID: 685995799544603791}
+  - component: {fileID: 7813501124776537850}
+  - component: {fileID: 388403732888809744}
+  m_Layer: 5
+  m_Name: TutoCanvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!224 &1587190383225954198
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13084,6 +13304,26 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d205922a9ca10f4486e499b059f40d0, type: 3}
+--- !u!224 &4675514690296010238
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548470879294429408}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1621415315}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!1001 &4901936492255174187
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13303,6 +13543,192 @@ PrefabInstance:
       insertIndex: 3
       addedObject: {fileID: 1274717702}
   m_SourcePrefab: {fileID: 100100000, guid: 27d820421a0ad474b885626d28daffc2, type: 3}
+--- !u!114 &7813501124776537850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548470879294429408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0.5
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!114 &7813501124776537851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548470879294429408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bc67b1125a1e4f448e2defe4e079487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LastSequentialIndex: 5
+  tutoParts:
+  - texts:
+    - language: 0
+      text: Here you are! Come on, rookie,  we have a lot of work to do, and  I want
+        to finish early tonight, so  we need to act professionally!
+    - language: 1
+      text: "Vous voil\xE0, vous ! Allez le bleu,  on a du pain sur la planche et 
+        j\u2019ai envie de rentrer de bonne  heure ce soir, alors va falloir se 
+        la jouer professionnel !"
+    altTexts: []
+    condition: 0
+    isHappyFace: 1
+  - texts:
+    - language: 0
+      text: ' As you may have noticed, you are in your new  office! And the most
+        important thing for you  here is this board. To zoom in or out, use your 
+        mouse wheel.'
+    - language: 1
+      text: "Comme tu as pu le remarquer, tu es dans ton  nouveau bureau ! Et le
+        plus important pour toi  ici, c\u2019est ce tableau. Pour te rapprocher ou 
+        prendre du recul, utilise la molette de ta  souris."
+    altTexts: []
+    condition: 2
+    isHappyFace: 1
+  - texts:
+    - language: 0
+      text: To start open your notebook !
+    - language: 1
+      text: Pour commencer ouvre ton carnet !
+    altTexts: []
+    condition: 4
+    isHappyFace: 1
+  - texts:
+    - language: 0
+      text: ' In this notebook, you will find all the crucial  information for your
+        investigation.  Go to the suspects page!'
+    - language: 1
+      text: " Dans ce carnet, tu trouveras toutes les informations  cruciales pour
+        ton enqu\xEAte.  Rend toi \xE0 la page des suspects !"
+    altTexts: []
+    condition: 5
+    isHappyFace: 1
+  - texts:
+    - language: 0
+      text: 'On this page, you will be able to  clear suspects and choose the culprit
+        of the theft. To  make navigating the board easier, a shortcut bar is  available
+        at the top of your screen. When you  approach the board, click on the face
+        of the suspect  you want to examine to instantly access their  documents. '
+    - language: 1
+      text: "Sur cette page, tu vas  pouvoir innocenter les suspects et choisir le 
+        coupable du vol. Pour te faciliter tes d\xE9placements  sur le tableau, une
+        barre de raccourcis est disponible  en haut de ton \xE9cran. Quand tu te
+        rapproches du  tableau, clique sur le visage du suspect que tu veux  examiner
+        pour acc\xE9der instantan\xE9ment \xE0 ses  documents."
+    altTexts: []
+    condition: 0
+    isHappyFace: 1
+  - texts:
+    - language: 0
+      text: 'Now, a little exercise, rookie: Try to  clear your first three suspects
+        using  the information available in the  notebook'
+    - language: 1
+      text: "Maintenant, petit exercice le bleu :  Essaye d\u2019innocenter tes trois 
+        premiers suspects avec les  \xE9l\xE9ments disponible dans le carnet. "
+    altTexts: []
+    condition: 0
+    isHappyFace: 1
+  - texts:
+    - language: 0
+      text: ' Well done, rookie! For now, you''re  on the right track. I think we
+        have  received some new documents.'
+    - language: 1
+      text: " Bravo le bleu ! Pour le moment, tu  es sur la bonne route. Je crois
+        que  nous avons re\xE7u de nouveaux  documents."
+    altTexts:
+    - language: 0
+      text: You're on the wrong track, rookie.  Focus a bit!
+    - language: 1
+      text: Tu fais fausse route, le bleu.  Concentre-toi un peu !
+    condition: 3
+    isHappyFace: 1
+  - texts:
+    - language: 0
+      text: Well done, rookie! You impress me. Keep  it up and I'll buy you a coffee.
+    - language: 1
+      text: " Bravo, le bleu ! Tu m'\xE9pates. Continue  comme \xE7a et je t'offre
+        le caf\xE9"
+    altTexts:
+    - language: 0
+      text: You're on the wrong track, rookie.  Focus a bit!
+    - language: 1
+      text: Tu fais fausse route, le bleu.  Concentre-toi un peu !
+    condition: 3
+    isHappyFace: 1
+  - texts:
+    - language: 0
+      text: ' You''re doing really well!'
+    - language: 1
+      text: "Tu te d\xE9brouilles vraiment bien !"
+    altTexts:
+    - language: 0
+      text: You're on the wrong track, rookie.  Focus a bit!
+    - language: 1
+      text: Tu fais fausse route, le bleu.  Concentre-toi un peu !
+    condition: 3
+    isHappyFace: 1
+  - texts:
+    - language: 0
+      text: Your detective skills are amazing!
+    - language: 1
+      text: "Tes talents d\u2019enqu\xEAteur sont surprenants !"
+    altTexts:
+    - language: 0
+      text: You're on the wrong track, rookie.  Focus a bit!
+    - language: 1
+      text: Tu fais fausse route, le bleu.  Concentre-toi un peu !
+    condition: 3
+    isHappyFace: 1
+  - texts:
+    - language: 0
+      text: ' WELL DONE, ROOKIE, YOU ARE  OFFICIALLY ............. STILL A ROOKIE, 
+        BUT KEEP IT UP AND YOU''LL GET A  PROMOTION!!'
+    - language: 1
+      text: "BRAVO LE BLEU, TU ES  OFFICIELLEMENT ............. ENCORE UN  BLEU,
+        MAIS CONTINUE COMME \xC7A ET  TU PRENDRAS DU GALON !!"
+    altTexts:
+    - language: 0
+      text: ' Given your detective skills, I''ll refrain  from commenting... We''re
+        going to assign  you to coloring in the composite  sketches!'
+    - language: 1
+      text: "Vu tes talents d\u2019enqu\xEAteur, je vais  m\u2019abstenir de commenter...
+        Nous allons  t\u2019assigner au coloriage de portraits robots !"
+    condition: 3
+    isHappyFace: 1
+  - texts:
+    - language: 0
+      text: ' You are made for this job. The  thief seems within reach!'
+    - language: 1
+      text: "Tu es fait pour ce job. Le voleur semble \xE0  port\xE9e de main !"
+    altTexts:
+    - language: 0
+      text: You're on the wrong track, rookie.  Focus a bit!
+    - language: 1
+      text: Tu fais fausse route, le bleu.  Concentre-toi un peu !
+    condition: 3
+    isHappyFace: 1
+  bubble: {fileID: 1223507606}
+  bubbleText: {fileID: 1621415318}
+  bubbleHappyFace: {fileID: 1621415317}
+  bubbleAngryFace: {fileID: 1621415316}
 --- !u!222 &8296603891409204683
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13507,4 +13933,5 @@ SceneRoots:
   - {fileID: 1373407698}
   - {fileID: 16078130}
   - {fileID: 3982519089638807956}
+  - {fileID: 4675514690296010238}
   - {fileID: 1011589785741791722}
