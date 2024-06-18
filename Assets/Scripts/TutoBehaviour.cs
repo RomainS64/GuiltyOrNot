@@ -85,7 +85,7 @@ public class TutoBehaviour : MonoBehaviour
    {
       if(tutoFlow != null)StopCoroutine(tutoFlow);
       if(popupFlow != null)StopCoroutine(popupFlow);
-      popupFlow = PopupFlow(4, !obj);
+      popupFlow = PopupFlow(4, !obj,false);
       StartCoroutine(popupFlow);
       StartCoroutine(FinishGame(obj));
       if(obj) FiftInnocented -= FiftInnocentedHandler;
@@ -127,11 +127,11 @@ public class TutoBehaviour : MonoBehaviour
       if(obj) FirstInnocented -= FirstInnocentedHandler;
    }
 
-   private IEnumerator PopupFlow(int _index,bool _altText)
+   private IEnumerator PopupFlow(int _index,bool _altText,bool _hideText = true)
    {
       ShowTextFromPart(tutoParts[LastSequentialIndex+1+_index],_altText);
       yield return WaitFor(tutoParts[LastSequentialIndex+1+_index].condition);
-      HideText();
+      if(_hideText)HideText();
    }
    private IEnumerator FinishGame(bool _win)
    {
