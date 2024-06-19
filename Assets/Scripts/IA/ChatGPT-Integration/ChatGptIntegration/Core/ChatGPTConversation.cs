@@ -4,7 +4,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Codice.Client.Common.WebApi;
 using UnityEngine;
 using UnityEngine.Networking;
 
