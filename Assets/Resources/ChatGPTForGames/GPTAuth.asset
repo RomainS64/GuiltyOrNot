@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Model: 4
   CompletionUrl: https://api.openai.com/v1/chat/completions
-  PrivateApiKey: sk-proj-XvveJPFRUd55PpI9io8wT3BlbkFJ4enr8yDHe6BuuZ5GQHKz
-  Organization: org-A51SAIiSKJ4WTGVUXOoM1pWv
+  PrivateApiKey: 
+  Organization: 
