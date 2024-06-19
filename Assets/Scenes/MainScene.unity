@@ -229,15 +229,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8442179006783847789, guid: eee7b251614d447468697c4168e5f4e2, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 8442179006783847789, guid: eee7b251614d447468697c4168e5f4e2, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8442179006783847789, guid: eee7b251614d447468697c4168e5f4e2, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -267,15 +267,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5630537813621925750, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 5630537813621925750, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5630537813621925750, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 5740233046234640710, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: m_Pivot.x
@@ -630,15 +630,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8135478921342907961, guid: de2960f4e8089644785b6e5c92ca443f, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 8135478921342907961, guid: de2960f4e8089644785b6e5c92ca443f, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8135478921342907961, guid: de2960f4e8089644785b6e5c92ca443f, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -767,6 +767,18 @@ PrefabInstance:
     - target: {fileID: 5322700593129750796, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
       propertyPath: spawnThreshold
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018344249018207499, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: unknownFactorX
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018344249018207499, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: unknownFactorY
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018344249018207499, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: zoomMaxMultiplicator
+      value: 4.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -900,15 +912,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8442179006783847789, guid: eee7b251614d447468697c4168e5f4e2, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 8442179006783847789, guid: eee7b251614d447468697c4168e5f4e2, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8442179006783847789, guid: eee7b251614d447468697c4168e5f4e2, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1064,15 +1076,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 463624216027866188, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 463624216027866188, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 463624216027866188, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 3485862974221096683, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: m_Pivot.x
@@ -1286,15 +1298,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8135478921342907961, guid: de2960f4e8089644785b6e5c92ca443f, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 8135478921342907961, guid: de2960f4e8089644785b6e5c92ca443f, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8135478921342907961, guid: de2960f4e8089644785b6e5c92ca443f, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1531,15 +1543,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8135478921342907961, guid: de2960f4e8089644785b6e5c92ca443f, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 8135478921342907961, guid: de2960f4e8089644785b6e5c92ca443f, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8135478921342907961, guid: de2960f4e8089644785b6e5c92ca443f, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1636,15 +1648,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 463624216027866188, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 463624216027866188, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 463624216027866188, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 3485862974221096683, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: m_Pivot.x
@@ -1908,15 +1920,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5630537813621925750, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 5630537813621925750, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5630537813621925750, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 5740233046234640710, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: m_Pivot.x
@@ -2101,15 +2113,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 463624216027866188, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 463624216027866188, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 463624216027866188, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 3485862974221096683, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: m_Pivot.x
@@ -2563,15 +2575,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8442179006783847789, guid: eee7b251614d447468697c4168e5f4e2, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 8442179006783847789, guid: eee7b251614d447468697c4168e5f4e2, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8442179006783847789, guid: eee7b251614d447468697c4168e5f4e2, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3017,15 +3029,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5630537813621925750, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 5630537813621925750, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5630537813621925750, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 5740233046234640710, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: m_Pivot.x
@@ -3135,15 +3147,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 463624216027866188, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 463624216027866188, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 463624216027866188, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 3485862974221096683, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: m_Pivot.x
@@ -3261,15 +3273,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5630537813621925750, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 5630537813621925750, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5630537813621925750, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 5740233046234640710, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: m_Pivot.x
@@ -3602,15 +3614,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8135478921342907961, guid: de2960f4e8089644785b6e5c92ca443f, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 8135478921342907961, guid: de2960f4e8089644785b6e5c92ca443f, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8135478921342907961, guid: de2960f4e8089644785b6e5c92ca443f, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3720,15 +3732,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8442179006783847789, guid: eee7b251614d447468697c4168e5f4e2, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 8442179006783847789, guid: eee7b251614d447468697c4168e5f4e2, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8442179006783847789, guid: eee7b251614d447468697c4168e5f4e2, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 9026062279763728603, guid: eee7b251614d447468697c4168e5f4e2, type: 3}
       propertyPath: m_text
@@ -4002,6 +4014,18 @@ PrefabInstance:
       propertyPath: spawnThreshold
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9018344249018207499, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: unknownFactorX
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018344249018207499, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: unknownFactorY
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018344249018207499, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: zoomMaxMultiplicator
+      value: 4.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4118,15 +4142,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8442179006783847789, guid: eee7b251614d447468697c4168e5f4e2, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 8442179006783847789, guid: eee7b251614d447468697c4168e5f4e2, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8442179006783847789, guid: eee7b251614d447468697c4168e5f4e2, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4156,15 +4180,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5630537813621925750, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 5630537813621925750, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5630537813621925750, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 5740233046234640710, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: m_Pivot.x
@@ -4394,7 +4418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shuffle: 1
-  zoomThreshold: 1
+  zoomThreshold: 0.2
   photos:
   - {fileID: 1274717695}
   - {fileID: 148906985}
@@ -4448,15 +4472,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5630537813621925750, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 5630537813621925750, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5630537813621925750, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 5740233046234640710, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: m_Pivot.x
@@ -4652,15 +4676,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 463624216027866188, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 463624216027866188, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 463624216027866188, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 3485862974221096683, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: m_Pivot.x
@@ -4786,15 +4810,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5630537813621925750, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 5630537813621925750, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5630537813621925750, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 5740233046234640710, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: m_Pivot.x
@@ -5191,6 +5215,18 @@ PrefabInstance:
       propertyPath: spawnThreshold
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9018344249018207499, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: unknownFactorX
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018344249018207499, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: unknownFactorY
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018344249018207499, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: zoomMaxMultiplicator
+      value: 4.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5325,15 +5361,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8442179006783847789, guid: eee7b251614d447468697c4168e5f4e2, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 8442179006783847789, guid: eee7b251614d447468697c4168e5f4e2, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8442179006783847789, guid: eee7b251614d447468697c4168e5f4e2, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5452,6 +5488,18 @@ PrefabInstance:
     - target: {fileID: 5322700593129750796, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
       propertyPath: spawnThreshold
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018344249018207499, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: unknownFactorX
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018344249018207499, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: unknownFactorY
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018344249018207499, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: zoomMaxMultiplicator
+      value: 4.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5644,15 +5692,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8442179006783847789, guid: eee7b251614d447468697c4168e5f4e2, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 8442179006783847789, guid: eee7b251614d447468697c4168e5f4e2, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8442179006783847789, guid: eee7b251614d447468697c4168e5f4e2, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5982,6 +6030,18 @@ PrefabInstance:
       propertyPath: spawnThreshold
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9018344249018207499, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: unknownFactorX
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018344249018207499, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: unknownFactorY
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018344249018207499, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: zoomMaxMultiplicator
+      value: 4.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6245,15 +6305,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 463624216027866188, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 463624216027866188, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 463624216027866188, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 3485862974221096683, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: m_Pivot.x
@@ -6371,15 +6431,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 463624216027866188, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 463624216027866188, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 463624216027866188, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 3485862974221096683, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: m_Pivot.x
@@ -6595,6 +6655,18 @@ PrefabInstance:
       propertyPath: spawnThreshold
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9018344249018207499, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: unknownFactorX
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018344249018207499, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: unknownFactorY
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018344249018207499, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: zoomMaxMultiplicator
+      value: 4.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6727,15 +6799,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8442179006783847789, guid: eee7b251614d447468697c4168e5f4e2, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 8442179006783847789, guid: eee7b251614d447468697c4168e5f4e2, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8442179006783847789, guid: eee7b251614d447468697c4168e5f4e2, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6863,15 +6935,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8135478921342907961, guid: de2960f4e8089644785b6e5c92ca443f, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 8135478921342907961, guid: de2960f4e8089644785b6e5c92ca443f, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8135478921342907961, guid: de2960f4e8089644785b6e5c92ca443f, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6912,15 +6984,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5630537813621925750, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 5630537813621925750, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5630537813621925750, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 5740233046234640710, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: m_Pivot.x
@@ -7116,15 +7188,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 463624216027866188, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 463624216027866188, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 463624216027866188, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 3485862974221096683, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: m_Pivot.x
@@ -7475,15 +7547,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5630537813621925750, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 5630537813621925750, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5630537813621925750, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 5740233046234640710, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: m_Pivot.x
@@ -7791,15 +7863,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8135478921342907961, guid: de2960f4e8089644785b6e5c92ca443f, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 8135478921342907961, guid: de2960f4e8089644785b6e5c92ca443f, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8135478921342907961, guid: de2960f4e8089644785b6e5c92ca443f, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8055,15 +8127,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8442179006783847789, guid: eee7b251614d447468697c4168e5f4e2, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 8442179006783847789, guid: eee7b251614d447468697c4168e5f4e2, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8442179006783847789, guid: eee7b251614d447468697c4168e5f4e2, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8269,6 +8341,10 @@ PrefabInstance:
     - target: {fileID: 7762214271244931253, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: minZoom
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7762214271244931253, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
+      propertyPath: scrollForce
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 8081598483791804606, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: news1Image
@@ -8657,15 +8733,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8135478921342907961, guid: de2960f4e8089644785b6e5c92ca443f, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 8135478921342907961, guid: de2960f4e8089644785b6e5c92ca443f, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8135478921342907961, guid: de2960f4e8089644785b6e5c92ca443f, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9090,15 +9166,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8135478921342907961, guid: de2960f4e8089644785b6e5c92ca443f, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 8135478921342907961, guid: de2960f4e8089644785b6e5c92ca443f, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8135478921342907961, guid: de2960f4e8089644785b6e5c92ca443f, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9218,6 +9294,18 @@ PrefabInstance:
       propertyPath: spawnThreshold
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9018344249018207499, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: unknownFactorX
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018344249018207499, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: unknownFactorY
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018344249018207499, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: zoomMaxMultiplicator
+      value: 4.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9334,15 +9422,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8135478921342907961, guid: de2960f4e8089644785b6e5c92ca443f, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 8135478921342907961, guid: de2960f4e8089644785b6e5c92ca443f, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8135478921342907961, guid: de2960f4e8089644785b6e5c92ca443f, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9518,6 +9606,18 @@ PrefabInstance:
       propertyPath: spawnThreshold
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9018344249018207499, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: unknownFactorX
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018344249018207499, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: unknownFactorY
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018344249018207499, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: zoomMaxMultiplicator
+      value: 4.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9636,6 +9736,18 @@ PrefabInstance:
       propertyPath: spawnThreshold
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9018344249018207499, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: unknownFactorX
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018344249018207499, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: unknownFactorY
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018344249018207499, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: zoomMaxMultiplicator
+      value: 4.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9656,15 +9768,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 463624216027866188, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 463624216027866188, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 463624216027866188, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 3485862974221096683, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: m_Pivot.x
@@ -9782,15 +9894,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 463624216027866188, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 463624216027866188, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 463624216027866188, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 3485862974221096683, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: m_Pivot.x
@@ -10000,15 +10112,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5630537813621925750, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 5630537813621925750, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5630537813621925750, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 5740233046234640710, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: m_Pivot.x
@@ -10245,15 +10357,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 463624216027866188, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 463624216027866188, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 463624216027866188, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 3485862974221096683, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: m_Pivot.x
@@ -10683,15 +10795,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5630537813621925750, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 5630537813621925750, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5630537813621925750, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 5740233046234640710, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: m_Pivot.x
@@ -10897,15 +11009,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8442179006783847789, guid: eee7b251614d447468697c4168e5f4e2, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 8442179006783847789, guid: eee7b251614d447468697c4168e5f4e2, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8442179006783847789, guid: eee7b251614d447468697c4168e5f4e2, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11025,6 +11137,18 @@ PrefabInstance:
       propertyPath: spawnThreshold
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9018344249018207499, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: unknownFactorX
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018344249018207499, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: unknownFactorY
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018344249018207499, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: zoomMaxMultiplicator
+      value: 4.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11141,15 +11265,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8135478921342907961, guid: de2960f4e8089644785b6e5c92ca443f, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 8135478921342907961, guid: de2960f4e8089644785b6e5c92ca443f, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8135478921342907961, guid: de2960f4e8089644785b6e5c92ca443f, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11272,15 +11396,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8442179006783847789, guid: eee7b251614d447468697c4168e5f4e2, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 8442179006783847789, guid: eee7b251614d447468697c4168e5f4e2, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8442179006783847789, guid: eee7b251614d447468697c4168e5f4e2, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11398,15 +11522,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8442179006783847789, guid: eee7b251614d447468697c4168e5f4e2, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 8442179006783847789, guid: eee7b251614d447468697c4168e5f4e2, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8442179006783847789, guid: eee7b251614d447468697c4168e5f4e2, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11436,15 +11560,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5630537813621925750, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 5630537813621925750, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5630537813621925750, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 5740233046234640710, guid: ac70a90fcfaa3934fa8564f679af73d3, type: 3}
       propertyPath: m_Pivot.x
@@ -11749,6 +11873,18 @@ PrefabInstance:
       propertyPath: spawnThreshold
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9018344249018207499, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: unknownFactorX
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018344249018207499, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: unknownFactorY
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018344249018207499, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: zoomMaxMultiplicator
+      value: 4.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11865,15 +12001,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8135478921342907961, guid: de2960f4e8089644785b6e5c92ca443f, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 8135478921342907961, guid: de2960f4e8089644785b6e5c92ca443f, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8135478921342907961, guid: de2960f4e8089644785b6e5c92ca443f, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12022,15 +12158,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 463624216027866188, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 463624216027866188, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 463624216027866188, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 3485862974221096683, guid: 6a78c1e20b325a74fbe24d6c42c5ce35, type: 3}
       propertyPath: m_Pivot.x
@@ -12749,15 +12885,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8135478921342907961, guid: de2960f4e8089644785b6e5c92ca443f, type: 3}
       propertyPath: unknownFactorX
-      value: 21
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 8135478921342907961, guid: de2960f4e8089644785b6e5c92ca443f, type: 3}
       propertyPath: unknownFactorY
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8135478921342907961, guid: de2960f4e8089644785b6e5c92ca443f, type: 3}
       propertyPath: zoomMaxMultiplicator
-      value: 9
+      value: 4.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13188,6 +13324,18 @@ PrefabInstance:
     - target: {fileID: 5322700593129750796, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
       propertyPath: spawnThreshold
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018344249018207499, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: unknownFactorX
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018344249018207499, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: unknownFactorY
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018344249018207499, guid: e86121255aaefbb40bf48f3e2840c89a, type: 3}
+      propertyPath: zoomMaxMultiplicator
+      value: 4.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

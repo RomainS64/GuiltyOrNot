@@ -93,7 +93,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &3159188553037960149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -671,8 +671,9 @@ MonoBehaviour:
   toggleOnStart: 1
   cameraTarget: {fileID: 0}
   mouvMultiplicator: 2
-  scrollForce: 100
+  scrollForce: 300
   camera: {fileID: 0}
+  defaultZoom: 33
   minZoom: 6
   maxZoom: 34
   zoomLerp: 0.2
