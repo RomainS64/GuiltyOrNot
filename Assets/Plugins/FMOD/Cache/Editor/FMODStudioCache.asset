@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: Assets/Sound/GuiltyOrNot_FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638451912331101162
+  lastModified: 638544270869919872
   FileSizes:
   - Name: Desktop
-    Value: 1514
+    Value: 1606
   Exists: 1
 --- !u!114 &-7809692087628665691
 MonoBehaviour:
@@ -146,6 +146,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 996
+--- !u!114 &-1853709662661073064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/sfx_new_document
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/sfx_new_document
+  Guid:
+    Data1: 1209135906
+    Data2: 1097401277
+    Data3: -738465400
+    Data4: 484419042
+  Banks:
+  - {fileID: 4645021511547162914}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1570
 --- !u!114 &-1720416916196963634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,6 +230,8 @@ MonoBehaviour:
   - {fileID: 8395898244769193915}
   - {fileID: -6700342347155983577}
   - {fileID: 5784689727849356758}
+  - {fileID: -1853709662661073064}
+  - {fileID: 281134043856868496}
   EditorParameters:
   - {fileID: -7809692087628665691}
   - {fileID: -6577469747039466111}
@@ -210,8 +239,35 @@ MonoBehaviour:
   - {fileID: 4645021511547162914}
   StringsBanks:
   - {fileID: -8920762047631395828}
-  cacheTime: 638451912331101162
+  cacheTime: 638544270869919872
   cacheVersion: 131609
+--- !u!114 &281134043856868496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/sfx_newspaper
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/sfx_newspaper
+  Guid:
+    Data1: 1485282865
+    Data2: 1301958112
+    Data3: 71709089
+    Data4: 1815380251
+  Banks:
+  - {fileID: 4645021511547162914}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3150
 --- !u!114 &1320764093547851049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,10 +361,10 @@ MonoBehaviour:
   Path: Assets/Sound/GuiltyOrNot_FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638451912331035007
+  lastModified: 638544270869879721
   FileSizes:
   - Name: Desktop
-    Value: 4207328
+    Value: 4255648
   Exists: 1
 --- !u!114 &5784689727849356758
 MonoBehaviour:
