@@ -7,8 +7,8 @@ using UnityEngine;
 public class Utility : MonoBehaviour
 { 
 
-    public static string API_KEY = "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";
-    public static string ORGANIZATION_KEY = "org-lEgMIl65LXtVs8v7qcUipv6t";
+    public static string ORGANIZATION_KEY => PlayerPrefs.GetString("Organization",string.Empty);
+    public static string API_KEY = PlayerPrefs.GetString("PrivateAPIKey",string.Empty);
 
     public static readonly string resolution_256 = "256x256"; // Possible Resolution 256x256, 512x512, or 1024x1024.
     public static readonly string resolution_512 = "512x512";
