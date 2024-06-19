@@ -60,6 +60,7 @@ public class MenuSettings : MonoBehaviour
     private void APIAccessible(string _response)
     {
         isAPIAccessible = true;
+        AudioManager.instance.audioEvents["New Document"].Play();
         OnApiAccessChanged?.Invoke(true);
         apiAccessLoadingText.SetActive(false);
         apiAccessOkText.SetActive(true);
