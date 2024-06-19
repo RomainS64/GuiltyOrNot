@@ -387,14 +387,6 @@ PrefabInstance:
 
 '
       objectReference: {fileID: 0}
-    - target: {fileID: 4180067450955119107, guid: a04efbaf7e90cbe4bb611e3f1fcc0041, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4180067450955119107, guid: a04efbaf7e90cbe4bb611e3f1fcc0041, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5057703837891655732, guid: a04efbaf7e90cbe4bb611e3f1fcc0041, type: 3}
       propertyPath: m_text
       value: 
@@ -439,10 +431,6 @@ PrefabInstance:
       propertyPath: startDisplayedPosition
       value: 
       objectReference: {fileID: 868980239399552234}
-    - target: {fileID: 6547675604091616388, guid: a04efbaf7e90cbe4bb611e3f1fcc0041, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6564343756902102102, guid: a04efbaf7e90cbe4bb611e3f1fcc0041, type: 3}
       propertyPath: m_LocalScale.x
       value: -3.815287

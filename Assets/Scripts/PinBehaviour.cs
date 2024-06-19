@@ -32,6 +32,7 @@ public class PinBehaviour : MonoBehaviour
     public void NotifySiblingChanged()
     {
         List<Collider2D> collidersInContact = new List<Collider2D>();
+        if (collider == null) return;
         if (collider.GetContacts(collidersInContact)> 0)
         {
             foreach (var col in collidersInContact)

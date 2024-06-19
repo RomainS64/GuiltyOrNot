@@ -29,6 +29,7 @@ public abstract class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
     {
         exist = false;
         instance = null;
+        StopAllCoroutines();
         OnDestroyed?.Invoke();
     }
 }

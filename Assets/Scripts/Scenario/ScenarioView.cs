@@ -12,6 +12,11 @@ public class ScenarioView : MonoBehaviour
     [SerializeField] private TMP_Text scenarioTextView;
     private bool isDisplayingText;
 
+    private void Awake()
+    {
+        OnScenarioViewSkiped = null;
+    }
+
     public void DisplayText(string _text)
     {
         isDisplayingText = true;

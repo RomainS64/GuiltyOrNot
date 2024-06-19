@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bcf566350476b342b633ec92a5f8a6e, type: 3}
   m_Name: GPTAuth
   m_EditorClassIdentifier: 
-  Model: 0
+  Model: 4
   CompletionUrl: https://api.openai.com/v1/chat/completions
   PrivateApiKey: sk-proj-XvveJPFRUd55PpI9io8wT3BlbkFJ4enr8yDHe6BuuZ5GQHKz
   Organization: org-A51SAIiSKJ4WTGVUXOoM1pWv

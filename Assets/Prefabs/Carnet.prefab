@@ -2403,6 +2403,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35a5f918770fa764bb52c9084ef1d25b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  linkedIdCard: {fileID: 0}
+  ropeId: -1
   documentType: 0
   unknownFactorX: 15
   unknownFactorY: 10
@@ -2454,6 +2456,7 @@ MonoBehaviour:
   testimonial1: {fileID: 0}
   testimonial2: {fileID: 0}
   testimonial3: {fileID: 0}
+  suspectIndex: 2
 --- !u!114 &231015441238678978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6019,7 +6022,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8190479559355240431
 Transform:
   m_ObjectHideFlags: 0

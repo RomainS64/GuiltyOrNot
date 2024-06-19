@@ -41,9 +41,10 @@ public class CameraHandler : MonoSingleton<CameraHandler>,IPointerDownHandler,IP
     {
         camera.m_Lens.OrthographicSize = defaultZoom;
         ZoomLevel = Mathf.InverseLerp(minZoom, maxZoom, camera.m_Lens.OrthographicSize);
+        movingBehaviour = null;
+        scrollingBehaviour = null;
         ScenarioFlow.OnGameStart += () => ToggleCameraMovement(true);
     }
-
     public void ToggleCameraMovement(bool _toggle)
     {
         isCameraMoving = _toggle;

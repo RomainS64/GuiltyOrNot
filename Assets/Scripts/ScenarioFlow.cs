@@ -4,11 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 using Debug = UnityEngine.Debug;
 using Random = UnityEngine.Random;
 
 public class ScenarioFlow : MonoSingleton<ScenarioFlow>
 {
+    
     public static bool IsInGame { get; private set; }
     public static Action OnGameStart;
     [SerializeField] private Texture[] debugTexture;
@@ -55,7 +57,14 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
     [SerializeField] private GameObject endCanvas;
     [SerializeField] private GameObject winEndPart;
     [SerializeField] private GameObject looseEndPart;
-    
+    [SerializeField] private Image criminalImage;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        OnGameStart = null;
+        IsInGame = false;
+    }
 
     public void SetSuspectEliminationStatus(int _suspectId, bool _eliminated)
     {
@@ -103,6 +112,9 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
 
     public void FinishGame(bool _win)
     {
+        Suspect lastSuspect = GeneratedSuspects.First(suspect => !suspect.isEliminated);
+        criminalImage.sprite = Sprite.Create((Texture2D)lastSuspect.portrait, new Rect(0, 0, lastSuspect.portrait.width, lastSuspect.portrait.height), new Vector2(0.5f, 0.5f), 100.0f);
+
         winEndPart.SetActive(_win);
         looseEndPart.SetActive(!_win);
         endCanvas.SetActive(true);
@@ -153,6 +165,7 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
         foreach (var spawnable in thresholdSpawnableObject) spawnable.NotifyThreshold(GetAlivedSuspectCout(),numberOfSuspects,false);
         loadingCanvas.SetActive(false);
         OnGameStart?.Invoke();
+        NewspaperGenerator.Instance.Generate(generatedScenario);
         IsInGame = true;
     }
 

@@ -46,7 +46,7 @@ public class GptGeneration : MonoBehaviour
 
     private void OnConversationError(string _text)
     {
-        SendMessage(lastSendMessage);
+        //SendMessage(lastSendMessage);
         OnGPTError?.Invoke(_text);
         Debug.LogError("Conversation Error: "+_text);
     }
