@@ -54,7 +54,7 @@ MonoBehaviour:
     Path: event:/MUSIC/Music
   Event: 
   PlayEvent: 0
-  StopEvent: 0
+  StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -117,7 +117,7 @@ MonoBehaviour:
     Path: event:/SFX/Notebook/sfx_notebook_undock
   Event: 
   PlayEvent: 0
-  StopEvent: 0
+  StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -180,7 +180,7 @@ MonoBehaviour:
     Path: event:/SFX/Notebook/sfx_notebook_dock
   Event: 
   PlayEvent: 0
-  StopEvent: 0
+  StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -243,7 +243,7 @@ MonoBehaviour:
     Path: event:/SFX/Notebook/sfx_notebook_turnpage_left
   Event: 
   PlayEvent: 0
-  StopEvent: 0
+  StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -306,7 +306,7 @@ MonoBehaviour:
     Path: event:/UI/Suspect/ui_suspect_off
   Event: 
   PlayEvent: 0
-  StopEvent: 0
+  StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -369,7 +369,7 @@ MonoBehaviour:
     Path: event:/SFX/sfx_newspaper
   Event: 
   PlayEvent: 0
-  StopEvent: 0
+  StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -432,7 +432,7 @@ MonoBehaviour:
     Path: event:/SFX/sfx_pin
   Event: 
   PlayEvent: 0
-  StopEvent: 0
+  StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -536,7 +536,7 @@ MonoBehaviour:
     Path: event:/SFX/sfx_new_document
   Event: 
   PlayEvent: 0
-  StopEvent: 0
+  StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -599,7 +599,7 @@ MonoBehaviour:
     Path: event:/SFX/Object/sfx_object_release
   Event: 
   PlayEvent: 0
-  StopEvent: 0
+  StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -794,7 +794,7 @@ MonoBehaviour:
     Path: event:/SFX/Object/sfx_object_grab
   Event: 
   PlayEvent: 0
-  StopEvent: 0
+  StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -857,7 +857,7 @@ MonoBehaviour:
     Path: event:/SFX/Notebook/sfx_notebook_turnpage_right
   Event: 
   PlayEvent: 0
-  StopEvent: 0
+  StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -920,7 +920,7 @@ MonoBehaviour:
     Path: event:/UI/Suspect/ui_suspect_on
   Event: 
   PlayEvent: 0
-  StopEvent: 0
+  StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -983,7 +983,7 @@ MonoBehaviour:
     Path: event:/UI/ui_profile_click
   Event: 
   PlayEvent: 0
-  StopEvent: 0
+  StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -1141,7 +1141,7 @@ MonoBehaviour:
     Path: event:/UI/ui_startgame_button
   Event: 
   PlayEvent: 0
-  StopEvent: 0
+  StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
