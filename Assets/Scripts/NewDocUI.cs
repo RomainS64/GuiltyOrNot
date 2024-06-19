@@ -14,7 +14,7 @@ public class NewDocUI : MonoSingleton<NewDocUI>
         if (_isElimination && thresholds.Contains(_amount))
         {
             animator.SetTrigger("Unlock");
-            AudioManager.instance.audioEvents["Notebook Dock"].Play();
+            AudioManager.instance.audioEvents["New Document"].Play();
         }
     }
 
