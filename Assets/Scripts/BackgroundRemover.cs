@@ -10,7 +10,7 @@ public class BackgroundRemover : MonoBehaviour
     
     void Awake()
     {   
-        runtimeModel = ModelLoader.Load(modelAsset);
+        //runtimeModel = ModelLoader.Load(modelAsset);
         worker = WorkerFactory.CreateWorker(runtimeModel);
     }
     private void Destroy()

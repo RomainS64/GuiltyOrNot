@@ -302,8 +302,8 @@ public class StableDiffusionText2Image : StableDiffusionGenerator
                         texture.Apply();
                         if (removeBackgroundAfterGeneration)
                         {
-                            Texture2D newTexture = backgroundRemover.RemoveBackground(ResizeTexture(texture));
-                            LoadIntoImage(newTexture);
+                            //Texture2D newTexture = backgroundRemover.RemoveBackground(ResizeTexture(texture));
+                            LoadIntoImage(texture);
                         }
                         else
                         {
