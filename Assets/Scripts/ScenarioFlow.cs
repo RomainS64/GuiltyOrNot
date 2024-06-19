@@ -166,7 +166,7 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
         foreach (var spawnable in thresholdSpawnableObject) spawnable.NotifyThreshold(GetAlivedSuspectCout(),numberOfSuspects,false);
         loadingCanvas.SetActive(false);
         OnGameStart?.Invoke();
-        NewspaperGenerator.Instance.Generate(generatedScenario);
+        NewspaperGenerator.Instance.Generate(generatedScenario, !generateImages);
         IsInGame = true;
     }
 

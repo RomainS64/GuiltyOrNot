@@ -55,6 +55,7 @@ public class NewspaperGenerator : MonoSingleton<NewspaperGenerator>
 
     private string currentScenarioString;
     private DallENews dalleE;
+    private bool debugGenerate;
 
     protected override void Awake()
     {
@@ -62,8 +63,9 @@ public class NewspaperGenerator : MonoSingleton<NewspaperGenerator>
         dalleE = GetComponent<DallENews>();
     }
 
-    public void Generate(Scenario _scenario)
+    public void Generate(Scenario _scenario,bool _debug=false)
     {
+        debugGenerate = _debug;
         currentScenarioString = _scenario.scenarioString;
         news1GPT.SetUpConversation();
         news1GPT.SendMessage(titleprompt);
@@ -141,6 +143,7 @@ public class NewspaperGenerator : MonoSingleton<NewspaperGenerator>
     private void OnNews1Recieved(string _news)
     {
         news1Title.text = _news;
+        if (debugGenerate)return;
         dalleE.GenerateImage("Generate an image about this title:"+_news, list =>
         {
             news1Image.sprite = Sprite.Create((Texture2D)list[0], new Rect(0, 0, list[0].width, list[0].height), new Vector2(0.5f, 0.5f), 100.0f);
@@ -149,6 +152,7 @@ public class NewspaperGenerator : MonoSingleton<NewspaperGenerator>
     private void OnNews2Recieved(string _news)
     {
         news2Title.text = _news;
+        if (debugGenerate)return;
         dalleE.GenerateImage("Generate an image about this title:"+_news, list =>
         {
             news2Image.sprite = Sprite.Create((Texture2D)list[0], new Rect(0, 0, list[0].width, list[0].height), new Vector2(0.5f, 0.5f), 100.0f);
@@ -157,6 +161,7 @@ public class NewspaperGenerator : MonoSingleton<NewspaperGenerator>
     private void OnNews3Recieved(string _news)
     {
         news3Title.text = _news;
+        if (debugGenerate)return;
         dalleE.GenerateImage("Generate an image about this title:"+_news, list =>
         {
             news3Image.sprite = Sprite.Create((Texture2D)list[0], new Rect(0, 0, list[0].width, list[0].height), new Vector2(0.5f, 0.5f), 100.0f);
@@ -165,6 +170,7 @@ public class NewspaperGenerator : MonoSingleton<NewspaperGenerator>
     private void OnNews4Recieved(string _news)
     {
         news4Title.text = _news;
+        if (debugGenerate)return;
         dalleE.GenerateImage("Generate an image about this title:"+_news, list =>
         {
             news4Image.sprite = Sprite.Create((Texture2D)list[0], new Rect(0, 0, list[0].width, list[0].height), new Vector2(0.5f, 0.5f), 100.0f);
@@ -175,6 +181,7 @@ public class NewspaperGenerator : MonoSingleton<NewspaperGenerator>
         description5GPT.SetUpConversation();
         description5GPT.SendMessage(descriptionPrompt+_news);
         description5GPT.OnGPTResponseReceived += OnDescription5Recieved;
+        if (debugGenerate)return;
         dalleE.GenerateImage("Generate an image about this title:"+_news, list =>
         {
             news5Image.sprite = Sprite.Create((Texture2D)list[0], new Rect(0, 0, list[0].width, list[0].height), new Vector2(0.5f, 0.5f), 100.0f);
@@ -188,6 +195,7 @@ public class NewspaperGenerator : MonoSingleton<NewspaperGenerator>
         description6GPT.SetUpConversation();
         description6GPT.SendMessage(descriptionPrompt+_news);
         description6GPT.OnGPTResponseReceived += OnDescription6Recieved;
+        if (debugGenerate)return;
         dalleE.GenerateImage("Generate an image about this title:"+_news, list =>
         {
             news6Image.sprite = Sprite.Create((Texture2D)list[0], new Rect(0, 0, list[0].width, list[0].height), new Vector2(0.5f, 0.5f), 100.0f);

@@ -9024,7 +9024,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3063484831070229916, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: m_Lens.OrthographicSize
-      value: 33
+      value: 14.0352
       objectReference: {fileID: 0}
     - target: {fileID: 3708459172825743237, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: m_IsActive
@@ -9078,6 +9078,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GON-CORE
       objectReference: {fileID: 0}
+    - target: {fileID: 5766656244393063610, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5775240283294973013, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: endCanvas
       value: 
@@ -9115,12 +9119,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6410746767475591784, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
+      propertyPath: ropeOffset.y
+      value: -0.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 6410746767475591784, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: ropeOffset.z
       value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 7711803702273583671, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: orthographic size
-      value: 33
+      value: 14.0352
       objectReference: {fileID: 0}
     - target: {fileID: 7762214271244931253, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: minZoom
