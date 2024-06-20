@@ -119,7 +119,7 @@ public class ScenarioFlow : MonoSingleton<ScenarioFlow>
         looseEndPart.SetActive(!_win);
         endCanvas.SetActive(true);
         AudioManager.instance.audioEvents["News Paper"].Play();
-        AudioManager.instance.audioEvents["Game Music"].Stop();
+        AudioManager.instance.SetParameter("music_state", 0);
     }
 
     private void Start()

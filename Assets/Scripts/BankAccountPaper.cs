@@ -34,9 +34,11 @@ public class BankAccountPaper : MonoBehaviour
             if (isPositive)
             {
                 transactions[i].positivePrice.text = Mathf.Abs(transaction.Value).ToString("F") +"$";
+                transactions[i].negativePrice.text = "...";
             }
             else
             {
+                transactions[i].positivePrice.text = "...";
                 transactions[i].negativePrice.text = Mathf.Abs(transaction.Value).ToString("F")+"$";
             }
             

@@ -4418,7 +4418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shuffle: 1
-  zoomThreshold: 0.2
+  zoomThreshold: 0.5
   photos:
   - {fileID: 1274717695}
   - {fileID: 148906985}
@@ -8232,7 +8232,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3063484831070229916, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: m_Lens.OrthographicSize
-      value: 14.0352
+      value: 20.19224
       objectReference: {fileID: 0}
     - target: {fileID: 3708459172825743237, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: m_IsActive
@@ -8336,7 +8336,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7711803702273583671, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: orthographic size
-      value: 14.0352
+      value: 20.19224
       objectReference: {fileID: 0}
     - target: {fileID: 7762214271244931253, guid: 6c35fc6efa6f133478ca27f791e55b8e, type: 3}
       propertyPath: minZoom
