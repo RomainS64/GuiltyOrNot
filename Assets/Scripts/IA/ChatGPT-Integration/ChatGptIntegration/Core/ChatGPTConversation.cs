@@ -153,6 +153,7 @@ namespace BitSplash.AI.GPT
         }
         protected ChatApiRequest CreateChatRequest()
         {
+            
             ChatApiRequest req = new ChatApiRequest();
             req.model = ModelNames.GetModelName(Authentication.Model);
             req.messages = mHistory.Prepend(mSystemMessage).ToArray();

@@ -17,10 +17,10 @@ public class BackgroundRemover : MonoBehaviour
     {
         worker.Dispose();
     }
-    public Texture2D RemoveBackground(Texture2D _inputTexture)
+
+    private Tensor CreateTensor(Texture2D _inputTexture)
     {
         Tensor inputTensor = new Tensor(1, 1024, 1024, 3);
-        
         for (int h = 0; h < 1024; h++)
         {
             for (int w = 0; w < 1024; w++)
@@ -30,9 +30,16 @@ public class BackgroundRemover : MonoBehaviour
                 inputTensor[0,h,w,2] = _inputTexture.GetPixel(w,h).b;
             }
         }
+
+        return inputTensor;
+    }
+    public Texture2D RemoveBackground(Texture2D _inputTexture)
+    {
+        Tensor inputTensor = CreateTensor(_inputTexture);
         Tensor outputTensor = worker.Execute(inputTensor).PeekOutput("mask");
-        inputTensor.Dispose();
         float[] mask = outputTensor.data.Download(new TensorShape(1,1024,1024,1));
+        
+        inputTensor.Dispose();
         outputTensor.Dispose();
         
         Color[] outputColors = new Color[mask.Length];
